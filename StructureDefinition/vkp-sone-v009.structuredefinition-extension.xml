@@ -1,24 +1,35 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="vkp-sone-v06" />
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsd="http://www.w3.org/2001/XMLSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir C:\GitRepo\R4\fhir-all-xsd\fhir-single.xsd">
+  <id value="vkp-sone-v009" />
   <meta>
     <versionId value="1" />
     <lastUpdated value="2018-06-15T13:39:05.662+00:00" />
   </meta>
-  <url value="http://ehelse.no/fhir/StructureDefinition/vkp-sone-v06" />
-  <version value="0.6" />
-  <name value="vkp-sone-v06" />
+  <url value="http://ehelse.no/fhir/StructureDefinition/vkp-sone-v009" />
+  <version value="0.0.9" />
+  <name value="vkp-sone-v009" />
   <status value="draft" />
-  <date value="2018-09-12" />
+  <date value="2019-09-12" />
   <description value="Information about juristictional sone/subsone the Person belongs to (home address)." />
-  <fhirVersion value="3.0.1" />
+  <fhirVersion value="4.0.0" />
   <kind value="complex-type" />
   <abstract value="false" />
-  <contextType value="resource" />
-  <context value="Location" />
-  <context value="Patient" />
-  <context value="Practitioner" />
-  <context value="Organization" />
+  <context>
+			<type value="element"/>
+			<expression value="Location"/>
+  </context>
+  <context>
+			<type value="element"/>
+			<expression value="Patient"/>
+  </context>
+    <context>
+			<type value="element"/>
+			<expression value="Practitioner"/>
+  </context>
+    <context>
+			<type value="element"/>
+			<expression value="Organization"/>
+  </context>
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
   <derivation value="constraint" />
@@ -26,7 +37,7 @@
     <element id="Extension">
       <path value="Extension" />
       <short value="Information about juristictional sone/subsone " />
-      <definition value="Information about juristictional sone/subsone of the Person. The sone and subsone is given as a list of string values delimited by &quot;|&quot;.&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;~~~&#xD;&#xA;{&#xD;&#xA;     &quot;url&quot;:&quot;http://ehelse.no/fhir/StructureDefinition/vkp-sone-v06&quot;,&#xD;&#xA;     &quot;valueString&quot;:&quot;Oslo|Gamle Oslo|Øst|Kampen&quot;&#xD;&#xA;}&#xD;&#xA;~~~" />
+      <definition value="Information about juristictional sone/subsone of the Person. The sone and subsone is given as a list of string values delimited by &quot;|&quot;.&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;~~~&#xD;&#xA;{&#xD;&#xA;     &quot;url&quot;:&quot;http://ehelse.no/fhir/StructureDefinition/vkp-sone-v009&quot;,&#xD;&#xA;     &quot;valueString&quot;:&quot;Oslo|Gamle Oslo|Øst|Kampen&quot;&#xD;&#xA;}&#xD;&#xA;~~~" />
       <comment value="This information is typically recorden in the municipality ERP and they have not defined any standard way of representing this data across different municipalities in Norway. The number of sones and subsones can as a result of this vary from one municipality to another." />
       <min value="0" />
       <max value="*" />
@@ -153,7 +164,7 @@
       <type>
         <code value="uri" />
       </type>
-      <fixedUri value="http://ehelse.no/fhir/StructureDefinition/vkp-sone-v06" />
+      <fixedUri value="http://ehelse.no/fhir/StructureDefinition/vkp-sone-v009" />
       <condition value="ele-1" />
       <constraint>
         <key value="ele-1" />
@@ -209,12 +220,12 @@
     <element id="Extension">
       <path value="Extension" />
       <short value="Information about juristictional sone/subsone " />
-      <definition value="Information about juristictional sone/subsone of the Person. The sone and subsone is given as a list of string values delimited by &quot;|&quot;.&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;~~~&#xD;&#xA;{&#xD;&#xA;     &quot;url&quot;:&quot;http://ehelse.no/fhir/StructureDefinition/vkp-sone-v06&quot;,&#xD;&#xA;     &quot;valueString&quot;:&quot;Oslo|Gamle Oslo|Øst|Kampen&quot;&#xD;&#xA;}&#xD;&#xA;~~~" />
+      <definition value="Information about juristictional sone/subsone of the Person. The sone and subsone is given as a list of string values delimited by &quot;|&quot;.&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;~~~&#xD;&#xA;{&#xD;&#xA;     &quot;url&quot;:&quot;http://ehelse.no/fhir/StructureDefinition/vkp-sone-v009&quot;,&#xD;&#xA;     &quot;valueString&quot;:&quot;Oslo|Gamle Oslo|Øst|Kampen&quot;&#xD;&#xA;}&#xD;&#xA;~~~" />
       <comment value="This information is typically recorden in the municipality ERP and they have not defined any standard way of representing this data across different municipalities in Norway. The number of sones and subsones can as a result of this vary from one municipality to another." />
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://ehelse.no/fhir/StructureDefinition/vkp-sone-v06" />
+      <fixedUri value="http://ehelse.no/fhir/StructureDefinition/vkp-sone-v009" />
     </element>
     <element id="Extension.value[x]:valueString">
       <path value="Extension.valueString" />
