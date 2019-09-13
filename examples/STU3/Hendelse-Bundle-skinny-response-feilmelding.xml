@@ -1,0 +1,58 @@
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../STU3/fhir-all-xsd/fhir-single.xsd">
+  <id value="c41379f4-2f2e-4337-98a7-4580e5287e54" />
+  <type value="message" />
+  <entry>
+    <fullUrl value="urn:uuid:47f78176-8cab-482d-ae01-0e8aece998c7" />
+    <resource>
+      <MessageHeader>
+        <id value="47f78176-8cab-482d-ae01-0e8aece998c7" />
+		<meta>
+			<profile value="http://ehelse.no/fhir/StructureDefinition/vkp-MessageHeader-v06"/>
+		</meta>
+        <event>
+          <system value="http://ehelse.no/fhir/CodeSystem/vkp-message-event-v05" />
+          <code value="MedicationDispense" />
+        </event>
+        <receiver>
+          <identifier>
+            <system value="urn:oid:2.16.578.1.12.4.1.2" />
+            <value value="95341" />
+          </identifier>
+          <display value="Velferdpoclev1" />
+        </receiver>
+        <sender>
+        <identifier>
+            <system value="urn:oid:2.16.578.1.12.4.1.2" />
+            <value value="102287" />
+          </identifier>
+          <display value="Sykepleietjeneste, pleie- og omsorg" />
+        </sender>
+        <timestamp value="2012-01-04T07:10:15Z" />
+        <source>
+          <endpoint value="https://vkp.azure-devices.net/devices/102287" />
+        </source>
+        <response>
+			<identifier value="1cbdfb97-5859-48a4-8301-d54eab818d68"/>
+			<code value="fatal-error"/>
+			<details>
+				<!-- A reference to the operation outcome resource -->
+				<reference value="urn:uuid:ffc834d4-8be5-4f6b-be7d-cdca23000fd6"/>
+			</details>
+        </response>
+      </MessageHeader>
+    </resource>
+  </entry>
+  <entry> <!-- Example of error reporting of a structural error on the received message -->
+	<fullUrl value="urn:uuid:ffc834d4-8be5-4f6b-be7d-cdca23000fd6" />
+	<resource>
+		<OperationOutcome>
+			<id value="ffc834d4-8be5-4f6b-be7d-cdca23000fd6"/>
+			<issue>
+				<severity value="error"/>
+				<code value="structure"/>
+				<diagnostics value="Feil i strukturen på meldingen"/>
+			</issue>
+		</OperationOutcome>
+	</resource>
+  </entry>
+</Bundle>

@@ -1,0 +1,62 @@
+<Encounter xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../STU3/fhir-all-xsd/fhir-single.xsd">
+	<!-- The use case is for making the encounter involving a CameraObservation available to the Electronic Health Record after an incedent has occurred and the incident is handled.-->
+	<!-- Digitalt Tilsyn Scenario 1 -->
+	<id value="7dc07bbf-e690-435a-99b6-11e867697ea2"/>
+	<meta>
+		<profile value="http://ehelse.no/fhir/StructureDefinition/vkp-digital-Encounter-v06"/>
+	</meta>
+	<extension url="http://ehelse.no/fhir/StructureDefinition/vkp-annotation-v06">
+		<extension url="signature">
+			<valueAnnotation>
+				<time value="2018-06-25T08:00:00.936Z"/>
+				<text value="Magnar Komann (magnark)"/>
+			</valueAnnotation>
+		</extension>
+	</extension>
+	<identifier>
+		<!--  Unique identification of the encounter as desided by the system -->
+		<system value="urn:ietf:rfc:3986"/>
+		<value value="urn:uuid:4d300421-beb7-4e25-b25b-194534064391"/>
+	</identifier>
+	<!-- The status of the encounter. Reported encounter should be finished. -->
+	<status value="finished"/>
+	<!-- The encounter type, we suggest using predefined codes from http://ehelse.no/fhir/CodeSystem/vkp-camera-reason-v05 -->
+	<type>
+		<coding>
+			<system value="http://ehelse.no/fhir/CodeSystem/vkp-encounter-type-v05"/>
+			<code value="1"/>
+			<display value="tilsyn"/>
+		</coding>
+	</type>
+	<subject>
+		<!-- Reference to the patient that is subject to the encounter, identified by Norwegian Fødselsnummer-->
+		<identifier>
+			<system value="urn:oid:2.16.578.1.12.4.1.4.1"/>
+			<value value="05073500186"/>
+		</identifier>
+		<display value="Ærlend Sørgård"/>
+	</subject>
+	<participant>
+		<!-- Refernce to the individual that participated in the encounter, usually health care provider. Identified using Norwegian Fødselsnummer -->
+		<individual>
+			<identifier>
+				<system value="urn:oid:2.16.578.1.12.4.1.4.1"/>
+				<value value="04056600324"/>
+			</identifier>
+			<display value="Magnar Koman"/>
+		</individual>
+	</participant>
+	<!-- Timestamp of when the encounter was finished, the system could provide both start and end times -->
+	<period>
+		<start value="2018-06-25T10:02:03.463Z"/>
+		<end value="2018-06-25T10:05:12.936Z"/>
+	</period>
+	<reason>
+		<!-- Reason the encounter takes place, coded according to http://ehelse.no/fhir/CodeSystem/vkp-camera-reason-v05 -->
+		<coding>
+			<system value="http://ehelse.no/fhir/CodeSystem/vkp-encounter-reason-v05"/>
+			<code value="4"/>
+			<display value="reist_seg_fra_stol"/>
+		</coding>
+	</reason>
+</Encounter>

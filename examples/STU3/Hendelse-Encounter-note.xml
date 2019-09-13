@@ -1,0 +1,102 @@
+<Encounter xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../STU3/fhir-all-xsd/fhir-single.xsd">
+	<!-- The use case is for making the encounter involving a CameraObservation available to the Electronic Health Record after an incedent has occurred and the incident is handled.-->
+	<!-- Digitalt Tilsyn Scenario 2 -->
+	<id value="df93eaae-d23e-44f6-9023-befe4725ad29"/>
+	<meta>
+		<profile value="http://ehelse.no/fhir/StructureDefinition/vkp-digital-Encounter-v06"/>
+	</meta>
+	<extension url="http://ehelse.no/fhir/StructureDefinition/vkp-annotation-v06">
+		<extension url="note">
+			<valueAnnotation>
+				<authorReference>
+					<!-- The identity of the Practitioner that entered the consult note -->
+					<identifier>
+						<system value="urn:oid:2.16.578.1.12.4.1.4.1"/>
+						<value value="04056600324"/>
+					</identifier>
+					<display value="Magnar Koman"/>
+				</authorReference>
+				<time value="2018-06-25T08:00:00.936Z"/>
+				<text value="Selve teksten til journalnotatet."/>
+			</valueAnnotation>
+		</extension>
+		<extension url="signature">
+			<valueAnnotation>
+				<time value="2018-06-25T08:00:00.936Z"/>
+				<text value="Magnar Komann (magnark)"/>
+			</valueAnnotation>
+		</extension>
+	</extension>
+	<extension url="http://ehelse.no/fhir/StructureDefinition/vkp-encounterDevice-v06">
+		<extension url="device">
+			<extension url="deviceIdentifier">
+				<valueIdentifier>
+					<!-- The identity of the Device -->
+					<system value="http://roommate.no/serial"/>
+					<value value="987456789101112"/>
+				</valueIdentifier>
+			</extension>
+			<extension url="display">
+				<valueString value="Roommate sensor"/>
+			</extension>
+		</extension>
+	</extension>
+	<identifier>
+		<!--  Unique code or number identifying the Encounter, VKP project uses UUID. -->
+		<system value="urn:ietf:rfc:3986"/>
+		<value value="urn:uuid:9c1ce08f-9ac7-4b4d-9d08-281c9f54ddfb"/>
+	</identifier>
+	<!-- The status of the encounter. Reported encounter should be finished. -->
+	<status value="finished"/>
+	<!-- classHistory of the Encounter. For the digital-encounter this gives the different modes of sensor-observation chosen by the operator to observe the patient -->
+	<classHistory>
+		<class>
+			<system value="http://ehelse.no/fhir/CodeSystem/vkp-encounter-class-v06"/>
+			<code value="0"/>
+			<display value="bildettilsyn_anonymisert"/>
+		</class>
+		<period>
+			<start value="2018-06-25T08:00:00.936Z"/>
+			<end value="2018-06-25T08:00:22.678Z"/>
+		</period>
+	</classHistory>
+	<!-- The encounter type, we suggest using predefined codes from http://ehelse.no/fhir/CodeSystem/vkp-camera-reason-v05 -->
+	<type>
+		<coding>
+			<system value="http://ehelse.no/fhir/CodeSystem/vkp-encounter-type-v05"/>
+			<code value="1"/>
+			<display value="tilsyn"/>
+		</coding>
+	</type>
+	<subject>
+		<!-- Reference to the patient that is subject to the encounter, identified by Norwegian Fødselsnummer-->
+		<identifier>
+			<system value="urn:oid:2.16.578.1.12.4.1.4.1"/>
+			<value value="05073500186"/>
+		</identifier>
+		<display value="Ærlend Sørgård"/>
+	</subject>
+	<participant>
+		<!-- Refernce to the individual that participated in the encounter, usually health care provider. Identified using Norwegian Fødselsnummer -->
+		<individual>
+			<identifier>
+				<system value="urn:oid:2.16.578.1.12.4.1.4.1"/>
+				<value value="04056600324"/>
+			</identifier>
+			<display value="Magnar Koman"/>
+		</individual>
+	</participant>
+	<period>
+		<!-- Timestamp of when the encounter was finished, the system could provide both start and end times -->
+		<start value="2018-06-25T08:00:00.936Z"/>
+		<end value="2018-06-25T08:00:22.678Z"/>
+	</period>
+	<reason>
+		<!-- Reason the encounter takes place, coded according to http://ehelse.no/fhir/CodeSystem/vkp-camera-reason-v05 -->
+		<coding>
+			<system value="http://ehelse.no/fhir/CodeSystem/vkp-encounter-reason-v05"/>
+			<code value="4"/>
+			<display value="reist_seg_fra_stol"/>
+		</coding>
+	</reason>
+</Encounter>

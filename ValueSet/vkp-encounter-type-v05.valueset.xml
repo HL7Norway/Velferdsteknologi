@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="vkp-encounter-type-v05.valueset" />
+  <meta>
+    <versionId value="1" />
+    <lastUpdated value="2018-06-27T10:48:46.366+00:00" />
+  </meta>
+  <url value="http://ehelse.no/fhir/ValueSet/vkp-encounter-type-v05" />
+  <version value="0.50" />
+  <name value="vkp-encounter-type-v05.valueset" />
+  <status value="draft" />
+  <experimental value="true" />
+  <date value="2018-06-27T10:48:45.936+00:00" />
+  <publisher value="Direktoratet for e-helse" />
+  <description value="ValueSet including all codes reported by a camera device made for detecting events in a patients home or room."/>
+  <immutable value="false" />
+  <compose>
+    <include>
+      <system value="http://ehelse.no/fhir/CodeSystem/vkp-encounter-type-v05" />
+    </include>
+  </compose>
+</ValueSet>

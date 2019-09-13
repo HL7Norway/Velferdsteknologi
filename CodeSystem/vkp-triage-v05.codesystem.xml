@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="vkp-triage-v05.codesystem" />
+  <meta>
+    <lastUpdated value="2017-09-12T15:00:50.532+02:00" />
+  </meta>
+  <url value="http://ehelse.no/fhir/CodeSystem/vkp-triage-v05" />
+  <version value="0.5" />
+  <name value="vkp-triage-v05.codesystem" />
+  <status value="draft" />
+  <publisher value="Direktoratet for e-helse" />
+  <content value="complete" />
+  <concept>
+    <code value="R" />
+    <display value="red" />
+	<definition value="immediate"/>
+  </concept>
+  <concept>
+    <code value="O" />
+    <display value="orange" />
+	<definition value="very urgent"/>
+  </concept>
+  <concept>
+    <code value="Y" />
+    <display value="yellow" />
+	<definition value="urgent"/>
+  </concept>
+  <concept>
+    <code value="G" />
+    <display value="green" />
+	<definition value="standard"/>
+  </concept>
+  <concept>
+    <code value="B" />
+    <display value="blue" />
+	<definition value="non urgent"/>
+  </concept>
+  <concept>
+    <code value="BL" />
+    <display value="black" />
+	<definition value="expectant"/>
+  </concept>
+  <concept>
+    <code value="NR" />
+    <display value="not reported" />
+  </concept>
+</CodeSystem>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CarePlan xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../STU3/fhir-all-xsd/fhir-single.xsd">
+	<meta>
+		<profile value="http://ehelse.no/fhir/StructureDefinition/vkp-CarePlan-v06"/>
+	</meta>
+	<identifier>
+		<system value="urn:ietf:rfc:3986"/>
+		<value value="urn:uuid:f1d85976-a9eb-49b5-a07c-8423081976fe"/>
+	</identifier>
+	<status value="active"/>
+	<!-- draft | active | suspended | completed | entered-in-error | cancelled | unknown -->
+	<intent value="plan"/>
+	<!-- proposal | plan | order | option -->
+	<category>
+		<coding>
+			<system value="http://ehelse.no/fhir/CodeSystem/vkp-careplan-category-v05"/>
+			<code value="3"/>
+			<display value="arbeidsplan"/>
+		</coding>
+	</category>
+	<title value="Arbeidsplan for Ærlend Sørgård"/>
+	<description value="Beskrivelse av planen"/>
+	<!-- The actual "besøksplan" in human readable form -->
+	<subject>
+		<!-- Who the besøksplan is for, should be an uniqe identifier of the patient -->
+		<identifier>
+		<system value="urn:oid:2.16.578.1.12.4.1.4.1"/>
+			<value value="05073500186"/>
+		</identifier>
+		<display value="Ærlend Sørgård"/>
+	</subject>
+	<period>
+		<!-- Period when the besøksplan is active, missing end date means the tjeneste is ongoing -->
+		<start value="2018-04-24T10:00:00.936+02:00"/>
+	</period>
+	<author>
+		<!-- Defines who is responsible for the content of the besøksplan, should be an organization/tjeneste -->
+		<identifier>
+			<system value="urn:oid:2.16.578.1.12.4.1.2"/> <!-- OID for HER-id -->
+			<value value="102287"/>
+		</identifier>
+		<display value="Sykepleietjeneste, pleie- og omsorg"/>
+	</author>
+	<activity>
+		<!-- Contents of besøksplan When more than one activity is added there should be more activity elements added  -->
+		<!-- Tekstlig beskrivlese av hvordan aktiviteten er gjennomført -->
+		<progress>
+			<text value="Pågående aktivitet"/>
+		</progress>
+		<!-- Details describing the work package/visit -->
+		<detail>
+			<!-- Status of the activity not-started | scheduled | in-progress | on-hold | completed | cancelled | unknown -->
+			<status value="scheduled"/>
+			<!-- Daglig besøk for hjelp med morgenstellet -->
+			<scheduledTiming>
+				<repeat>
+					<boundsPeriod>
+						<start value="2017-05-09T10:00:00.936+02:00"/>
+					</boundsPeriod>
+					<frequency value="1"/>
+					<period value="1"/>
+					<periodUnit value="d"/>
+					<timeOfDay value="08:00:00"/>
+				</repeat>
+			</scheduledTiming>
+			<description value="Opp av seng, hjelp til påkledning og frokost"/>
+		</detail>
+	</activity>
+	<activity>
+		<!-- Contents of besøksplan When more than one activity is added there should be more activity elements added  -->
+		<!-- Tekstlig beskrivlese av hvordan aktiviteten er gjennomført -->
+		<progress>
+			<text value="Pågående aktivitet"/>
+		</progress>
+		<!-- Details describing the work package/visit -->
+		<detail>
+			<!-- Status of the activity not-started | scheduled | in-progress | on-hold | completed | cancelled | unknown -->
+			<status value="scheduled"/>
+			<!-- Hver mandag besøk for å fylle dosettet -->
+			<scheduledTiming>
+				<repeat>
+					<boundsPeriod>
+						<start value="2017-05-09T10:00:00.936+02:00"/>
+					</boundsPeriod>
+					<dayOfWeek value="mon"/>
+				</repeat>
+			</scheduledTiming>
+			<description value="Besøk for å fylle dosett en gang i uka"/>
+		</detail>
+	</activity>
+</CarePlan>

@@ -1,0 +1,84 @@
+{
+  "resourceType": "Bundle",
+  "entry": [
+    {
+      "resource": {
+        "sender": {
+          "identifier": {
+            "system": "urn:oid:2.16.578.1.12.4.1.2",
+            "value": "135233"
+          },
+          "display": "Dignio Prevent Medisineringsstøtte"
+        },
+        "resourceType": "MessageHeader",
+        "timestamp": "2018-10-24T02:01:20Z",
+        "focus": [
+          {
+            "display": "MedicationDispense",
+            "reference": "urn:uuid:0ea88f75-2163-5ef8-aaac-11d390ed61f8"
+          }
+        ],
+        "event": {
+          "code": "MedicationDispense",
+          "system": "http://ehelse.no/fhir/ValueSet/vkp-message-event-v05"
+        },
+        "source": {
+          "endpoint": "https://vkp.azure-devices.net/devices/135233"
+        },
+        "receiver": {
+          "identifier": {
+            "system": "urn:oid:2.16.578.1.12.4.1.2",
+            "value": "102287"
+          },
+          "display": "Sykepleietjeneste, pleie- og omsorg"
+        },
+        "meta": {
+          "profile": [ "http://ehelse.no/fhir/StructureDefinition/vkp-MessageHeader-v06" ]
+        },
+        "id": "a452e0a8-d2fe-5b4d-8f76-cb6e7980d496"
+      },
+      "fullUrl": "urn:uuid:a452e0a8-d2fe-5b4d-8f76-cb6e7980d496"
+    },
+    {
+      "resource": {
+        "category": {
+          "coding": [
+            {
+              "code": "1",
+              "display": "medisin_utlevert",
+              "system": "http://ehelse.no/fhir/CodeSystem/vkp-medicationdispense-events-v06"
+            }
+          ]
+        },
+        "status": "completed",
+        "resourceType": "MedicationDispense",
+        "whenHandedOver": "2018-10-23T06:00:00Z",
+        "meta": {
+          "profile": [
+            "http://ehelse.no/fhir/StructureDefinition/vkp-MedicationDispense-v06"
+          ]
+        },
+        "medicationCodeableConcept": {
+          "text": "Ukjent medisin"
+        },
+        "identifier": [
+          {
+            "system": "urn:ietf:rfc:3986",
+            "value": "b4c294bd-2983-499d-a49f-f406471ffa06"
+          }
+        ],
+        "id": "0ea88f75-2163-5ef8-aaac-11d390ed61f8",
+        "subject": {
+          "identifier": {
+            "system": "urn:oid:2.16.578.1.12.4.1.4.1",
+            "value": "05108749964"
+          },
+          "display": "05108749964"
+        }
+      },
+      "fullUrl": "urn:uuid:0ea88f75-2163-5ef8-aaac-11d390ed61f8"
+    }
+  ],
+  "type": "message",
+  "id": "dd7610bb-9c70-5e6f-9538-f794a4f3d9b5"
+}

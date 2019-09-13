@@ -1,0 +1,85 @@
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../STU3/fhir-all-xsd/fhir-single.xsd">
+  <id value="10bb101f-a121-4264-a920-67be9cb82c74" />
+  <type value="message" />
+  <entry>
+    <fullUrl value="urn:uuid:1cbdfb97-5859-48a4-8301-d54eab818d68" />
+    <resource>
+      <MessageHeader>
+        <id value="1cbdfb97-5859-48a4-8301-d54eab818d68" />
+		<meta>
+			<profile value="http://ehelse.no/fhir/StructureDefinition/vkp-MessageHeader-v06"/>
+		</meta>
+        <event>
+          <system value="http://ehelse.no/fhir/CodeSystem/vkp-message-event-v05" />
+          <code value="MedicationDispense" />
+        </event>
+        <receiver>
+          <identifier>
+            <system value="urn:oid:2.16.578.1.12.4.1.2" />
+            <value value="102287" />
+          </identifier>
+          <display value="Sykepleietjeneste, pleie- og omsorg" />
+        </receiver>
+        <sender>
+          <identifier>
+            <system value="urn:oid:2.16.578.1.12.4.1.2" />
+            <value value="95341" />
+          </identifier>
+          <display value="Velferdpoclev1" />
+        </sender>
+        <timestamp value="2012-01-04T07:10:14Z" />
+        <source>
+          <endpoint value="https://vkp.azure-devices.net/devices/95341" />
+        </source>
+        <focus>
+          <reference value="urn:uuid:ef91399e-8993-11e7-bb31-be2e44b06b34" />
+          <display value="MedicationDispense" />
+        </focus>
+      </MessageHeader>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:ef91399e-8993-11e7-bb31-be2e44b06b34" />
+    <resource>
+      <MedicationDispense>
+        <id value="ef91399e-8993-11e7-bb31-be2e44b06b34" />
+        <meta>
+			<profile value="http://ehelse.no/fhir/StructureDefinition/vkp-MedicationDispense-v06"/>
+		</meta>
+        <identifier>
+          <system value="urn:ietf:rfc:3986" />
+          <value value="urn:uuid:c42984fc-8ca8-48d7-8bbf-7fe5503c49a9" />
+        </identifier>
+        <status value="completed" />
+        <category>
+          <coding>
+            <system value="http://ehelse.no/fhir/CodeSystem/vkp-medicationdispense-events-v06" />
+            <code value="4"/>
+			<display value="medisin_teknisk_feil" />
+          </coding>
+          <text value="Medisin ikke utlevert"/>
+        </category>
+        <medicationCodeableConcept>
+          <text value="Ukjent medisin" />
+        </medicationCodeableConcept>
+        <subject>
+          <identifier>
+            <system value="urn:oid:2.16.578.1.12.4.1.4.1" />
+            <value value="05073500186" />
+          </identifier>
+          <display value="Ærlend Sørgård" />
+        </subject>
+		<performer>
+			<actor>
+          <identifier>
+            <system value="http://dignio.no/IMEInummer" />
+            <value value="123456789101112" />
+          </identifier>
+          <display value="Medido multidosesdispenser"/>
+        </actor>
+      </performer>
+			<whenHandedOver value="2017-05-09T08:00:00.936Z"/>
+      </MedicationDispense>
+    </resource>
+  </entry>
+</Bundle>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Flag xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../fhir-all-xsd/fhir-single.xsd">
+			<meta>
+				<profile value="http://ehelse.no/fhir/StructureDefinition/vkp-Flag-v05"/>
+			</meta>
+			<extension url="http://ehelse.no/fhir/StructureDefinition/vkp-emergencylevel-v05">
+				<extension url="severity">
+					<valueCodeableConcept>
+						<coding>
+							<system value="http://ehelse.no/fhir/CodeSystem/vkp-emergency-level-v05"/>
+							<code value="V"/>
+							<display value="vanlig"/>
+						</coding>
+					</valueCodeableConcept>
+				</extension>
+			</extension>
+			<extension url="http://ehelse.no/fhir/StructureDefinition/vkp-timestamp-v05">
+				<valueDateTime value="2017-05-09T10:00:00.936+02:00"/>
+			</extension>
+			<extension url="http://ehelse.no/fhir/StructureDefinition/vkp-displayURL-v05">
+				<valueUri value="http://not.a.real.adress"/>
+			</extension>
+			<identifier>
+				<value value="test-id"/>
+			</identifier>
+			<status value="active"/>
+			<!-- 1..1 active | inactive | entered-in-error -->
+			<code>
+				<!-- 1..1 CodeableConcept Partially deaf, Requires easy open caps, No permanent address, etc. -->
+				<text value="Bruker utenfor Geofence"/>
+			</code>
+			<subject> <!-- Referanse til pasient to ganger, antkelig ikke nødvendig -->
+				<identifier>
+					<system value="http://ehelse.no/fhir/identifiertypes/FNR"/>
+					<value value="05073500186"/>
+				</identifier>
+			</subject>
+		</Flag>

@@ -1,0 +1,3 @@
+For hjemmekontor:
+
+java -jar org.hl7.fhir.validator.jar E:\GitRepo\FHIR-utvikling\STU3\examples\Flag-Trondheim-example.xml -defn definitions.xml.zip -profile https://stu3.simplifier.net/open/StructureDefinition/39a0c81d-bbb4-4ebb-ab4c-1eb732f070a3

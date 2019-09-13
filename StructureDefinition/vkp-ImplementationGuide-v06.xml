@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../STU3/fhir-all-xsd/fhir-single.xsd">
+	<id value="vkp-ImplementationGuide-v06"/>
+	<url value="http://ehelse.no/fhir/ImplementationGuide/vkp-ImplementationGuide-v06"/>
+	<version value="0.61"/>
+	<name value="vkp-ImplementationGuide-v06"/>
+	<status value="draft"/>
+	<date value="2018-09-13T11:17:44.4112568+02:00"/>
+	<description value="ImplementationGuide for VKP Norway defining the version 0.6 of the VKP FHIR profiles, extensions, valuesets and codesystems"/>
+	<fhirVersion value="3.0.1"/>
+	<dependency>
+		<type value="reference"/>
+		<uri value="http://hl7.no/fhir/ImplementationGuide/no-basis-Entities-Individuals-ImplementationGuide-v10"/>
+	</dependency>
+	<package>
+		<name value="vkp-Package-v06"/>
+		<resource>
+			<example value="false"/>
+			<name value="vkp-additionalpositiondata-v05"/>
+			<description value="Additional information about the geoposition measurement for the PCH in Norway. Contains timestamp, altitudeMeters, horizontal accuracy, vertical accuracy, velocity and direction of travel"/>
+			<sourceReference>
+				<reference value="http://ehelse.no/fhir/StructureDefinition/vkp-additionalpositiondata-v05"/>
+			</sourceReference>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="vkp-Address-v06"/>
+			<description value="Profile of the no-Address profile for use in Norwegian VKP project"/>
+			<sourceReference>
+				<reference value="http://ehelse.no/fhir/StructureDefinition/vkp-Address-v06"/>
+			</sourceReference>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="vkp-annotation-v06"/>
+			<description value="Annotation resource to add Annotation to any resource profile."/>
+			<sourceReference>
+				<reference value="http://ehelse.no/fhir/StructureDefinition/vkp-annotation-v06"/>
+			</sourceReference>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="vkp-CarePlan-v06"/>
+			<description value="VKP norway uses the CarePlan to describe.&#xD;&#xA;- tjenesteoversikt&#xD;&#xA;- tiltaksplan&#xD;&#xA;- besøksplan"/>
+			<sourceReference>
+				<reference value="http://ehelse.no/fhir/StructureDefinition/vkp-CarePlan-v06"/>
+			</sourceReference>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="vkp-customdisplaydata-v05"/>
+			<description value="Custom display field. The client software can provide one or more fields of custom display data that could be displayed to a human operator. contains a fieldname and content. Both should be human readable."/>
+			<sourceReference>
+				<reference value="http://ehelse.no/fhir/StructureDefinition/vkp-customdisplaydata-v05"/>
+			</sourceReference>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="vkp-detailheader-v05"/>
+			<description value="The header of an activity.detail, usually one of the following: &quot;Problem/Ressurs&quot;, &quot;Mål&quot;, &quot;Tiltak&quot; or &quot;Evaluering&quot;&#xD;&#xA;Used for CarePlan with type of &quot;tiltaksplan&quot;."/>
+			<sourceReference>
+				<reference value="http://ehelse.no/fhir/StructureDefinition/vkp-detailheader-v05"/>
+			</sourceReference>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="vkp-digital-Encounter-v06"/>
+			<description value="The digital (virtual) Encounter is caracterized as an encounter that uses some technological mean to perform the encounter instead of a face-to-face meeting."/>
+			<sourceReference>
+				<reference value="http://ehelse.no/fhir/StructureDefinition/vkp-digital-Encounter-v06"/>
+			</sourceReference>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="vkp-displayURL-v05"/>
+			<description value="URL to show the event data to user in some web interface"/>
+			<sourceReference>
+				<reference value="http://ehelse.no/fhir/StructureDefinition/vkp-displayURL-v05"/>
+			</sourceReference>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="vkp-elock-v06"/>
+			<description value="Information about elock installed at the location"/>
+			<sourceReference>
+				<reference value="http://ehelse.no/fhir/StructureDefinition/vkp-elock-v06"/>
+			</sourceReference>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="vkp-emergency-level-v06"/>
+			<description value="Describes the severity of the Flagged event."/>
+			<sourceReference>
+				<reference value="http://ehelse.no/fhir/StructureDefinition/vkp-emergency-level-v06"/>
+			</sourceReference>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="vkp-Flag-v06"/>
+			<description value="Profile of the Flag Resource to be used in Personal Connected Health in Norway. Adds Severity, category, timestamp, URL and Geoposition to the base http://hl7.org/fhir/StructureDefinition/Flag resource.&#xD;&#xA;"/>
+			<sourceReference>
+				<reference value="http://ehelse.no/fhir/StructureDefinition/vkp-Flag-v06"/>
+			</sourceReference>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="vkp-household-v05"/>
+			<description value="Important information about the household of the persons home address. Wether the person lives alone or not, pets etc."/>
+			<sourceReference>
+				<reference value="http://ehelse.no/fhir/StructureDefinition/vkp-household-v05"/>
+			</sourceReference>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="vkp-Location-v06"/>
+			<description value="Profile of the location resource to include more accurate location measurement from geopositioning devices."/>
+			<sourceReference>
+				<reference value="http://ehelse.no/fhir/StructureDefinition/vkp-Location-v06"/>
+			</sourceReference>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="vkp-MedicationDispense-v06"/>
+			<description value="Profile of the MedicationDispense resource. Used in the Norwegian Personal Connected Health project to document MedicationDispense events from devices dispensing medication to the user at the patients home."/>
+			<sourceReference>
+				<reference value="http://ehelse.no/fhir/StructureDefinition/vkp-MedicationDispense-v06"/>
+			</sourceReference>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="vkp-MessageHeader-v06"/>
+			<description value="Profile of the MessageHeader resource. Used in the Norwegian Personal Connected Health project to document events from devices user at the patients home. The vkp-MessageHead is also used for transmitting information from the VKP to the response center system. vkp-Messages can contain Resources like:&#xD;&#xA;&#xD;&#xA;- vkp-MedicationDispense - to document MedicationDispense events&#xD;&#xA;- vkp-Location - to document changes of the Patients geoposition&#xD;&#xA;- vkp-Flag - to document events that need attention&#xD;&#xA;- Composition - additional information about handling of a reported event documented by the person handling that event&#xD;&#xA;- vkp-CarePlan - to document what is called &quot;tjeneste&quot;, &quot;tiltaksplan&quot; and &quot;arbeidsplan&quot;&#xD;&#xA;- vkp-digital-Encounter - to document a digital (virtual) encounter"/>
+			<sourceReference>
+				<reference value="http://ehelse.no/fhir/StructureDefinition/vkp-MessageHeader-v06"/>
+			</sourceReference>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="vkp-Patient-v06"/>
+			<description value="Profile of the no-basis-Patient profile resource. Used in the Norwegian Personal Connected Health project to document Patient information. "/>
+			<sourceReference>
+				<reference value="http://ehelse.no/fhir/StructureDefinition/vkp-Patient-v06"/>
+			</sourceReference>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="vkp-sone-v06"/>
+			<description value="Information about juristictional sone/subsone the Person belongs to (home address)."/>
+			<sourceReference>
+				<reference value="http://ehelse.no/fhir/StructureDefinition/vkp-sone-v06"/>
+			</sourceReference>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="CodeSystem : vkp-careplan-category-v05.codesystem"/>
+			<sourceUri value="http://ehelse.no/fhir/CodeSystem/vkp-careplan-category-v05"/>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="CodeSystem : vkp-emergency-level-v05.codesystem"/>
+			<sourceUri value="http://ehelse.no/fhir/CodeSystem/vkp-emergency-level-v05"/>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="CodeSystem : vkp-encounter-reason-v05.codesystem"/>
+			<sourceUri value="http://ehelse.no/fhir/CodeSystem/vkp-encounter-reason-v05"/>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="CodeSystem : vkp-encounter-type-v05.codesystem"/>
+			<sourceUri value="http://ehelse.no/fhir/CodeSystem/vkp-encounter-type-v05"/>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="CodeSystem : vkp-medicationdispense-events-v06.codesystem"/>
+			<sourceUri value="http://ehelse.no/fhir/CodeSystem/vkp-medicationdispense-events-v06"/>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="CodeSystem : vkp-message-event-v05.codesystem"/>
+			<sourceUri value="http://ehelse.no/fhir/CodeSystem/vkp-message-event-v05"/>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="CodeSystem : vkp-triage-v05.codesystem"/>
+			<sourceUri value="http://ehelse.no/fhir/CodeSystem/vkp-triage-v05"/>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="CodeSystem : vkp-encounter-class-v06.codesystem"/>
+			<sourceUri value="http://ehelse.no/fhir/CodeSystem/vkp-encounter-class-v06"/>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="ValueSet : vkp-careplan-category-v05.valueset"/>
+			<sourceUri value="http://ehelse.no/fhir/ValueSet/vkp-careplan-category-v05"/>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="ValueSet : vkp-emergency-level-v05.valueset"/>
+			<sourceUri value="http://ehelse.no/fhir/ValueSet/vkp-emergency-level-v05l"/>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="ValueSet : vkp-encounter-reason-v05.valueset"/>
+			<sourceUri value="http://ehelse.no/fhir/ValueSet/vkp-encounter-reason-v05"/>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="ValueSet : vkp-encounter-type-v05.valueset"/>
+			<sourceUri value="http://ehelse.no/fhir/ValueSet/vkp-encounter-type-v05"/>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="ValueSet : vkp-medicationdispense-events-v06.valueset"/>
+			<sourceUri value="http://ehelse.no/fhir/ValueSet/vkp-medicationdispense-events-v06"/>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="ValuSet : vkp-medicationdispense-message-status-v05.valueset"/>
+			<sourceUri value="http://ehelse.no/fhir/ValueSet/vkp-medicationdispense-message-status-v05"/>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="ValueSet : vkp-message-event-v05.valueset"/>
+			<sourceUri value="http://ehelse.no/fhir/ValueSet/vkp-message-event-v05"/>
+		</resource>
+		<resource>
+			<example value="false"/>
+			<name value="ValueSet : vkp-encounter-class-v06.valueset"/>
+			<sourceUri value="http://ehelse.no/fhir/ValueSet/vkp-encounter-class-v06"/>
+		</resource>
+	</package>
+</ImplementationGuide>

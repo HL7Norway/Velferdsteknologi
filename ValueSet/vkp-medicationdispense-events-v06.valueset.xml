@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="vkp-medicationdispense-events-v06.valueset" />
+  <meta>
+    <versionId value="1" />
+    <lastUpdated value="2018-06-25T10:48:46.366+00:00" />
+  </meta>
+  <url value="http://ehelse.no/fhir/ValueSet/vkp-medicationdispense-events-v06" />
+  <version value="0.6" />
+  <name value="vkp-medicationdispense-events-v06.valueset" />
+  <status value="draft" />
+  <experimental value="true" />
+  <date value="2018-09-12T10:48:45.936+00:00" />
+  <publisher value="Direktoratet for e-helse" />
+  <description value="ValueSet containtig codes reported by a medicationdispense device to vkp."/>
+  <immutable value="false" />
+  <compose>
+    <include>
+      <system value="http://ehelse.no/fhir/CodeSystem/vkp-medicationdispense-events-v06" />
+    </include>
+  </compose>
+</ValueSet>

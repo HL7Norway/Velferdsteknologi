@@ -1,0 +1,98 @@
+<Patient xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../STU3/fhir-all-xsd/fhir-single.xsd">
+	<meta>
+		<profile value="http://hl7.no/fhir/StructureDefinition/no-basis-Patient"/>
+	</meta>
+	<extension url="http://hl7.org/fhir/StructureDefinition/patient-nationality">
+		<extension url="code">
+			<valueCodeableConcept>
+				<coding>
+					<system value="urn:iso:std:iso:3166"/>
+					<code value="NO"/>
+				</coding>
+			</valueCodeableConcept>
+		</extension>
+	</extension>
+	<extension url="http://hl7.no/fhir/StructureDefinition/no-basis-bydel">
+		<valueCoding>
+			<system value="urn:uri:2.16.578.1.12.4.1.1.3403"/>
+			<code value="030101"/>
+			<display value="Gamle Oslo"/>
+		</valueCoding>
+	</extension>
+	<identifier> <!-- Fødselnummeret til brukeren -->
+		<system value="urn:oid:2.16.578.1.12.4.1.4.1"/>
+		<value value="05073500186"/>
+		<assigner>
+			<display value="Skatt"/>
+		</assigner>
+	</identifier>
+	<identifier>
+		<type>
+			<coding>
+				<system value="urn:oid:2.16.578.1.12.4.1.1.8327"/>
+				<code value="HNR"/>
+			</coding>
+		</type>
+		<value value="12345"/>
+		<assigner>
+			<display value="Skatt"/>
+		</assigner>
+	</identifier>
+	<identifier> <!-- en annen identifikator, for eksempel løpenummer i EPJ -->
+		<system value="http://profil.visma.no/lopenummer"/>
+		<value value="123"/>
+		<assigner>
+			<display value="Skatt"/>
+		</assigner>
+	</identifier>
+	<name> <!-- Navnet til brukeren -->
+		<family value="Sørgård"/>
+		<given value="Ærlend"/>
+	</name>
+	<telecom>
+		<system value="phone"/>
+		<value value="+4733445566"/>
+		<use value="home"/>
+	</telecom>
+	<gender value="male"/>
+	<address>
+		<extension url="http://hl7.no/fhir/StructureDefinition/no-basis-propertyinformation">
+			<extension url="kommune">
+				<valueCoding>
+					<system value="urn:uri:2.16.578.1.12.4.1.1.3402"/>
+					<code value="030101"/>
+					<display value="Gamle Oslo"/>
+				</valueCoding>
+			</extension>
+		</extension>
+		<use value="home"/>
+		<line value="Åssiden 32"/>
+		<city value="Drammen"/>
+		<postalCode value="3008"/>
+		<country value="NO"/>
+	</address>
+	<maritalStatus>
+		<coding>
+			<system value="http://hl7.org/fhir/v3/MaritalStatus"/>
+			<code value="U"/>
+			<display value="unmarried"/>
+		</coding>
+	</maritalStatus>
+	<contact>
+		<relationship>
+			<coding>
+				<system value="http://hl7.org/fhir/v2/0131"/>
+				<code value="CP"/>
+				<display value="Contact person"/>
+			</coding>
+		</relationship>
+		<name> <!-- Navnet til kontaktpersonen, legg merke til mellomnavn som ikke er en del av HumanName i FHIR -->
+			<extension url="http://hl7.no/fhir/StructureDefinition/no-basis-middlename">
+				<valueString value="Pårørende"/>
+			</extension>
+			<text value="Pål Pårørende Olsen"/>
+			<family value="Olsen"/>
+			<given value="Pål"/>
+		</name>
+	</contact>
+</Patient>

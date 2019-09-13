@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="vkp-emergency-level-v05.codesystem" />
+  <meta>
+    <lastUpdated value="2017-09-12T15:00:50.532+02:00" />
+  </meta>
+  <url value="http://ehelse.no/fhir/CodeSystem/vkp-emergency-level-v05" />
+  <version value="0.5" />
+  <name value="vkp-emergency-level-v05.codesystem" />
+  <status value="draft" />
+  <publisher value="Direktoratet for e-helse" />
+  <description value="Hastegrad, samme som hastegrad AMK Volven OID 7340. Norsk Medisinsk Indeks. Denne versjonen er definert opp som FHIR CodeSystem for bruk innen kategorisering av hendelser til responssenter."/>
+  <content value="complete" />
+  <concept>
+    <code value="A" />
+    <display value="Akutt (rød)" />
+	<definition value="Hastegrad for antatt kritisk tilstand der de vitale funksjoner kan være truet eller manifest forstyrret og der ambulanse skal rykke ut og lege alarmeres."/>
+  </concept>
+  <concept>
+    <code value="H" />
+    <display value="Haster (gul)" />
+	<definition value="Hastegrad for antatt alvorlig tilstand der de vitale funksjonene kan bli truet og der det er behov for umiddelbar situasjonsvurdering av lege eller transport til sykehus."/>
+  </concept>
+  <concept>
+    <code value="V" />
+    <display value="Vanlig (grønn)" />
+	<definition value="Hastegrad for tilstander der det antas at tidsmomentet medisinsk sett ikke er avgjørende og som kan forelegges lege til vurdering ved første passende anledning."/>
+  </concept>
+  <concept>
+    <code value="IR" />
+    <display value="Ikke rapportert" />
+	<definition value="Hastegraden er ikke rapportert"/>
+  </concept>
+  <concept>
+    <code value="U" />
+    <display value="Udefinert" />
+	<definition value="Udefinert hastegrad"/>
+  </concept>
+</CodeSystem>

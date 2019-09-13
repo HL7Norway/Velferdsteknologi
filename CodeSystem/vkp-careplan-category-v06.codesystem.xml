@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="vkp-careplan-category-v06.codesystem" />
+  <meta>
+    <lastUpdated value="2019-05-07T08:00:50.532+02:00" />
+  </meta>
+  <url value="http://ehelse.no/fhir/CodeSystem/vkp-careplan-category-v06" />
+  <version value="0.6" />
+  <name value="vkp-careplan-category-v06.codesystem" />
+  <status value="draft" />
+  <publisher value="Direktoratet for e-helse" />
+  <content value="complete" />
+    <concept>
+    <code value="0" />
+    <display value="annen_type" />
+    <definition value="Ikke definert type plan" />
+  </concept>
+  <concept>
+	  <code value="1"/>
+	  <display value="behandlingsplan"/>
+	  <definition value="Helhetlig koordinert plan for behandling av pasienten"/>
+  </concept>
+  <concept>
+    <code value="2" />
+    <display value="egenbehandlingsplan" />
+    <definition value="Plan for tiltak pasienten selv kan utføre, som støtte til selvhjelp og egenmestring" />
+  </concept>
+  <concept>
+    <code value="3" />
+    <display value="besoksplan" />
+    <definition value="Planlagte og gjennomførte besøk hjemme hos pasienten" />
+  </concept>
+</CodeSystem>

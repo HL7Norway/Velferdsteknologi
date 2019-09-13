@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="vkp-encounterDevice-v06" />
+  <url value="http://ehelse.no/fhir/StructureDefinition/vkp-encounterDevice-v06" />
+  <version value="0.6" />
+  <name value="vkp-encounterDevice-v06" />
+  <status value="draft" />
+  <date value="2019-02-06" />
+  <description value="Simple extension for representing device identifier " />
+  <fhirVersion value="3.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <contextType value="resource" />
+  <context value="Encounter" />
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="logical reference to the device" />
+      <definition value="The device used in the patient encounter. For example, a particular camera device&#xD;&#xA;&#xD;&#xA;VKP-norway: Should be a logical reference containing the IMEI/serial number of the device. display value should contain the name of the device type. Could also contain a displayname of the device&#xD;&#xA;" />
+      <base>
+        <path value="Element" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <constraint>
+        <key value="ext-1" />
+        <severity value="error" />
+        <human value="Must have either extensions or value[x], not both" />
+        <expression value="extension.exists() != value.exists()" />
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
+    </element>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:deviceidentifier">
+      <path value="Extension.extension" />
+      <sliceName value="deviceidentifier" />
+      <short value="logical reference to the device" />
+      <definition value="The device used in the patient encounter. For example, a particular camera device&#xD;&#xA;&#xD;&#xA;VKP-norway: Should be a logical reference containing the IMEI/serial number of the device. display value should contain the name of the device type.&#xD;&#xA;" />
+    </element>
+    <element id="Extension.extension:deviceidentifier.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="deviceidentifier" />
+    </element>
+    <element id="Extension.extension:deviceidentifier.value[x]:valueIdentifier">
+      <path value="Extension.extension.valueIdentifier" />
+      <sliceName value="valueIdentifier" />
+      <short value="Logical reference to the device " />
+      <definition value="Logical reference to the device. VKP-norway: Should be a logical reference containing the IMEI/serial number of the device. display value should contain the name of the device type. VKP uses serial numbers decided by the manufacturer of the device" />
+      <type>
+        <code value="Identifier" />
+      </type>
+    </element>
+    <element id="Extension.extension:deviceidentifier.value[x]:valueIdentifier.system">
+      <path value="Extension.extension.valueIdentifier.system" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:deviceidentifier.value[x]:valueIdentifier.value">
+      <path value="Extension.extension.valueIdentifier.value" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:display">
+      <path value="Extension.extension" />
+      <sliceName value="display" />
+      <short value="displayname of the device" />
+      <definition value="Plain text narrative that identifies the device" />
+    </element>
+    <element id="Extension.extension:display.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="display" />
+    </element>
+    <element id="Extension.extension:display.value[x]:valueString">
+      <path value="Extension.extension.valueString" />
+      <sliceName value="valueString" />
+      <short value="displayname of the device" />
+      <definition value="Plain text narrative that identifies the device" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://ehelse.no/fhir/StructureDefinition/vkp-encounterDevice-v06" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

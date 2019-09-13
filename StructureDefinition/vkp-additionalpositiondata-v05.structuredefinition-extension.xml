@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="vkp-additionalpositiondata-v05" />
+  <meta>
+    <lastUpdated value="2018-01-09T14:38:24.415+01:00" />
+  </meta>
+  <url value="http://ehelse.no/fhir/StructureDefinition/vkp-additionalpositiondata-v05" />
+  <version value="0.5" />
+  <name value="vkp-additionalpositiondata-v05" />
+  <status value="draft" />
+  <date value="2017-05-09T16:53:54.8520187+02:00" />
+  <publisher value="The Norwegian Directorate of eHealth" />
+  <description value="Additional information about the geoposition measurement for the PCH in Norway. Contains timestamp, altitudeMeters, horizontal accuracy, vertical accuracy, velocity and direction of travel" />
+  <fhirVersion value="3.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <contextType value="resource" />
+  <context value="Location" />
+  <context value="Flag" />
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="Additional postition data" />
+      <definition value="Additional position data describing the position measurement contains timestamp, altitudeMeters, horizontal accuracy, vertical accuracy, velocity and direction of travel" />
+    </element>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:timestamp">
+      <path value="Extension.extension" />
+      <sliceName value="timestamp" />
+      <short value="Timestamp for the measurement" />
+      <definition value="Timestamp describing when the device recorded the measurement. Basic timestamp with UTC offset" />
+    </element>
+    <element id="Extension.extension:timestamp.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="timestamp" />
+    </element>
+    <element id="Extension.extension:timestamp.value[x]:valueDateTime">
+      <path value="Extension.extension.valueDateTime" />
+      <sliceName value="valueDateTime" />
+      <min value="1" />
+      <type>
+        <code value="dateTime" />
+      </type>
+    </element>
+    <element id="Extension.extension:altitudeMeters">
+      <path value="Extension.extension" />
+      <sliceName value="altitudeMeters" />
+      <short value="Recorded altitude in meters" />
+      <definition value="The recorded altitude by the device, measured in meters" />
+    </element>
+    <element id="Extension.extension:altitudeMeters.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="altitudeMeters" />
+    </element>
+    <element id="Extension.extension:altitudeMeters.value[x]:valueQuantity">
+      <path value="Extension.extension.valueQuantity" />
+      <sliceName value="valueQuantity" />
+      <type>
+        <code value="Quantity" />
+      </type>
+    </element>
+    <element id="Extension.extension:altitudeMeters.value[x]:valueQuantity.comparator">
+      <path value="Extension.extension.valueQuantity.comparator" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:altitudeMeters.value[x]:valueQuantity.unit">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.valueQuantity.unit" />
+      <short value="Unit meters" />
+      <fixedString value="m" />
+    </element>
+    <element id="Extension.extension:altitudeMeters.value[x]:valueQuantity.system">
+      <path value="Extension.extension.valueQuantity.system" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:altitudeMeters.value[x]:valueQuantity.code">
+      <path value="Extension.extension.valueQuantity.code" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:horizontalAccuracy">
+      <path value="Extension.extension" />
+      <sliceName value="horizontalAccuracy" />
+      <short value="The horizontal accuracy of the measurement" />
+      <definition value="The horizontal accuracy of the position measurement in meters" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:horizontalAccuracy.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="horizontalAccuracy" />
+    </element>
+    <element id="Extension.extension:horizontalAccuracy.value[x]:valueDecimal">
+      <path value="Extension.extension.valueDecimal" />
+      <sliceName value="valueDecimal" />
+      <type>
+        <code value="decimal" />
+      </type>
+    </element>
+    <element id="Extension.extension:verticalAccuracy">
+      <path value="Extension.extension" />
+      <sliceName value="verticalAccuracy" />
+      <short value="The vertical accuracy of the position" />
+      <definition value="The vertical accuracy of the position measurement in meters" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:verticalAccuracy.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="verticalAccuracy" />
+    </element>
+    <element id="Extension.extension:verticalAccuracy.value[x]:valueDecimal">
+      <path value="Extension.extension.valueDecimal" />
+      <sliceName value="valueDecimal" />
+      <type>
+        <code value="decimal" />
+      </type>
+    </element>
+    <element id="Extension.extension:velocityMs">
+      <path value="Extension.extension" />
+      <sliceName value="velocityMs" />
+      <short value="Recorded speed and direction of travel" />
+      <definition value="Recorded speed and direction of travel as recorded by the device" />
+    </element>
+    <element id="Extension.extension:velocityMs.extension">
+      <path value="Extension.extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:velocityMs.extension:directionDecimalDegrees">
+      <path value="Extension.extension.extension" />
+      <sliceName value="directionDecimalDegrees" />
+      <short value="Direction of travel" />
+      <definition value="Direction of travel as measured by the device, annotated in Decimal degrees" />
+    </element>
+    <element id="Extension.extension:velocityMs.extension:directionDecimalDegrees.url">
+      <path value="Extension.extension.extension.url" />
+      <fixedUri value="directionDecimalDegrees" />
+    </element>
+    <element id="Extension.extension:velocityMs.extension:directionDecimalDegrees.value[x]:valueDecimal">
+      <path value="Extension.extension.extension.valueDecimal" />
+      <sliceName value="valueDecimal" />
+      <type>
+        <code value="decimal" />
+      </type>
+    </element>
+    <element id="Extension.extension:velocityMs.extension:speedMs">
+      <path value="Extension.extension.extension" />
+      <sliceName value="speedMs" />
+      <short value="The recorded speed" />
+      <definition value="The speed as recorded by the device. Measured in m/s" />
+    </element>
+    <element id="Extension.extension:velocityMs.extension:speedMs.url">
+      <path value="Extension.extension.extension.url" />
+      <fixedUri value="speedMs" />
+    </element>
+    <element id="Extension.extension:velocityMs.extension:speedMs.value[x]:valueQuantity">
+      <path value="Extension.extension.extension.valueQuantity" />
+      <sliceName value="valueQuantity" />
+      <type>
+        <code value="Quantity" />
+      </type>
+    </element>
+    <element id="Extension.extension:velocityMs.extension:speedMs.value[x]:valueQuantity.value">
+      <path value="Extension.extension.extension.valueQuantity.value" />
+      <short value="speed in meters per second" />
+      <definition value="Norwegian VKP project: Value of speed measured in meter per second" />
+    </element>
+    <element id="Extension.extension:velocityMs.extension:speedMs.value[x]:valueQuantity.comparator">
+      <path value="Extension.extension.extension.valueQuantity.comparator" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:velocityMs.extension:speedMs.value[x]:valueQuantity.unit">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.extension.valueQuantity.unit" />
+      <short value="Unit m/s" />
+      <definition value="fixed value of m/s" />
+      <fixedString value="m/s" />
+    </element>
+    <element id="Extension.extension:velocityMs.extension:speedMs.value[x]:valueQuantity.system">
+      <path value="Extension.extension.extension.valueQuantity.system" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:velocityMs.extension:speedMs.value[x]:valueQuantity.code">
+      <path value="Extension.extension.extension.valueQuantity.code" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:velocityMs.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="velocityMs" />
+    </element>
+    <element id="Extension.extension:velocityMs.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <max value="0" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://ehelse.no/fhir/StructureDefinition/vkp-additionalpositiondata-v05" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

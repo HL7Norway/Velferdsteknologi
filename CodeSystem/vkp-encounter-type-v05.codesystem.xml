@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+	<id value="vkp-encounter-type-v05.codesystem"/>
+	<meta>
+		<versionId value="1"/>
+		<lastUpdated value="2018-06-27T10:48:34.405+00:00"/>
+	</meta>
+	<url value="http://ehelse.no/fhir/CodeSystem/vkp-encounter-type-v05"/>
+	<version value="0.50"/>
+	<name value="vkp-encounter-type-v05.codesystem"/>
+	<status value="draft"/>
+	<date value="2018-06-27T10:48:33.551+00:00"/>
+	<publisher value="Direktoratet for e-helse"/>
+	<content value="complete"/>
+	<concept>
+		<code value="0"/>
+		<display value="begge"/>
+		<definition value="Tilsyn gjennomført og hendelse rappportert"/>
+	</concept>
+	<concept>
+		<code value="1"/>
+		<display value="tilsyn"/>
+		<definition value="Tilsyn gjennomført"/>
+	</concept>
+	<concept>
+		<code value="2"/>
+		<display value="hendelse"/>
+		<definition value="Hendelse rapportert"/>
+	</concept>
+</CodeSystem>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="c4044e93-5602-560c-9f25-6e68a1cecce8"/>
+  <type value="message"/>
+  <entry>
+    <fullUrl value="urn:uuid:7774c18e-a603-5ce7-9b06-481be56cb1d4"/>
+    <resource>
+      <MessageHeader>
+        <id value="7774c18e-a603-5ce7-9b06-481be56cb1d4"/>
+		<meta>
+			<profile value="http://ehelse.no/fhir/StructureDefinition/vkp-MessageHeader-v06"/>
+		</meta>
+        <event>
+          <system value="http://ehelse.no/fhir/ValueSet/vkp-message-event-v05"/>
+          <code value="MedicationDispense"/>
+        </event>
+        <receiver>
+          <identifier>
+            <system value="urn:oid:2.16.578.1.12.4.1.2"/>
+            <value value="95938"/>
+          </identifier>
+          <display value="Sykepleietjeneste, pleie- og omsorg"/>
+        </receiver>
+        <sender>
+          <identifier>
+            <system value="urn:oid:2.16.578.1.12.4.1.2"/>
+            <value value=" 8134527"/>
+          </identifier>
+          <display value="Evondos medication service"/>
+        </sender>
+        <timestamp value="2018-07-18T07:01:06Z"/>
+        <source>
+          <endpoint value="https://vkp.azure-devices.net/devices/8134527"/>
+        </source>
+        <focus>
+          <reference value="urn:uuid:ba6747fd-11dc-5e21-b3b8-87ac1849fff6"/>
+          <display value="MedicationDispense"/>
+        </focus>
+      </MessageHeader>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:ba6747fd-11dc-5e21-b3b8-87ac1849fff6"/>
+    <resource>
+      <MedicationDispense>
+        <id value="ba6747fd-11dc-5e21-b3b8-87ac1849fff6"/>
+        <meta>
+          <profile value="http://ehelse.no/fhir/StructureDefinition/vkp-MedicationDispense-v06"/>
+        </meta>
+        <identifier>
+          <system value="urn:ietf:rfc:3986"/>
+          <value value="b4c294bd-2983-499d-a49f-f406471ffa06"/>
+        </identifier>
+        <status value="completed"/>
+        <category>
+          <coding>
+            <system value="http://ehelse.no/fhir/CodeSystem/vkp-medicationdispense-events-v06"/>
+            <code value="1"/>
+            <display value="medisin_utlevert"/>
+          </coding>
+        </category>
+        <medicationCodeableConcept>
+          <text value="Ukjent medisin"/>
+        </medicationCodeableConcept>
+        <subject>
+          <identifier>
+            <system value="urn:oid:2.16.578.1.12.4.1.4.1"/>
+            <value value=" 29098300000"/>
+          </identifier>
+          <display value="Testbruker EVON"/>
+        </subject>
+        <performer>
+          <actor>
+            <identifier>
+              <system value="https://fhir.evondos.com/e300-codes/serialnumber"/>
+              <value value="PP000533"/>
+            </identifier>
+            <display value="Evondos E300 multidosedispenser"/>
+          </actor>
+        </performer>
+        <whenHandedOver value="2018-07-06T07:00:00Z"/>
+      </MedicationDispense>
+    </resource>
+  </entry>
+</Bundle>

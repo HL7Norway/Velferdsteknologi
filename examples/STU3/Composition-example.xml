@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Composition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../STU3/fhir-all-xsd/fhir-single.xsd">
+				<id value="285357b8-1ec8-429b-827e-3bcd92366126"/>
+				<status value="final"/>
+				<!-- Status er alltid final når Composition sendes første gang, kan ha andre statuser hvis man ønsker å endre på avsendt Composition (amended og entered in error) -->
+				<type>
+					<coding>
+						<code value="11488-4"/>
+						<!-- LOINC kode, mer enn tusen koder å velge mellom, her er det mulig å benytte eget kodeverk som er gjenkjennbart for norske EPJ -->
+						<display value="Consult note"/>
+					</coding>
+				</type>
+				<subject>
+					<!-- Referanse til pasient obligatorisk i Composition-->
+					<identifier>
+						<system value="urn:oid:2.16.578.1.12.4.1.4.1"/>
+						<value value="05073500186"/>
+					</identifier>
+				</subject>
+				<date value="2017-05-09T08:30:00.936Z"/>
+				<!-- Timestamp for journalnotatet, må være senere enn hendelsen-->
+				<author> <!-- Behandleren som har skrevet notatet, ingen begrensninger på type og antall i dagens "profil" -->
+					<identifier>
+						<system value="urn:oid:2.16.578.1.12.4.1.4.1"/>
+						<value value="04056600324"/>
+					</identifier>
+					<display value="Magnar Koman"/>
+				</author>
+				<title value="Journalnotat for Medisinutleveringen"/>
+				<section>
+					<title value="Response summary"/>
+					<text>
+						<!-- Selve notatet-->
+						<status value="additional"/>
+						<!-- Alltid additional siden dette er mennesker som har skrevet notater som tillegg til den strukturerte informasjonen-->
+						<div xmlns="http://www.w3.org/1999/xhtml">
+							XHTML strukturert tekstinformasjon
+						</div>
+					</text>
+					<entry>
+						<!-- A reference to data that supports this section. In this case the vft-medicationadministration -->
+						<reference value="urn:uuid:c31bd880-2b09-4eda-a5a3-90090d49dad5"/>
+						<display value="MedicationDispense"/>
+					</entry>
+				</section>
+				<section>
+					<title value="Signature"/>
+					<text>
+						<status value="additional"/>
+						<div xmlns="http://www.w3.org/1999/xhtml">
+						Magnar Komann (magnark)</div>
+					</text>
+				</section>
+			</Composition>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValueSet xmlns="http://hl7.org/fhir">
+    <id value="vkp-emergency-level-v05.valueset" />
+    <url value="http://ehelse.no/fhir/ValueSet/vkp-emergency-level-v05" />
+    <version value="0.5" />
+    <name value="vkp-emergency-level-v05.valueset" />
+    <status value="draft" />
+    <experimental value="true" />
+    <publisher value="Direktoratet for e-helse" />
+    <immutable value="false" />
+    <compose>
+        <include>
+            <system value="http://ehelse.no/fhir/CodeSystem/vkp-emergency-level-v05" />
+        </include>
+		<include>
+			<system value="http://ehelse.no/fhir/CodeSystem/vkp-triage-v05"/>
+		</include>
+    </compose>
+</ValueSet>

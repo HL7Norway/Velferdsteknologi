@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MessageDefinition xmlns="http://hl7.org/fhir">
+	<title value="MedicationDispense-to-EPR"/>
+	<status value="draft"/>
+	<date value="2018-05-03"/>
+	<description value="Message for MedicationDispense events to be sent via the VKP (Velferdsteknologisk knutepunkt) to the EPR. The message can contain several resources depending on the use-case. 
+	- MedicationDispense - Should alwas be present in a MedicationDispense message
+	- Composition - additional information about handling of a reported event documented by the person handling that event
+	- Flag - should be present when the MedicationDispense needs special attention by the receiver "/>
+	<event>
+		<system value="http://ehelse.no/fhir/CodeSystem/vkp-message-event-v05"/>
+		<code value="MedicationDispense"/>
+	</event>
+	<focus>
+		<code id="Composition"/>
+		<min value="0"/>
+		<max value="1"/>
+	</focus>
+	<focus>
+		<code id="MedicationDispense"/>
+		<profile>
+			<reference value="http://ehelse.no/fhir/StructureDefinition/vkp-MedicationDispense-v05"/>
+		</profile>
+		<min value="1"/>
+		<max value="1"/>
+	</focus>
+	<focus>
+		<code id="Flag"/>
+		<min value="0"/>
+		<max value="1"/>
+	</focus>
+</MessageDefinition>

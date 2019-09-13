@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CapabilityStatement xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir file:///C:/GitRepo/FHIR/STU3/fhir-all-xsd/fhir-single.xsd">
+	<url value="http://ehelse.no/fhir/CapabilityStatement/vkp-Patient-Server-Requirements/v001"/>
+	<name value="vkp-Patient-Server-Requirements"/>
+	<title value="Requirements for VKP Patient Service Interface"/>
+	<status value="draft"/>
+	<date value="2019-05-24"/>
+	<description value="Requirements for the vkp Patient service provided by VKP"/>
+	<kind value="requirements"/>
+	<fhirVersion value="3.0.1"/>
+	<acceptUnknown value="both"/>
+	<format value="json"/>
+	<format value="xml"/>
+	<rest>
+		<mode value="server"/>
+		<resource>
+			<type value="Patient"/>
+			<profile>
+				<reference value="http://ehelse.no/fhir/StructureDefinition/vkp-Patient-v06"/>
+			</profile>
+			<interaction>
+				<code value="search-type"/>
+				<documentation value="Search for a specific Resource type on some specified filter criteria"/>
+			</interaction>
+			<interaction>
+				<code value="read"/>
+				<documentation value="Normal read operation."/>
+			</interaction>
+			<searchParam>
+				<extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+					<valueCode value="SHALL"/>
+				</extension>
+				<name value="identifier"/>
+				<type value="token"/>
+				<documentation value="Search on Patient.identifier: GET [base]/Patient?identifier=[system]|[code]  Example: GET [base]/Patient?identifier=urn:oid:2.16.578.1.12.4.1.4.1|13116900216 "/>
+			</searchParam>
+			<searchParam>
+				<extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+					<valueCode value="SHALL"/>
+				</extension>
+				<name value="name"/>
+				<type value="string"/>
+				<documentation value="Search on Person.name: GET [base]/Person?name=[string]"/>
+			</searchParam>
+		</resource>
+		<resource>
+			<type value="EpisodeOfCare"/>
+			<profile>
+				<reference value="http://ehelse.no/fhir/StructureDefinition/vkp-EpisodeOfCare-v06"/>
+			</profile>
+			<interaction>
+				<code value="search-type"/>
+				<documentation value="Search for a specific Resource type on some specified filter criteria"/>
+			</interaction>
+			<interaction>
+				<code value="read"/>
+				<documentation value="Normal read operation."/>
+			</interaction>
+			<searchParam>
+				<name value="type.text"/>
+				<type value="string"/>
+				<documentation value="Search on EpisodeOfCare.type.text string: GET [base]/EpisodeOfCare?type=[string]  Example: GET [base]/EpisodeOfCare?type=GPS"/>
+			</searchParam>
+			<searchParam>
+				<name value="patient"/>
+				<type value="reference"/>
+				<documentation value="Search on EpisodeOfCare.patient reference: GET [base]/EpisodeOfCare?patient=[system]|[code] Example: GET [base]/EpisodeOfCare?patient=urn:oid:2.16.578.1.12.4.1.4.1|13116900216"/>
+			</searchParam>
+		</resource>
+		<resource>
+			<type value="Composition"/>
+			<interaction>
+				<code value="search-type"/>
+				<documentation value="Search for a specific Resource type on some specified filter criteria"/>
+			</interaction>
+			<interaction>
+				<code value="read"/>
+				<documentation value="Normal read operation."/>
+			</interaction>
+			<searchParam>
+				<name value="type"/>
+				<type value="token"/>
+				<documentation value="Search on Composition.type code: GET [base]/Composition?type=[system]|[code]  Example: GET [base]/Composition?type=http://loinc.org|11488-4"/>
+			</searchParam>
+			<searchParam>
+				<name value="category"/>
+				<type value="token"/>
+				<documentation value="Search on Composition.category code: GET [base]/Composisition?category=[system]|[code]  Example: GET [base]/Composition?category=???|3"/>
+			</searchParam>
+			<searchParam>
+				<name value="subject"/>
+				<type value="reference"/>
+				<documentation value="Search on Composition.subject reference: GET [base]/Composition?subject=[system]|[code] Example: GET [base]/EpisodeOfCare?subject=urn:oid:2.16.578.1.12.4.1.4.1|13116900216"/>
+			</searchParam>
+			<searchParam>
+				<name value="date"/>
+				<type value="date"/>
+				<documentation value="Search on Composition.date : GET [base]/Composisition?date=[date] Example: GET [base]/Composition?date=2015-01-14"/>
+			</searchParam>
+		</resource>
+	</rest>
+</CapabilityStatement>

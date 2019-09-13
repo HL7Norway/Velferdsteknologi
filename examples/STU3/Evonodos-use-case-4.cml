@@ -1,0 +1,95 @@
+{
+  "resourceType": "Bundle",
+  "type": "message",
+  "id": "c4044e93-5602-560c-9f25-6e68a1cecfg2",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:7774c18e-a603-5ce7-9b06-481be56cb9g3",
+      "resource": {
+        "resourceType": "MessageHeader",
+        "id": "7774c18e-a603-5ce7-9b06-481be56cb9g3",
+        "sender": {
+          "identifier": {
+            "system": "http://ehelse.no/fhir/identifiertypes/HERID",
+            "value": "8134527"
+          },
+          "display": "Evondos medication service"
+        },
+        "timestamp": "2018-07-18T07:01:46Z",
+        "focus": [
+          {
+            "display": "MedicationDispense",
+            "reference": "urn:uuid:ba6747fd-11dc-5e21-b3b8-87ac1849ggg9"
+          }
+        ],
+        "event": {
+          "code": "MedicationDispense",
+          "system": "http://ehelse.no/fhir/ValueSet/vkp-message-event-v05"
+        },
+        "source": {
+          "endpoint": "http://ehelse.no/fhir/identifiertypes/HERID:8134527"
+        },
+        "receiver": {
+          "identifier": {
+            "system": "http://ehelse.no/fhir/identifiertypes/HERID",
+            "value": "95938"
+          },
+          "display": "Sykepleietjeneste, pleie- og omsorg"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:ba6747fd-11dc-5e21-b3b8-87ac1849ggg9",
+      "resource": {
+        "resourceType": "MedicationDispense",
+        "id": "ba6747fd-11dc-5e21-b3b8-87ac1849ggg9",
+        "meta": {
+          "profile": [
+            "http://ehelse.no/fhir/StructureDefinition/vkp-MedicationDispense-v05"
+          ]
+        },
+        "category": {
+          "coding": [
+            {
+              "code": "19",
+              "display": "medisin_melding_til_bruker",
+              "system": "http://ehelse.no/fhir/CodeSystem/vkp-medicationdispense-events-v05"
+            }
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://fhir.evondos.com/e300-codes/event-id",
+            "value": "2199664"
+          }
+        ],
+        "status": "completed",
+        "performer": [
+          {
+            "actor": {
+              "identifier": {
+                "system": "https://fhir.evondos.com/e300-codes/serialnumber",
+                "value": "PP000533"
+              },
+              "display": "Evondos E300 multidosedispenser"
+            }
+          }
+        ],
+        "whenHandedOver": "2018-07-06T07:00:00Z",
+        "medicationCodeableConcept": {
+          "text": "Ukjent medisin"
+        },
+        "dosageInstruction": {
+          "text": "Husk øyedråper!"
+        },
+        "subject": {
+          "identifier": {
+            "system": "http://ehelse.no/fhir/identifiertypes/FNR",
+            "value": "29098300000"
+          },
+          "display": "Testbruker EVON"
+        }
+      }
+    }
+  ]
+}

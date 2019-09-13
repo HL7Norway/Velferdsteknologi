@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CarePlan xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../STU3/fhir-all-xsd/fhir-single.xsd">
+	<meta>
+		<profile value="http://ehelse.no/fhir/StructureDefinition/vkp-CarePlan-v06"/>
+	</meta>
+	<identifier>
+		<system value="urn:ietf:rfc:3986"/>
+		<value value="urn:uuid:476298fe-21cb-481b-8873-771fc2f8151b "/>
+	</identifier>
+	<status value="active"/>
+	<!-- draft | active | suspended | completed | entered-in-error | cancelled | unknown -->
+	<intent value="plan"/>
+	<!-- proposal | plan | order | option -->
+	<category>
+		<coding>
+			<system value="http://ehelse.no/fhir/CodeSystem/vkp-careplan-category-v06"/>
+			<code value="3"/>
+			<display value="besoksplan"/>
+		</coding>
+	</category>
+	<title value="Besøk"/>
+	<!-- The actual "besøksplan" in human readable form -->
+	<subject>
+		<!-- Who the besøksplan is for, should be an uniqe identifier of the patient -->
+		<identifier>
+			<system value="urn:oid:2.16.578.1.12.4.1.4.1"/>
+				<value value="01014549834"/>
+			</identifier>
+		<display value="Magnar Solbakken"/>
+	</subject>
+	<period>
+		<!-- Period when the besøksplan is active, missing end date means the tjeneste is ongoing -->
+		<start value="2018-09-11T14:00:00.936Z"/>
+		<end value="2018-09-11T14:50:00.936Z"/>
+	</period>
+	<activity>
+		<!-- Contents of besøksplan When more than one activity is added there should be more activity elements added  -->
+		<!-- Tekstlig beskrivlese av hvordan aktiviteten er gjennomført -->
+		<!-- Details describing the work package/visit -->
+		<detail>
+			<!-- Status of the activity not-started | scheduled | in-progress | on-hold | completed | cancelled | unknown -->
+			<status value="scheduled"/>
+			<scheduledTiming>
+				<repeat>
+					<boundsPeriod>
+						<start value="2018-09-11T14:00:00Z"/>
+						<end value="2018-09-11T14:50:00Z"/>
+					</boundsPeriod>
+				</repeat>
+			</scheduledTiming>
+			<performer>
+				<identifier>
+					<system value="urn:oid:2.16.578.1.12.4.1.2"/> <!-- OID for HER-id -->
+					<value value="720"/> <!-- The actual HER-id -->
+				</identifier>
+				<display value="Sakkeus Hansen"/>
+			</performer>
+			<description value="Legebesøk"/>
+		</detail>
+	</activity>
+	<activity>
+		<!-- Contents of besøksplan When more than one activity is added there should be more activity elements added  -->
+		<!-- Tekstlig beskrivlese av hvordan aktiviteten er gjennomført -->
+		<detail>
+			<!-- Status of the activity not-started | scheduled | in-progress | on-hold | completed | cancelled | unknown -->
+			<status value="scheduled"/>
+			<scheduledTiming>
+				<repeat>
+					<boundsPeriod>
+						<start value="2018-09-11T14:00:00Z"/>
+						<end value="2018-09-11T14:50:00Z"/>
+					</boundsPeriod>
+				</repeat>
+			</scheduledTiming>
+			<performer>
+				<identifier>
+					<system value="urn:oid:2.16.578.1.12.4.1.4.1"/> <!-- OID for FNR -->
+					<value value="11223112233"/> <!-- The actual FNR-id -->
+				</identifier>
+				<display value="Line Jensen"/>
+			</performer>
+			<performer>
+				<identifier>
+					<system value="urn:oid:2.16.578.1.12.4.1.4.1"/> <!-- OID for FNR -->
+					<value value="3344566778"/> <!-- The actual FNR-id -->
+				</identifier>
+				<display value="Beate Rasmussen"/>
+			</performer>
+			<description value="Hjemmehjelp"/>
+		</detail>
+	</activity>
+</CarePlan>
