@@ -6,7 +6,7 @@
 
 ## Publisering
 Ferdige profiler publiseres også her: 
-https://simplifier.net/Velferdsteknologi2/~resources
+
 
 ## Vi benytter Feature branch workflow
 ![Feature branch workflow]
@@ -40,6 +40,7 @@ http://ehelse.no/fhir/StructureDefinition/vkp-Flag-v05
 
 ## kontakt
 
+jorn punktum sikkerbol at ehelse punktum no
+
 thomas punktum tveit punktum rosenlund at ehelse punktum no
 
-lars punktum kristian punktum roland at ehelse punktum no
