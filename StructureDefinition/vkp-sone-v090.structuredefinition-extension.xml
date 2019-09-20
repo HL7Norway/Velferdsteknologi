@@ -200,7 +200,7 @@
       <definition value="Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list)." />
       <comment value="A stream of bytes, base64 encoded" />
       <min value="0" />
-      <max value="1" />
+      <max value="0" />
       <base>
         <path value="Extension.value[x]" />
         <min value="0" />
@@ -425,7 +425,7 @@
           <path value="$this" />
         </discriminator>
       </slicing>
-	 <max value="0" />
+      <max value="0" />
     </element>
     <element id="Extension.value[x]:valueString">
       <path value="Extension.value[x]" />
