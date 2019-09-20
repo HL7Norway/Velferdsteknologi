@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir file:///C:/GitRepo/R4/fhir-all-xsd/fhir-single.xsd">
+  <id value="vkp-elock-v090" />
+  <meta>
+    <versionId value="1" />
+    <lastUpdated value="2018-06-15T13:38:54.765+00:00" />
+  </meta>
+  <url value="http://ehelse.no/fhir/StructureDefinition/vkp-elock-v090" />
+  <version value="0.9.0" />
+  <name value="vkp-elock-v090" />
+  <title value="vkp-elock" />
+  <status value="draft" />
+  <date value="2018-09-07" />
+  <description value="Information about elock installed at the location" />
+  <purpose value="Information about elock installed at the location" />
+  <fhirVersion value="4.0.0" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <contextType value="resource" />
+  <context value="Patient" />
+  <context value="Person" />
+  <context value="Location" />
+  <context value="Address" />
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="Information about elock at the location" />
+      <definition value="Name of the e-lock system installed at the location, if no name is present there is no e-lock installed at the location." />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://ehelse.no/fhir/StructureDefinition/vkp-elock-v06" />
+    </element>
+    <element id="Extension.value[x]:valueString">
+      <path value="Extension.valueString" />
+      <sliceName value="valueString" />
+      <short value="Name of the e-lock system installed at the location" />
+      <definition value="Name of the e-lock system installed at the location, if no name is present there is no e-lock at the location" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>
