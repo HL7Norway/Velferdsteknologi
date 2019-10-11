@@ -24,7 +24,7 @@ https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workf
 | |\\examples | eksempler |
 | |\\Images | Bilder/figurer til IG |
 | |\\NamingSystem | Optinal definisjon av navnerom |
-| |\\REST-kall | Optional |
+| |\\Script | Optional |
 | |\\SearchParameter | Optional definisjon av egne søkeparametere til CapabilityStatement|
 | |\\StructureDefinition | alle extensions og profiler |
 | |\\ValueSet | ValueSet definisjoner |
