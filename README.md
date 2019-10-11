@@ -20,12 +20,14 @@ https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workf
 |\\[prosjektnavn]| | |
 |---|---|---|
 | |\\CodeSystem | CodeSystem definisjoner |
+| |\\CapabilityStatement | CapabilityStatement ressurser |
 | |\\examples | eksempler |
+| |\\Images | Bilder/figurer til IG |
+| |\\NamingSystem | Optinal definisjon av navnerom |
 | |\\REST-kall | Optional |
+| |\\SearchParameter | Optional definisjon av egne søkeparametere til CapabilityStatement|
 | |\\StructureDefinition | alle extensions og profiler |
 | |\\ValueSet | ValueSet definisjoner |
-| |\\ImplementationGuide-definition | Definisjonene for implementationguide |
-| |\\ImplementationGuidePublish | Rendring av implementationguide for publisering på web |
 | |[prosjektnavn]-[versjon].zip | Pakke med det ferdige resultatet for en versjon |
 
 ## Navngivning av filer
