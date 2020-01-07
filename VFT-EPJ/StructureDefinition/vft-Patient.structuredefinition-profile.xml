@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="no-vft-Patient" />
+  <url value="http://hl7.no/fhir/StructureDefinition/no-vft-Patient" />
+  <version value="0.0.1" />
+  <name value="VftPatient" />
+  <title value="VftPatient" />
+  <status value="draft" />
+  <description value="Derived from no basis Patient. This profile defines the minimum patient requirements for the Norwegian &quot;Welfare technology&quot; initiative." />
+  <fhirVersion value="4.0.0" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Patient" />
+  <baseDefinition value="http://hl7.no/fhir/StructureDefinition/no-basis-Patient" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Patient.extension:citizenship">
+      <path value="Patient.extension" />
+      <sliceName value="citizenship" />
+    </element>
+    <element id="Patient.extension:citizenship.extension:code">
+      <path value="Patient.extension.extension" />
+      <sliceName value="code" />
+    </element>
+    <element id="Patient.extension:citizenship.extension:code.value[x]">
+      <path value="Patient.extension.extension.value[x]" />
+      <slicing>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Patient.extension:citizenship.extension:period">
+      <path value="Patient.extension.extension" />
+      <sliceName value="period" />
+    </element>
+    <element id="Patient.extension:citizenship.extension:period.value[x]">
+      <path value="Patient.extension.extension.value[x]" />
+      <slicing>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Patient.identifier">
+      <path value="Patient.identifier" />
+      <definition value="An identifier for this patient. Should be a Fødselsnummer, Felles hjelpenummer, D-nummer or locally assigned H-nummer" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:FNR">
+      <path value="Patient.identifier" />
+      <sliceName value="FNR" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:FNR.system">
+      <path value="Patient.identifier.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:FNR.value">
+      <path value="Patient.identifier.value" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:FHN">
+      <path value="Patient.identifier" />
+      <sliceName value="FHN" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:FHN.system">
+      <path value="Patient.identifier.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:FHN.value">
+      <path value="Patient.identifier.value" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:DNR">
+      <path value="Patient.identifier" />
+      <sliceName value="DNR" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:DNR.system">
+      <path value="Patient.identifier.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:DNR.value">
+      <path value="Patient.identifier.value" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:HNR">
+      <path value="Patient.identifier" />
+      <sliceName value="HNR" />
+      <mustSupport value="false" />
+    </element>
+    <element id="Patient.name">
+      <path value="Patient.name" />
+      <min value="1" />
+      <type>
+        <code value="HumanName" />
+        <profile value="http://hl7.no/fhir/StructureDefinition/no-vft-HumanName" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.telecom">
+      <path value="Patient.telecom" />
+      <type>
+        <code value="ContactPoint" />
+        <profile value="http://hl7.no/fhir/StructureDefinition/no-vft-ContactPoint" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.gender">
+      <path value="Patient.gender" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.birthDate">
+      <path value="Patient.birthDate" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address">
+      <path value="Patient.address" />
+      <type>
+        <code value="Address" />
+        <profile value="http://hl7.no/fhir/StructureDefinition/no-vft-Address" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact">
+      <path value="Patient.contact" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact.relationship">
+      <path value="Patient.contact.relationship" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact.relationship.coding">
+      <path value="Patient.contact.relationship.coding" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact.relationship.coding.system">
+      <path value="Patient.contact.relationship.coding.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact.relationship.coding.code">
+      <path value="Patient.contact.relationship.coding.code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact.name">
+      <path value="Patient.contact.name" />
+      <type>
+        <code value="HumanName" />
+        <profile value="http://hl7.no/fhir/StructureDefinition/no-vft-HumanName" />
+      </type>
+    </element>
+    <element id="Patient.contact.telecom">
+      <path value="Patient.contact.telecom" />
+      <type>
+        <code value="ContactPoint" />
+        <profile value="http://hl7.no/fhir/StructureDefinition/no-vft-ContactPoint" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact.address">
+      <path value="Patient.contact.address" />
+      <type>
+        <code value="Address" />
+        <profile value="http://hl7.no/fhir/StructureDefinition/no-vft-Address" />
+      </type>
+    </element>
+    <element id="Patient.generalPractitioner">
+      <path value="Patient.generalPractitioner" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.generalPractitioner.reference">
+      <path value="Patient.generalPractitioner.reference" />
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>
