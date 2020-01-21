@@ -1,22 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="vkp-additionalpositiondata-v05" />
+  <id value="vkp-additionalpositiondata-v090" />
   <meta>
     <lastUpdated value="2018-01-09T14:38:24.415+01:00" />
   </meta>
-  <url value="http://ehelse.no/fhir/StructureDefinition/vkp-additionalpositiondata-v05" />
-  <version value="0.5" />
-  <name value="vkp-additionalpositiondata-v05" />
+  <url value="http://ehelse.no/fhir/StructureDefinition/vkp-additionalpositiondata-v090" />
+  <version value="0.9.0" />
+  <name value="VkpAdditionalPositionData" />
   <status value="draft" />
-  <date value="2017-05-09T16:53:54.8520187+02:00" />
+  <date value="2020-01-20" />
   <publisher value="The Norwegian Directorate of eHealth" />
   <description value="Additional information about the geoposition measurement for the PCH in Norway. Contains timestamp, altitudeMeters, horizontal accuracy, vertical accuracy, velocity and direction of travel" />
-  <fhirVersion value="3.0.1" />
+  <fhirVersion value="4.0.0" />
   <kind value="resource" />
   <abstract value="false" />
-  <contextType value="resource" />
-  <context value="Location" />
-  <context value="Flag" />
+   <context>
+	<type value="element"/>
+	<expression value="resource"/>
+   </context>
+   <context>
+	<type value="element"/>
+	<expression value="Location"/>
+   </context>
+   <context>
+	<type value="element"/>
+	<expression value="Flag"/>
+   </context>
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
   <derivation value="constraint" />
@@ -213,7 +222,7 @@
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://ehelse.no/fhir/StructureDefinition/vkp-additionalpositiondata-v05" />
+      <fixedUri value="http://ehelse.no/fhir/StructureDefinition/vkp-additionalpositiondata-v090" />
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />

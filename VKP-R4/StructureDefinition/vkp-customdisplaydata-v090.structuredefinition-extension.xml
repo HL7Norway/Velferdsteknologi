@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="vkp-customdisplaydata-v090" />
+  <meta>
+    <lastUpdated value="2017-12-14T15:01:12.618+01:00" />
+  </meta>
+  <url value="http://ehelse.no/fhir/StructureDefinition/vkp-customdisplaydata-v090" />
+  <name value="VkpCustomDisplayData" />
+  <status value="draft" />
+  <date value="2020-01-20" />
+  <description value="Custom display field. The client software can provide one or more fields of custom display data that could be displayed to a human operator. contains a fieldname and content. Both should be human readable." />
+  <fhirVersion value="4.0.0" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+	<type value="element"/>
+	<expression value="Observation"/>
+  </context>
+  <context>
+	<type value="element"/>
+	<expression value="Flag"/>
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:name">
+      <path value="Extension.extension" />
+      <sliceName value="name" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:name.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="name" />
+    </element>
+    <element id="Extension.extension:name.value[x]:valueString">
+      <path value="Extension.extension.valueString" />
+      <sliceName value="valueString" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:content">
+      <path value="Extension.extension" />
+      <sliceName value="content" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:content.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="content" />
+    </element>
+    <element id="Extension.extension:content.value[x]:valueString">
+      <path value="Extension.extension.valueString" />
+      <sliceName value="valueString" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://ehelse.no/fhir/StructureDefinition/vkp-customdisplaydata-v090" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

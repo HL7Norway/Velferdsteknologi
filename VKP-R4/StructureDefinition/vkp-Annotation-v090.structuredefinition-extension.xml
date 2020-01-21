@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="vkp-annotation-v06" />
-  <url value="http://ehelse.no/fhir/StructureDefinition/vkp-annotation-v06" />
-  <version value="0.6" />
-  <name value="vkp-annotation-v06" />
+  <id value="vkp-annotation-v090" />
+  <url value="http://ehelse.no/fhir/StructureDefinition/vkp-annotation-v090" />
+  <version value="0.9.0" />
+  <name value="VkpAnnotation" />
   <status value="draft" />
-  <date value="2018-10-02" />
+  <date value="2020-02-20" />
   <description value="Annotation resource to add Annotation to any resource profile." />
-  <fhirVersion value="3.0.1" />
+  <fhirVersion value="4.0.0" />
   <kind value="complex-type" />
   <abstract value="false" />
-  <contextType value="resource" />
-  <context value="Encounter" />
+  <!--contextType value="resource" JES er dette greit, type er element under /-->
+  <context>
+	<type value="element"/>
+	<expression value="Encounter"/>
+  </context>
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
   <derivation value="constraint" />
   <differential>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://ehelse.no/fhir/StructureDefinition/vkp-annotation-v06" />
+      <fixedUri value="http://ehelse.no/fhir/StructureDefinition/vkp-annotation-v090" />
     </element>
     <element id="Extension.value[x]:valueAnnotation">
       <path value="Extension.valueAnnotation" />

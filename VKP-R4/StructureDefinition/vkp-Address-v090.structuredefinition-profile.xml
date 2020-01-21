@@ -3,7 +3,7 @@
   <id value="vkp-Address-v090" />
   <url value="http://ehelse.no/fhir/StructureDefinition/vkp-Address-v090" />
   <version value="0.9.0" />
-  <name value="VkpAddressv090" />
+  <name value="VkpAddress" />
   <status value="draft" />
   <date value="2019-11-28" />
   <description value="Profile of the no-Address profile for use in Norwegian VKP project" />
@@ -29,7 +29,7 @@
       <sliceName value="elock" />
       <type>
         <code value="Extension" />
-        <profile value="http://ehelse.no/fhir/StructureDefinition/VkpElockv090" />
+        <profile value="http://ehelse.no/fhir/StructureDefinition/vkp-elock-v090" />
       </type>
     </element>
     <element id="Address.line.extension">
@@ -42,6 +42,7 @@
         <rules value="open" />
       </slicing>
     </element>
+<!--JES problem start -->	
     <element id="Address.line.extension:hint">
       <path value="Address.line.extension" />
       <sliceName value="hint" />
@@ -52,6 +53,7 @@
         <profile value="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator" />
       </type>
     </element>
+<!-- JES problem end -->
     <element id="Address.line.extension:hint.valueString:valueString">
       <path value="Address.line.extension.valueString" />
       <sliceName value="valueString" />

@@ -1,26 +1,30 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="vkp-detailheader-v05" />
-  <url value="http://ehelse.no/fhir/StructureDefinition/vkp-detailheader-v05" />
-  <version value="0.5" />
-  <name value="vkp-detailheader-v05" />
+  <id value="vkp-displayURL-v090" />
+  <meta>
+    <lastUpdated value="2017-12-14T16:06:37.334+01:00" />
+  </meta>
+  <url value="http://ehelse.no/fhir/StructureDefinition/vkp-displayURL-v090" />
+  <name value="VkpDisplayURL" />
   <status value="draft" />
-  <date value="2018-08-28" />
-  <description value="The header of an activity.detail, usually one of the following: &quot;Problem/Ressurs&quot;, &quot;Mål&quot;, &quot;Tiltak&quot; or &quot;Evaluering&quot;&#xD;&#xA;Used for CarePlan with type of &quot;tiltaksplan&quot;." />
-  <fhirVersion value="3.0.1" />
+  <date value="2018-01-20" />
+  <description value="URL to show the event data to user in some web interface" />
+  <purpose value="URL" />
+  <fhirVersion value="4.0.0" />
   <kind value="complex-type" />
   <abstract value="false" />
-  <contextType value="datatype" />
-  <context value="CarePlan" />
-  <context value="BackboneElement" />
+  <context>
+	<type value="element"/> 
+	<expression value="Flag"/>
+  </context>
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
   <derivation value="constraint" />
   <snapshot>
     <element id="Extension">
       <path value="Extension" />
-      <short value="The header of an activity.detail" />
-      <definition value="The header of an activity.detail" />
+      <short value="URL to show the event data to a user" />
+      <definition value="URL to show the event data to user in some web interface" />
       <min value="0" />
       <max value="*" />
       <base>
@@ -146,7 +150,7 @@
       <type>
         <code value="uri" />
       </type>
-      <fixedUri value="http://ehelse.no/fhir/StructureDefinition/vkp-detailheader-v05" />
+      <fixedUri value="http://ehelse.no/fhir/StructureDefinition/vkp-displayURL-v090" />
       <condition value="ele-1" />
       <constraint>
         <key value="ele-1" />
@@ -164,11 +168,11 @@
         <map value="N/A" />
       </mapping>
     </element>
-    <element id="Extension.value[x]:valueString">
-      <path value="Extension.valueString" />
-      <sliceName value="valueString" />
-      <short value="The header of the activity.detail" />
-      <definition value="The header of the activity.detail, explains what part of the plan is described in the activity.detail.description." />
+    <element id="Extension.value[x]:valueUri">
+      <path value="Extension.valueUri" />
+      <sliceName value="valueUri" />
+      <short value="Value of extension" />
+      <definition value="Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list)." />
       <comment value="A stream of bytes, base64 encoded" />
       <min value="0" />
       <max value="1" />
@@ -178,7 +182,7 @@
         <max value="1" />
       </base>
       <type>
-        <code value="string" />
+        <code value="uri" />
       </type>
       <condition value="ele-1" />
       <constraint>
@@ -201,20 +205,18 @@
   <differential>
     <element id="Extension">
       <path value="Extension" />
-      <short value="The header of an activity.detail" />
-      <definition value="The header of an activity.detail" />
+      <short value="URL to show the event data to a user" />
+      <definition value="URL to show the event data to user in some web interface" />
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://ehelse.no/fhir/StructureDefinition/vkp-detailheader-v05" />
+      <fixedUri value="http://ehelse.no/fhir/StructureDefinition/vkp-displayURL-v090" />
     </element>
-    <element id="Extension.value[x]:valueString">
-      <path value="Extension.valueString" />
-      <sliceName value="valueString" />
-      <short value="The header of the activity.detail" />
-      <definition value="The header of the activity.detail, explains what part of the plan is described in the activity.detail.description." />
+    <element id="Extension.value[x]:valueUri">
+      <path value="Extension.valueUri" />
+      <sliceName value="valueUri" />
       <type>
-        <code value="string" />
+        <code value="uri" />
       </type>
     </element>
   </differential>

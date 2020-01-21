@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="vkp-MessageHeader-v090" />
+  <meta>
+    <lastUpdated value="2018-03-08T13:19:09.633+01:00" />
+  </meta>
+  <url value="http://ehelse.no/fhir/StructureDefinition/vkp-MessageHeader-v090" />
+  <version value="0.9.0" />
+  <name value="VkpMessageHeader" />
+  <status value="draft" />
+  <date value="2020-01-20" />
+  <description value="Profile of the MessageHeader resource. Used in the Norwegian Personal Connected Health project to document events from devices user at the patients home. The vkp-MessageHead is also used for transmitting information from the VKP to the response center system. vkp-Messages can contain Resources like:&#xD;&#xA;&#xD;&#xA;- vkp-MedicationDispense - to document MedicationDispense events&#xD;&#xA;- vkp-Location - to document changes of the Patients geoposition&#xD;&#xA;- vkp-Flag - to document events that need attention&#xD;&#xA;- Composition - additional information about handling of a reported event documented by the person handling that event&#xD;&#xA;- vkp-CarePlan - to document what is called &quot;tjeneste&quot;, &quot;tiltaksplan&quot; and &quot;arbeidsplan&quot;&#xD;&#xA;- vkp-digital-Encounter - to document a digital (virtual) encounter" />
+  <fhirVersion value="4.0.0" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="MessageHeader" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/MessageHeader" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="MessageHeader.event">
+      <path value="MessageHeader.event" />
+      <definition value="Code that identifies the event this message represents.&#xD;&#xA;&#xD;&#xA;VKP-norway uses the vkp-message-event ValueSet Containing the vkp-message-event CodeSystem:&#xD;&#xA;&#xD;&#xA;http://ehelse.no/fhir/CodeSystem/vkp-message-event-v05&#xD;&#xA;&#xD;&#xA;Example: &#xD;&#xA;~~~&#xD;&#xA;&quot;event&quot;:{&#xD;&#xA;   &quot;system&quot;:&quot;http://ehelse.no/fhir/CodeSystem/vkp-message-event-v05&quot;,&#xD;&#xA;   &quot;code&quot;:&quot;MedicationDispense&quot;&#xD;&#xA;}&#xD;&#xA;~~~" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="MessageEvent" />
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding">
+          <valueBoolean value="true" />
+        </extension>
+        <strength value="preferred" />
+        <description value="vkp-message-event" />
+        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-message-event-v05" />
+      </binding>
+    </element>
+    <element id="MessageHeader.event.system">
+      <path value="MessageHeader.event.system" />
+      <definition value="VKP-norway uses: http://ehelse.no/fhir/CodeSystem/vkp-message-event-v05&#xD;&#xA;&#xD;&#xA;The identification of the code system that defines the meaning of the symbol in the code." />
+      <mustSupport value="true" />
+    </element>
+    <element id="MessageHeader.event.version">
+      <path value="MessageHeader.event.version" />
+      <definition value="Not used in VKP-norway&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged." />
+      <mustSupport value="false" />
+    </element>
+    <element id="MessageHeader.event.code">
+      <path value="MessageHeader.event.code" />
+      <definition value="VKP Norway uses coded values for the event type.&#xD;&#xA;&#xD;&#xA;A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)." />
+      <mustSupport value="true" />
+    </element>
+    <element id="MessageHeader.event.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="MessageHeader.event.display" />
+      <definition value="VKP-norway don't use this element&#xD;&#xA;&#xD;&#xA;A representation of the meaning of the code in the system, following the rules of the system." />
+      <mustSupport value="false" />
+    </element>
+    <element id="MessageHeader.event.userSelected">
+      <path value="MessageHeader.event.userSelected" />
+      <definition value="VKP-norway don't use this element&#xD;&#xA;&#xD;&#xA;Indicates that this coding was chosen by a user directly - i.e. off a pick list of available items (codes or displays)." />
+      <mustSupport value="false" />
+    </element>
+    <element id="MessageHeader.destination">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="MessageDestination" />
+      </extension>
+      <path value="MessageHeader.destination" />
+      <definition value="VKP-norway don't use this element in the current version. Use receiver instead.&#xD;&#xA;&#xD;&#xA;The destination application which the message is intended for." />
+      <comment value="VKP-norway don't use this element in the current version. Use receiver instead this supersedes the origintal FHIR STU documentation.&#xD;&#xA;&#xD;&#xA;From FHIR STU 3 documentation: &#xD;&#xA;There SHOULD be at least one destination, but in some circumstances, the source system is unaware of any particular destination system." />
+      <mustSupport value="false" />
+    </element>
+    <element id="MessageHeader.receiver">
+      <path value="MessageHeader.receiver" />
+      <definition value="VKP-norway identifies the receiving service of the message by a norwegian HER-id.&#xD;&#xA;&#xD;&#xA;vkp-norway uses the Norwegian HER-id to route messages within the Norwegian healthcare network. The receiver is identified by the Norwegian HER-id and not by a reference to another resource. Systems communicating with vkp has to support this mode of message routing and addressing.&#xD;&#xA;&#xD;&#xA;Example: &#xD;&#xA;~~~&#xD;&#xA;&quot;receiver&quot;:{&#xD;&#xA;   &quot;identifier&quot;:{&#xD;&#xA;      &quot;system&quot;:&quot;urn:oid:2.16.578.1.12.4.1.2&quot;,&#xD;&#xA;      &quot;value&quot;:&quot;102287&quot;&#xD;&#xA;   },&#xD;&#xA;   &quot;display&quot;:&quot;Sykepleietjeneste, pleie- og omsorg&quot;&#xD;&#xA;}&#xD;&#xA;~~~" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.no/fhir/StructureDefinition/no-basis-Organization" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/HealthcareService" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="MessageHeader.receiver.reference">
+      <path value="MessageHeader.receiver.reference" />
+      <definition value="vkp Norway don't use this element to identify the reciever.&#xD;&#xA;&#xD;&#xA;A reference to a location at which the other resource is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found. The reference may be version specific or not. If the reference is not to a FHIR RESTful server, then it should be assumed to be version specific. Internal fragment references (start with '#') refer to contained resources." />
+    </element>
+    <element id="MessageHeader.receiver.identifier">
+      <path value="MessageHeader.receiver.identifier" />
+      <definition value="vkp-norway uses the norwegian HER-id to route messages within the norwegian healthcare network. The receiver is identified by the Norwegian HER-id and not by a reference to another resource. systems communicating with the norwegian vkp have to support this mode of message routing and adressing.&#xD;&#xA;&#xD;&#xA;An identifier for the other resource. This is used when there is no way to reference the other resource directly, either because the entity is not available through a FHIR server, or because there is no way for the author of the resource to convert a known identifier to an actual location. There is no requirement that a Reference.identifier point to something that is actually exposed as a FHIR instance, but it SHALL point to a business concept that would be expected to be exposed as a FHIR instance, and that instance would need to be of a FHIR resource type allowed by the reference." />
+      <mustSupport value="true" />
+    </element>
+    <element id="MessageHeader.receiver.identifier.system">
+      <path value="MessageHeader.receiver.identifier.system" />
+      <short value="The official name of the HERid namespace" />
+      <definition value="The official name of the HERid namespace, identified by its oid value" />
+      <fixedUri value="urn:oid:2.16.578.1.12.4.1.2" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MessageHeader.receiver.identifier.value">
+      <path value="MessageHeader.receiver.identifier.value" />
+      <definition value="The HERid value identifying the receiver&#xD;&#xA;The portion of the identifier typically relevant to the user and which is unique within the context of the system." />
+      <mustSupport value="true" />
+    </element>
+    <element id="MessageHeader.receiver.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="MessageHeader.receiver.display" />
+      <definition value="Display name of the organization service (tjeneste) receiving the message. MUST be taken from the NHN Address Register. The identifier and display name MUST be taken from the same service entity in AR." />
+      <mustSupport value="true" />
+    </element>
+    <element id="MessageHeader.sender">
+      <path value="MessageHeader.sender" />
+      <definition value="VKP-norway identifies the sender of the message by a norwegian HER-id.&#xD;&#xA;&#xD;&#xA;vkp-norway uses the norwegian HER-id to route messages within the Norwegian healthcare network. The sender is identified by the Norwegian HER-id and not by a reference to another resource. Systems communicating with vkp has to support this mode of message routing and addressing.&#xD;&#xA;&#xD;&#xA;Example: &#xD;&#xA;~~~&#xD;&#xA;&quot;sender&quot;:{&#xD;&#xA;   &quot;identifier&quot;:{&#xD;&#xA;      &quot;system&quot;:&quot;urn:oid:2.16.578.1.12.4.1.2&quot;,&#xD;&#xA;      &quot;value&quot;:&quot;102287&quot;&#xD;&#xA;   },&#xD;&#xA;   &quot;display&quot;:&quot;Sykepleietjeneste, pleie- og omsorg&quot;&#xD;&#xA;}&#xD;&#xA;~~~" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.no/fhir/StructureDefinition/no-basis-Organization" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/HealthcareService" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="MessageHeader.sender.reference">
+      <path value="MessageHeader.sender.reference" />
+      <definition value="vkp Norway don't use this element to identify the reciever.&#xD;&#xA;&#xD;&#xA;A reference to a location at which the other resource is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found. The reference may be version specific or not. If the reference is not to a FHIR RESTful server, then it should be assumed to be version specific. Internal fragment references (start with '#') refer to contained resources." />
+    </element>
+    <element id="MessageHeader.sender.identifier">
+      <path value="MessageHeader.sender.identifier" />
+      <definition value="vkp-norway uses the norwegian HER-id to route messages within the norwegian healthcare network. The sender is identified by the Norwegian HER-id and not by a reference to another resource. systems communicating with the norwegian vkp has to support this mode of message routing and adressing." />
+      <comment value="vkp-norway uses the norwegian HER-id to route messages within the norwegian healthcare network. The receiver is identified by the Norwegian HER-id and not by a reference to another resource. systems communicating with the norwegian vkp have to support this mode of message routing and adressing.&#xD;&#xA;&#xD;&#xA;When an identifier is provided in place of a reference, any system processing the reference will only be able to resolve the identifier to a reference if it understands the business context in which the identifier is used. Sometimes this is global (e.g. a national identifier) but often it is not. For this reason, none of the useful mechanisms described for working with references (e.g. chaining, includes) are possible, nor should servers be expected to be able resolve the reference. Servers may accept an identifier based reference untouched, resolve it, and/or reject it - see CapabilityStatement.rest.resource.referencePolicy. &#xA;&#xA;When both an identifier and a literal reference are provided, the literal reference is preferred. Applications processing the resource are allowed - but not required - to check that the identifier matches the literal reference&#xA;&#xA;Applications converting a logical reference to a literal reference may choose to leave the logical reference present, or remove it." />
+      <mustSupport value="true" />
+    </element>
+    <element id="MessageHeader.sender.identifier.system">
+      <path value="MessageHeader.sender.identifier.system" />
+      <short value="The official name of the HERid namespace" />
+      <definition value="The official name of the HERid namespace, identified by its oid value" />
+      <fixedUri value="urn:oid:2.16.578.1.12.4.1.2" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MessageHeader.sender.identifier.value">
+      <path value="MessageHeader.sender.identifier.value" />
+      <short value="The HERid" />
+      <definition value="The HERid value identifying the sender&#xD;&#xA;The portion of the identifier typically relevant to the user and which is unique within the context of the system." />
+      <mustSupport value="true" />
+    </element>
+    <element id="MessageHeader.sender.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="MessageHeader.sender.display" />
+      <short value="Display name of the organization service (tjeneste) sending the message" />
+      <definition value="Display name of the organization service (tjeneste) sending the message. MUST be taken from the NHN Address Register. The identifier and display name MUST be taken from the same service entity in AR." />
+      <mustSupport value="true" />
+    </element>
+    <element id="MessageHeader.timestamp">
+      <path value="MessageHeader.timestamp" />
+      <definition value="The time that the message was sent.&#xD;&#xA;&#xD;&#xA;Example code: &#xD;&#xA;~~~&#xD;&#xA;&lt;timestamp value=&quot;2012-01-04T09:10:14+00:00&quot; /&gt;&#xD;&#xA;~~~" />
+      <example>
+        <label value="example timestamp" />
+        <valueInstant value="2012-01-04T09:10:14+00:00" />
+      </example>
+      <mustSupport value="true" />
+    </element>
+    <element id="MessageHeader.enterer">
+      <path value="MessageHeader.enterer" />
+      <definition value="VKP norway don't use this element.&#xD;&#xA;&#xD;&#xA;The person or device that performed the data entry leading to this message. When there is more than one candidate, pick the most proximal to the message. Can provide other enterers in extensions." />
+      <mustSupport value="false" />
+    </element>
+    <element id="MessageHeader.author">
+      <path value="MessageHeader.author" />
+      <definition value="VKP norway don't use this element.&#xD;&#xA;&#xD;&#xA;The logical author of the message - the person or device that decided the described event should happen. When there is more than one candidate, pick the most proximal to the MessageHeader. Can provide other authors in extensions." />
+      <mustSupport value="false" />
+    </element>
+    <element id="MessageHeader.source">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="MessageSource" />
+      </extension>
+      <path value="MessageHeader.source" />
+      <definition value="VKP norway uses the source to identify the endpoint of the source application and contact information for support." />
+      <mustSupport value="true" />
+    </element>
+    <element id="MessageHeader.source.contact">
+      <path value="MessageHeader.source.contact" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <description value="VKP project in Norway uses the contact information, either Phone number or URL for contacting support regarding technical issues regarding message communication with the source system." />
+        <rules value="closed" />
+      </slicing>
+      <comment value="VKP project in Norway uses the contact information, either Phone number or URL for contacting support regarding technical issues regarding message communication with the source system." />
+    </element>
+    <element id="MessageHeader.source.contact:phone">
+      <path value="MessageHeader.source.contact" />
+      <sliceName value="phone" />
+      <short value="Phone number human contact for problems" />
+      <definition value="Phone numberto use to resolve issues with message communications." />
+    </element>
+    <element id="MessageHeader.source.contact:phone.system">
+      <path value="MessageHeader.source.contact.system" />
+      <fixedCode value="phone" />
+    </element>
+    <element id="MessageHeader.source.contact:videoStreamUrl">
+      <path value="MessageHeader.source.contact" />
+      <sliceName value="videoStreamUrl" />
+      <short value="Video Stream human contact for problems" />
+      <definition value="URL endpoint for video call to use to resolve issues with message communications." />
+    </element>
+    <element id="MessageHeader.source.contact:videoStreamUrl.system">
+      <path value="MessageHeader.source.contact.system" />
+      <fixedCode value="url" />
+    </element>
+    <element id="MessageHeader.source.endpoint">
+      <path value="MessageHeader.source.endpoint" />
+      <definition value="Identifies the routing target to send acknowledgements to.&#xD;&#xA;&#xD;&#xA;In VKP Norway this element identifies the endpoint to reach the actual source application of the message. This logical identifier MUST be identical to the information found in the Address register for the HER-id in the sender.identifier element. The value should be an actual endpoint acknowledgments can be sent to. &#xD;&#xA;&#xD;&#xA;Example: &#xD;&#xA;~~~&#xD;&#xA;&quot;source&quot;:{&#xD;&#xA;   &quot;endpoint&quot;:&quot;https://vkp.azure-devices.net/devices/135164&quot;&#xD;&#xA;}&#xD;&#xA;~~~" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MessageHeader.responsible">
+      <path value="MessageHeader.responsible" />
+      <definition value="VKP Norway do not use this information&#xD;&#xA;&#xD;&#xA;The person or organization that accepts overall responsibility for the contents of the message. The implication is that the message event happened under the policies of the responsible party." />
+      <mustSupport value="false" />
+    </element>
+    <element id="MessageHeader.reason">
+      <path value="MessageHeader.reason" />
+      <definition value="VKP Norway do not use this information&#xD;&#xA;&#xD;&#xA;Coded indication of the cause for the event - indicates  a reason for the occurrence of the event that is a focus of this message." />
+      <mustSupport value="false" />
+    </element>
+    <element id="MessageHeader.response">
+      <path value="MessageHeader.response" />
+      <definition value="Information about the message that this message is a response to.  Only present if this message is a response.&#xD;&#xA;The actual response (error description) is a separate OperationOutcome resource in the Bundle, referenced in detail.reference &#xD;&#xA;&#xD;&#xA;~~~&#xD;&#xA;&quot;response&quot; : {&#xD;&#xA;     &quot;identifier&quot; : &quot;93d56570-ebb9-4cdb-b49d-d1bcbf06a296&quot;,&#xD;&#xA;     &quot;code&quot; : &quot;ok&quot;,&#xD;&#xA;     &quot;details&quot; : {&#xD;&#xA;      &quot;reference&quot; : &quot;urn:uuid:116bb667-5506-4c2a-8ea7-7b40c170d539&quot;&#xD;&#xA;     }&#xD;&#xA;}&#xD;&#xA;~~~" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MessageHeader.focus">
+      <path value="MessageHeader.focus" />
+      <definition value="The actual data of the message - a reference to the root/focus class of the event.&#xD;&#xA;&#xD;&#xA;VKP uses literal references to the actual data elements contained in the Bundle.&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;~~~&#xD;&#xA;&quot;focus&quot;: [&#xD;&#xA;   {&#xD;&#xA;      &quot;reference&quot;:&quot;urn:uuid:ef91399e-8993-11e7-bb31-be2e44b06b34&quot;,&#xD;&#xA;      &quot;display&quot;:&quot;MedicationDispense&quot;&#xD;&#xA;   }&#xD;&#xA;]&#xD;&#xA;~~~" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MessageHeader.focus.reference">
+      <path value="MessageHeader.focus.reference" />
+      <definition value="VKP norway uses literal references to the actual data elements contained in the Bundle.&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;~~~json&#xD;&#xA;&quot;focus&quot;: [&#xD;&#xA;   {&#xD;&#xA;      &quot;reference&quot;:&quot;urn:uuid:ef91399e-8993-11e7-bb31-be2e44b06b34&quot;,&#xD;&#xA;      &quot;display&quot;:&quot;MedicationDispense&quot;&#xD;&#xA;   }&#xD;&#xA;]&#xD;&#xA;~~~" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MessageHeader.focus.identifier">
+      <path value="MessageHeader.focus.identifier" />
+      <definition value="Not used by VKP&#xD;&#xA;&#xD;&#xA;An identifier for the other resource. This is used when there is no way to reference the other resource directly, either because the entity is not available through a FHIR server, or because there is no way for the author of the resource to convert a known identifier to an actual location. There is no requirement that a Reference.identifier point to something that is actually exposed as a FHIR instance, but it SHALL point to a business concept that would be expected to be exposed as a FHIR instance, and that instance would need to be of a FHIR resource type allowed by the reference." />
+      <mustSupport value="false" />
+    </element>
+    <element id="MessageHeader.focus.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="MessageHeader.focus.display" />
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>

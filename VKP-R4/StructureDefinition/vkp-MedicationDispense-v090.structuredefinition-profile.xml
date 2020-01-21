@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="vkp-MedicationDispense-v090" />
+  <meta>
+    <versionId value="4" />
+    <lastUpdated value="2018-06-29T07:52:59.488+00:00" />
+  </meta>
+  <url value="http://ehelse.no/fhir/StructureDefinition/vkp-MedicationDispense-v090" />
+  <version value="0.9.0" />
+  <name value="vkp-MedicationDispense-v06" />
+  <status value="draft" />
+  <date value="2020-01-20" />
+  <description value="Profile of the MedicationDispense resource. Used in the Norwegian Personal Connected Health project to document MedicationDispense events from devices dispensing medication to the user at the patients home." />
+  <fhirVersion value="4.0.0" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="MedicationDispense" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/MedicationDispense" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="MedicationDispense">
+      <path value="MedicationDispense" />
+      <definition value="Profile of the MedicationDispense resource. Used in the Norwegian Personal Connected Health project to document MedicationDispense events from devices dispensing medication to the user at the patients home. The Resource is also used to report that a planned dispense event did not occur according to plan.&#xD;&#xA;&#xD;&#xA;Indicates that a medication product is to be or has been dispensed for a named person/patient.  This includes a description of the medication product (supply) provided and the instructions for administering the medication.  The medication dispense is the result of a pharmacy system responding to a medication order." />
+      <constraint>
+        <key value="category-1" />
+        <severity value="error" />
+        <human value="When category code is 19 | 20 dosageInstruction.text should be filled out" />
+        <expression value="category.coding.code = '19'|'20' implies dosageInstruction.text.exists()" />
+      </constraint>
+    </element>
+    <element id="MedicationDispense.identifier">
+      <path value="MedicationDispense.identifier" />
+      <short value="Unique code or number identifying the MedicationDispense" />
+      <definition value="Unique code or number identifying the MedicationDispense&#xD;&#xA;&#xD;&#xA;VKP project uses UUID. &#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;~~~&#xD;&#xA;&quot;identifier&quot;: [&#xD;&#xA;     {&#xD;&#xA;         &quot;system&quot;:&quot;urn:ietf:rfc:3986&quot;,&#xD;&#xA;         &quot;value&quot;:&quot;urn:uuid:a76d9bbf-f293-4fb7-ad4c-2851cac77162&quot;&#xD;&#xA;     }&#xD;&#xA;]&#xD;&#xA;~~~" />
+      <comment value="Should be a UUID" />
+    </element>
+    <element id="MedicationDispense.identifier.system">
+      <path value="MedicationDispense.identifier.system" />
+      <short value="The namespace for UUID" />
+      <definition value="VKP project uses UUID identifiers, the namespace of UUID is identified by urn:ietf:rfc:3986&#xD;&#xA;Establishes the namespace for the value - that is, a URL that describes a set values that are unique." />
+      <fixedUri value="urn:ietf:rfc:3986" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationDispense.identifier.value">
+      <path value="MedicationDispense.identifier.value" />
+      <definition value="The actual UUID value.&#xD;&#xA;The portion of the identifier typically relevant to the user and which is unique within the context of the system." />
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationDispense.partOf">
+      <path value="MedicationDispense.partOf" />
+      <max value="0" />
+    </element>
+    <element id="MedicationDispense.status">
+      <path value="MedicationDispense.status" />
+      <short value="in-progress | completed" />
+      <definition value="A code specifying the state of the set of dispense events.&#xD;&#xA;&#xD;&#xA;The VKP project uses a subset of the message-status (http://hl7.org/fhir/medication-admin-status) CodeSystem containing the codes:&#xD;&#xA;- in-progress&#xD;&#xA;- completed - Normal reporting of medication dispenced should have status completed" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="MedicationDispenseStatus" />
+        </extension>
+        <strength value="required" />
+        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-medicationdispense-message-status-v05" />
+      </binding>
+    </element>
+    <element id="MedicationDispense.category">
+      <path value="MedicationDispense.category" />
+      <short value="Event types when medication dispencer performs the medication dispense" />
+      <definition value="Event types when medication dispencer performs the medication dispense. Values from http://ehelse.no/fhir/CodeSystem/vkp-medicationdispense-events-v06 is required" />
+      <min value="1" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="MedicationDispenseCategory" />
+        </extension>
+        <strength value="required" />
+        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-medicationdispense-events-v06" />
+      </binding>
+    </element>
+    <element id="MedicationDispense.category.coding">
+      <path value="MedicationDispense.category.coding" />
+      <min value="1" />
+    </element>
+    <element id="MedicationDispense.medication[x]:medicationCodeableConcept">
+      <path value="MedicationDispense.medicationCodeableConcept" />
+      <sliceName value="medicationCodeableConcept" />
+      <short value="Will always be unknown" />
+      <definition value="VKP project always uses unknown value &#xD;&#xA;&#xD;&#xA;Fixed value: &quot;Ukjent medisin&quot;" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <fixedCodeableConcept>
+        <text value="Ukjent medisin" />
+      </fixedCodeableConcept>
+    </element>
+    <element id="MedicationDispense.medication[x]:medicationCodeableConcept.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="MedicationDispense.medicationCodeableConcept.text" />
+      <short value="VKP always unknown medicine" />
+      <definition value="VKP expects a fixed value of &quot;Ukjent medisin&quot;&#xD;&#xA;&#xD;&#xA;A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user." />
+      <fixedString value="Ukjent medisin" />
+    </element>
+    <element id="MedicationDispense.subject">
+      <path value="MedicationDispense.subject" />
+      <definition value="A link to a resource representing the person or the group to whom the medication will be given.&#xD;&#xA;&#xD;&#xA;VKP always references a Patient Resource using a norwegian Fødslesnummer, Felles hjelpenummer or D-nummer in a logical identifier in the subject.identifier element.&#xD;&#xA;The Name of the patient should be given in the subject.display element.&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;~~~~&#xD;&#xA;&quot;subject&quot;:{&#xD;&#xA;   &quot;identifier&quot;:{&#xD;&#xA;      &quot;system&quot;:&quot;urn:oid:2.16.578.1.12.4.1.4.1&quot;,&#xD;&#xA;      &quot;value&quot;:&quot;05073500186&quot;&#xD;&#xA;     },&#xD;&#xA;     &quot;display&quot;:&quot;Ærlend Sørgård&quot;&#xD;&#xA;}&#xD;&#xA;~~~~" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://ehelse.no/fhir/StructureDefinition/vkp-Patient-v090" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.no/fhir/StructureDefinition/no-basis-Patient" />
+      </type>
+    </element>
+    <element id="MedicationDispense.subject.reference">
+      <path value="MedicationDispense.subject.reference" />
+      <max value="0" />
+      <mustSupport value="false" />
+    </element>
+    <element id="MedicationDispense.subject.identifier">
+      <path value="MedicationDispense.subject.identifier" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <definition value="VKP expects a FNR for the patient given using system and value elements, as well as the name in the subject.display element.&#xD;&#xA;&#xD;&#xA;An identifier for the other resource. This is used when there is no way to reference the other resource directly, either because the entity is not available through a FHIR server, or because there is no way for the author of the resource to convert a known identifier to an actual location. There is no requirement that a Reference.identifier point to something that is actually exposed as a FHIR instance, but it SHALL point to a business concept that would be expected to be exposed as a FHIR instance, and that instance would need to be of a FHIR resource type allowed by the reference." />
+      <comment value="VKP expects a FNR, DNR or Felles hjelpenummer for the patient that is subject of the medicationdispense. The subject should be identified using system and value elements, as well as the name of the patient in the subject.display element.&#xD;&#xA;&#xD;&#xA;When an identifier is provided in place of a reference, any system processing the reference will only be able to resolve the identifier to a reference if it understands the business context in which the identifier is used. Sometimes this is global (e.g. a national identifier) but often it is not. For this reason, none of the useful mechanisms described for working with references (e.g. chaining, includes) are possible, nor should servers be expected to be able resolve the reference. Servers may accept an identifier based reference untouched, resolve it, and/or reject it - see CapabilityStatement.rest.resource.referencePolicy. &#xA;&#xA;When both an identifier and a literal reference are provided, the literal reference is preferred. Applications processing the resource are allowed - but not required - to check that the identifier matches the literal reference&#xA;&#xA;Applications converting a logical reference to a literal reference may choose to leave the logical reference present, or remove it." />
+      <min value="1" />
+      <mustSupport value="false" />
+    </element>
+    <element id="MedicationDispense.subject.identifier:FNR">
+      <path value="MedicationDispense.subject.identifier" />
+      <sliceName value="FNR" />
+      <short value="Norwegian FNR" />
+      <definition value="Fødselsnummer for the patient. Fødselsnummer as one of the possible patient identifier, should at least be sent unless there is a reason not to. Reasons for not sending the Fødselsnummer include but are not limited to, research and apps without a contract for processing data.&#xD;&#xA;&#xD;&#xA;Multiple FNR can exist for a person. If several FNR is provided the time period that each identifier is valid should be provided. No information about period is required when only one FNR is provided." />
+      <alias value="Fødselsnummer" />
+    </element>
+    <element id="MedicationDispense.subject.identifier:FNR.system">
+      <path value="MedicationDispense.subject.identifier.system" />
+      <short value="Identification of the Norwegian FNR" />
+      <definition value="Identifies that this is a Norwegian Fødselsnummer" />
+      <min value="1" />
+      <fixedUri value="urn:oid:2.16.578.1.12.4.1.4.1" />
+    </element>
+    <element id="MedicationDispense.subject.identifier:FNR.value">
+      <path value="MedicationDispense.subject.identifier.value" />
+      <short value="The actual Fødselsnumme" />
+      <definition value="The Norwegian Fødselsnummer" />
+      <alias value="Fødselsnummer" />
+      <min value="1" />
+    </element>
+    <element id="MedicationDispense.subject.identifier:DNR">
+      <path value="MedicationDispense.subject.identifier" />
+      <sliceName value="DNR" />
+      <short value="The D-nummer of the patient" />
+      <definition value="The D-nummer of the patient. (assigned by the norwegian Skatteetaten)" />
+      <alias value="D-nummer" />
+    </element>
+    <element id="MedicationDispense.subject.identifier:DNR.system">
+      <path value="MedicationDispense.subject.identifier.system" />
+      <short value="The identification of the D-nummer" />
+      <definition value="The identification of the Norwegian D-nummer" />
+      <min value="1" />
+      <fixedUri value="urn:oid:2.16.578.1.12.4.1.4.2" />
+    </element>
+    <element id="MedicationDispense.subject.identifier:DNR.value">
+      <path value="MedicationDispense.subject.identifier.value" />
+      <short value="The actual D-numme" />
+      <definition value="The actual Norwegian D-nummer" />
+      <min value="1" />
+    </element>
+    <element id="MedicationDispense.subject.identifier:FHN">
+      <path value="MedicationDispense.subject.identifier" />
+      <sliceName value="FHN" />
+      <short value="Felles hjelpenummer used for the patient" />
+      <definition value="Felles hjelpenummer for the patient. Felles hjelpenummer as one of the possible patient identification numbers. The norwegian Felles hjelpenummer shoud only be used when the Fødselsnummer og D-number is unknown." />
+      <alias value="Felles hjelpenummer" />
+    </element>
+    <element id="MedicationDispense.subject.identifier:FHN.system">
+      <path value="MedicationDispense.subject.identifier.system" />
+      <short value="Identification of the Norwegian felles hjelpenumme" />
+      <definition value="Identification of the Norwegian felles hjelpenummer system" />
+      <min value="1" />
+    </element>
+    <element id="MedicationDispense.subject.identifier:FHN.value">
+      <path value="MedicationDispense.subject.identifier.value" />
+      <short value="The actual Hjelpenummer" />
+      <definition value="The actual Norwegian Hjelpenummer" />
+      <min value="1" />
+    </element>
+    <element id="MedicationDispense.subject.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="MedicationDispense.subject.display" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationDispense.context">
+      <path value="MedicationDispense.context" />
+      <max value="0" />
+    </element>
+    <element id="MedicationDispense.supportingInformation">
+      <path value="MedicationDispense.supportingInformation" />
+      <max value="0" />
+    </element>
+    <element id="MedicationDispense.performer">
+      <path value="MedicationDispense.performer" />
+      <short value="Device and person who performed the dispense" />
+      <definition value="Indicates what device and person that performed the event. It should be assumed that the performer is the dispenser of the medication. The Practitioner handling tthe device can be indicated in addition to the identity of he the device used.&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;~~~&#xD;&#xA;&quot;performer&quot;: [&#xD;&#xA;          {&#xD;&#xA;            &quot;actor&quot;: {&#xD;&#xA;              &quot;identifier&quot;: {&#xD;&#xA;                &quot;system&quot;: &quot;https://fhir.evondos.com/e300-codes/serialnumber&quot;,&#xD;&#xA;                &quot;value&quot;: &quot;PP000533&quot;&#xD;&#xA;              },&#xD;&#xA;              &quot;display&quot;: &quot;Evondos E300 multidosedispenser&quot;&#xD;&#xA;            }&#xD;&#xA;          },&#xD;&#xA;          {&#xD;&#xA;             &quot;actor&quot;:{&#xD;&#xA;                &quot;identifier&quot;:{&#xD;&#xA;                   &quot;system&quot;:&quot;urn:oid:2.16.578.1.12.4.1.4.1&quot;,&#xD;&#xA;                   &quot;value&quot;:&quot;04056600324&quot;&#xD;&#xA;                  },&#xD;&#xA;               &quot;display&quot;:&quot;Magnar Koman&quot;&#xD;&#xA;            }&#xD;&#xA;          }&#xD;&#xA;      ]&#xD;&#xA;~~~" />
+      <min value="1" />
+    </element>
+    <element id="MedicationDispense.performer.actor">
+      <path value="MedicationDispense.performer.actor" />
+      <short value="The device used to dispense the medication to the patient.  For example, a particular medication dispense device" />
+      <definition value="The device used to dispense the medication to the patient.  For example, a particular medication dispense device&#xD;&#xA;&#xD;&#xA;VKP-norway: Should be a logical reference containing the IMEI/serial number of the device.&#xD;&#xA;display value should contain the name of the device type.&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;~~~~&#xD;&#xA;&quot;performer&quot;: [&#xD;&#xA;                    {&#xD;&#xA;                        &quot;actor&quot;:{&#xD;&#xA;                            &quot;identifier&quot;:{&#xD;&#xA;                                &quot;system&quot;:&quot;http://dignio.no/IMEInummer&quot;,&#xD;&#xA;                                &quot;value&quot;:&quot;123456789101112&quot;&#xD;&#xA;                            },&#xD;&#xA;                            &quot;display&quot;:&quot;Medido multidosesdispenser&quot;&#xD;&#xA;                        }&#xD;&#xA;                    }&#xD;&#xA;                ]&#xD;&#xA;~~~~" />
+    </element>
+    <element id="MedicationDispense.performer.actor.reference">
+      <path value="MedicationDispense.performer.actor.reference" />
+      <max value="0" />
+    </element>
+    <element id="MedicationDispense.performer.actor.identifier">
+      <path value="MedicationDispense.performer.actor.identifier" />
+      <short value="Logical reference to the medication dispenser/person/organization" />
+      <definition value="Logical reference to the medication dispenser&#xD;&#xA;VKP-norway: Should be a logical reference containing the IMEI/serial number of the device.&#xD;&#xA;display value should contain the name of the device type. VKP uses serial numbers decided by the manufacturer of the device.&#xD;&#xA;" />
+      <min value="1" />
+    </element>
+    <element id="MedicationDispense.performer.actor.identifier.system">
+      <path value="MedicationDispense.performer.actor.identifier.system" />
+      <min value="1" />
+    </element>
+    <element id="MedicationDispense.performer.actor.identifier.value">
+      <path value="MedicationDispense.performer.actor.identifier.value" />
+      <min value="1" />
+    </element>
+    <element id="MedicationDispense.authorizingPrescription">
+      <path value="MedicationDispense.authorizingPrescription" />
+      <max value="0" />
+    </element>
+    <element id="MedicationDispense.type">
+      <path value="MedicationDispense.type" />
+      <max value="0" />
+    </element>
+    <element id="MedicationDispense.quantity">
+      <path value="MedicationDispense.quantity" />
+      <max value="0" />
+    </element>
+    <element id="MedicationDispense.daysSupply">
+      <path value="MedicationDispense.daysSupply" />
+      <max value="0" />
+    </element>
+    <element id="MedicationDispense.whenPrepared">
+      <path value="MedicationDispense.whenPrepared" />
+      <max value="0" />
+    </element>
+    <element id="MedicationDispense.whenHandedOver">
+      <path value="MedicationDispense.whenHandedOver" />
+      <definition value="Timestamp defining the point in time the MedicationDispense event took place. The timestamp could also be set for &quot;negative&quot; events, when a product was not provided to the patient according to plan.&#xD;&#xA;&#xD;&#xA;The time the dispensed product was/was not provided to the patient or their representative.&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;~~~&#xD;&#xA;&quot;timestamp&quot;:&quot;2018-07-18T07:01:06+00:00&quot;&#xD;&#xA;~~~" />
+      <min value="1" />
+    </element>
+    <element id="MedicationDispense.destination">
+      <path value="MedicationDispense.destination" />
+      <max value="0" />
+    </element>
+    <element id="MedicationDispense.receiver">
+      <path value="MedicationDispense.receiver" />
+      <max value="0" />
+    </element>
+    <element id="MedicationDispense.note">
+      <path value="MedicationDispense.note" />
+      <definition value="VKP: In the VPK project additional information about the MedicationDispense event sould be documented in a Composition in the Message Bundle&#xD;&#xA;&#xD;&#xA;'Extra information about the dispense that could not be conveyed in the other attributes." />
+      <max value="0" />
+    </element>
+    <element id="MedicationDispense.dosageInstruction">
+      <path value="MedicationDispense.dosageInstruction" />
+      <definition value="VKP takes handles information about the dosage given in the text element.&#xD;&#xA;&#xD;&#xA;Example text could be: &#xD;&#xA;«10 doser medisin ble matet ut for bruk på reise.&#xD;&#xA;Første dose: 22/6 kl. 19:00. &#xD;&#xA;Siste dose: 24/6 kl. 19:00.»&#xD;&#xA;&#xD;&#xA;Indicates how the medication is to be used by the patient.&#xD;&#xA;&#xD;&#xA;Example code:&#xD;&#xA;~~~&#xD;&#xA;&quot;dosageInstruction&quot;: [&#xD;&#xA;     {&#xD;&#xA;         &quot;text&quot;:&quot;Husk øyedråper!&quot;&#xD;&#xA;     }&#xD;&#xA;]&#xD;&#xA;~~~" />
+    </element>
+    <element id="MedicationDispense.dosageInstruction.sequence">
+      <path value="MedicationDispense.dosageInstruction.sequence" />
+      <mustSupport value="false" />
+    </element>
+    <element id="MedicationDispense.dosageInstruction.text">
+      <path value="MedicationDispense.dosageInstruction.text" />
+      <definition value="Free text dosage instructions e.g. SIG. from the medication dispenser.&#xD;&#xA;&#xD;&#xA;VKP handles information from the medication dispenser given in the text element. Example text: &#xD;&#xA;VKP takes handles information about the dosage given in the text element.&#xD;&#xA;&#xD;&#xA;Example text could be: &#xD;&#xA;«10 doser medisin ble matet ut for bruk på reise.&#xD;&#xA;Første dose: 22/6 kl. 19:00. &#xD;&#xA;Siste dose: 24/6 kl. 19:00.»" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationDispense.dosageInstruction.additionalInstruction">
+      <path value="MedicationDispense.dosageInstruction.additionalInstruction" />
+      <mustSupport value="false" />
+    </element>
+    <element id="MedicationDispense.dosageInstruction.patientInstruction">
+      <path value="MedicationDispense.dosageInstruction.patientInstruction" />
+      <mustSupport value="false" />
+    </element>
+    <element id="MedicationDispense.dosageInstruction.timing">
+      <path value="MedicationDispense.dosageInstruction.timing" />
+      <mustSupport value="false" />
+    </element>
+    <element id="MedicationDispense.dosageInstruction.asNeeded[x]">
+      <path value="MedicationDispense.dosageInstruction.asNeeded[x]" />
+      <mustSupport value="false" />
+    </element>
+    <element id="MedicationDispense.dosageInstruction.site">
+      <path value="MedicationDispense.dosageInstruction.site" />
+      <mustSupport value="false" />
+    </element>
+    <element id="MedicationDispense.dosageInstruction.route">
+      <path value="MedicationDispense.dosageInstruction.route" />
+      <mustSupport value="false" />
+    </element>
+    <element id="MedicationDispense.dosageInstruction.method">
+      <path value="MedicationDispense.dosageInstruction.method" />
+      <mustSupport value="false" />
+    </element>
+    <element id="MedicationDispense.dosageInstruction.dose[x]">
+      <path value="MedicationDispense.dosageInstruction.dose[x]" />
+      <mustSupport value="false" />
+    </element>
+    <element id="MedicationDispense.dosageInstruction.maxDosePerPeriod">
+      <path value="MedicationDispense.dosageInstruction.maxDosePerPeriod" />
+      <mustSupport value="false" />
+    </element>
+    <element id="MedicationDispense.dosageInstruction.maxDosePerAdministration">
+      <path value="MedicationDispense.dosageInstruction.maxDosePerAdministration" />
+      <mustSupport value="false" />
+    </element>
+    <element id="MedicationDispense.dosageInstruction.maxDosePerLifetime">
+      <path value="MedicationDispense.dosageInstruction.maxDosePerLifetime" />
+      <mustSupport value="false" />
+    </element>
+    <element id="MedicationDispense.dosageInstruction.rate[x]">
+      <path value="MedicationDispense.dosageInstruction.rate[x]" />
+      <mustSupport value="false" />
+    </element>
+    <element id="MedicationDispense.substitution">
+      <path value="MedicationDispense.substitution" />
+      <max value="0" />
+    </element>
+    <element id="MedicationDispense.detectedIssue">
+      <path value="MedicationDispense.detectedIssue" />
+      <max value="0" />
+    </element>
+    <element id="MedicationDispense.notDone">
+      <path value="MedicationDispense.notDone" />
+      <mustSupport value="false" />
+    </element>
+    <element id="MedicationDispense.notDoneReason[x]">
+      <path value="MedicationDispense.notDoneReason[x]" />
+      <mustSupport value="false" />
+    </element>
+    <element id="MedicationDispense.eventHistory">
+      <path value="MedicationDispense.eventHistory" />
+      <mustSupport value="false" />
+    </element>
+  </differential>
+</StructureDefinition>

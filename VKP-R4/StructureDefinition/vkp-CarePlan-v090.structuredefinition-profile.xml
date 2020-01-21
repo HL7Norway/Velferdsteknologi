@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="vkp-CarePlan-v090" />
+  <url value="http://ehelse.no/fhir/StructureDefinition/vkp-CarePlan-v090" />
+  <version value="0.9.0" />
+  <name value="VkpCarePlan" />
+  <status value="draft" />
+  <date value="2020-01-20" />
+  <description value="VKP norway uses the CarePlan to describe.&#xD;&#xA;- tjenesteoversikt&#xD;&#xA;- tiltaksplan&#xD;&#xA;- besøksplan" />
+  <fhirVersion value="4.0.0" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="CarePlan" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/CarePlan" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="CarePlan">
+      <path value="CarePlan" />
+      <definition value="Describes the intention of how one or more practitioners intend to deliver care for a particular patient, group or community for a period of time, possibly limited to care for a specific condition or set of conditions.&#xD;&#xA;&#xD;&#xA;In VKP application this resource is used for transmitting what is called &quot;tjeneste&quot;, &quot;tiltaksplan&quot; and &quot;arbeidsplan&quot;. The category is given by the category code and are required to be given according to vkp-careplan-category.&#xD;&#xA;&#xD;&#xA;The actual description of the careplan is given as text information in CarePlan.activity.detail.description" />
+    </element>
+    <element id="CarePlan.identifier">
+      <path value="CarePlan.identifier" />
+      <definition value="VKP project uses UUID. &#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;~~~&#xD;&#xA;&quot;identifier&quot;: [&#xD;&#xA;     {&#xD;&#xA;         &quot;system&quot;:&quot;urn:ietf:rfc:3986&quot;,&#xD;&#xA;         &quot;value&quot;:&quot;urn:uuid:a76d9bbf-f293-4fb7-ad4c-2851cac77162&quot;&#xD;&#xA;     }&#xD;&#xA;]&#xD;&#xA;~~~&#xD;&#xA;&#xD;&#xA;This records identifiers associated with this care plan that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation)." />
+      <mustSupport value="true" />
+    </element>
+    <element id="CarePlan.identifier.system">
+      <path value="CarePlan.identifier.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="CarePlan.identifier.value">
+      <path value="CarePlan.identifier.value" />
+      <mustSupport value="true" />
+    </element>
+    <element id="CarePlan.basedOn">
+      <path value="CarePlan.basedOn" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/CarePlan" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://ehelse.no/fhir/StructureDefinition/vkp-CarePlan-v06" />
+      </type>
+    </element>
+    <element id="CarePlan.replaces">
+      <path value="CarePlan.replaces" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/CarePlan" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://ehelse.no/fhir/StructureDefinition/vkp-CarePlan-v06" />
+      </type>
+    </element>
+    <element id="CarePlan.partOf">
+      <path value="CarePlan.partOf" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/CarePlan" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://ehelse.no/fhir/StructureDefinition/vkp-CarePlan-v06" />
+      </type>
+    </element>
+    <element id="CarePlan.status">
+      <path value="CarePlan.status" />
+      <mustSupport value="true" />
+    </element>
+    <element id="CarePlan.intent">
+      <path value="CarePlan.intent" />
+      <mustSupport value="true" />
+    </element>
+    <element id="CarePlan.category">
+      <path value="CarePlan.category" />
+      <definition value="VKP-Norway uses vkp-careplan-category to identify the different kinds of care plans.  &#xD;&#xA;&#xD;&#xA;Examples: &#xD;&#xA;tiltaksplan&#xD;&#xA;tjeneste&#xD;&#xA;arbeidsplan&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;~~~&#xD;&#xA;&quot;category&quot;: [&#xD;&#xA;   {&#xD;&#xA;      &quot;coding&quot;: [&#xD;&#xA;      {&#xD;&#xA;         &quot;system&quot;:&quot;http://ehelse.no/fhir/CodeSystem/vkp-careplan-category-v06&quot;,&#xD;&#xA;         &quot;code&quot;:&quot;1&quot;,&#xD;&#xA;         &quot;display&quot;:&quot;behandlingsplan&quot;&#xD;&#xA;         }&#xD;&#xA;      ]&#xD;&#xA;   }&#xD;&#xA;]&#xD;&#xA;~~~" />
+      <min value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="CarePlanCategory" />
+        </extension>
+        <strength value="required" />
+        <description value="VKP-Norway uses vkp-careplan-category to identify the different kinds of care plans." />
+<!-- JES blir dette riktig -->
+        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-careplan-category-v06" />
+      </binding>
+    </element>
+    <element id="CarePlan.category.coding.system">
+      <path value="CarePlan.category.coding.system" />
+      <fixedUri value="http://ehelse.no/fhir/CodeSystem/vkp-careplan-category-v06" />
+    </element>
+    <element id="CarePlan.subject">
+      <path value="CarePlan.subject" />
+      <definition value="vkp-Patient is expected. Identifier should be nathional id number of the patient.&#xD;&#xA;&#xD;&#xA;Identifies the patient or group whose intended care is described by the plan.&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;~~~&#xD;&#xA; &quot;subject&quot;:{&#xD;&#xA;        &quot;identifier&quot;:{&#xD;&#xA;            &quot;system&quot;:&quot;urn:oid:2.16.578.1.12.4.1.4.1&quot;,&#xD;&#xA;            &quot;value&quot;:&quot;05073500186&quot;&#xD;&#xA;        },&#xD;&#xA;        &quot;display&quot;:&quot;Ærlend Sørgård&quot;&#xD;&#xA;    },&#xD;&#xA;~~~" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Group" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://ehelse.no/fhir/StructureDefinition/vkp-Patient" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.no/fhir/StructureDefinition/no-basis-Patient" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="CarePlan.subject.identifier">
+      <path value="CarePlan.subject.identifier" />
+      <mustSupport value="true" />
+    </element>
+    <element id="CarePlan.context">
+      <path value="CarePlan.context" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Encounter" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/EpisodeOfCare" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://ehelse.no/fhir/StructureDefinition/vkp-digital-Encounter-v06" />
+      </type>
+    </element>
+    <element id="CarePlan.period">
+      <path value="CarePlan.period" />
+      <definition value="Indicates when the plan did (or is intended to) come into effect and end.&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;~~~&#xD;&#xA;&quot;period&quot;:{&#xD;&#xA;   &quot;start&quot;:&quot;2018-04-24T10:00:00.936+02:00&quot;&#xD;&#xA;}&#xD;&#xA;~~~" />
+      <mustSupport value="true" />
+    </element>
+    <element id="CarePlan.author">
+      <path value="CarePlan.author" />
+      <definition value="Identifies the individual(s) or ogranization who is responsible for the content of the care plan.&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;~~~&#xD;&#xA;&quot;author&quot;: [&#xD;&#xA;        {&#xD;&#xA;            &quot;identifier&quot;:{&#xD;&#xA;                &quot;system&quot;:&quot;urn:oid:2.16.578.1.12.4.1.2&quot;,&#xD;&#xA;                &quot;value&quot;:&quot;102287&quot;&#xD;&#xA;            },&#xD;&#xA;            &quot;display&quot;:&quot;Sykepleietjeneste, pleie- og omsorg&quot;&#xD;&#xA;        }&#xD;&#xA;    ]&#xD;&#xA;~~~" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/CareTeam" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.no/fhir/StructureDefinition/no-basis-Practitioner" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="CarePlan.author.identifier">
+      <path value="CarePlan.author.identifier" />
+      <mustSupport value="true" />
+    </element>
+    <element id="CarePlan.author.identifier.system">
+      <path value="CarePlan.author.identifier.system" />
+      <short value="The official name of the HERid namespace" />
+      <definition value="The official name of the HERid namespace, identified by its oid value&#xD;&#xA;&#xD;&#xA;Establishes the namespace for the value - that is, a URL that describes a set values that are unique." />
+      <mustSupport value="true" />
+    </element>
+    <element id="CarePlan.author.identifier.value">
+      <path value="CarePlan.author.identifier.value" />
+      <definition value="The HERid value identifing the author of the CarePlan (could be a HealthcareService)&#xD;&#xA;The portion of the identifier typically relevant to the user and which is unique within the context of the system." />
+      <mustSupport value="true" />
+    </element>
+    <element id="CarePlan.author.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="CarePlan.author.display" />
+      <mustSupport value="true" />
+    </element>
+    <element id="CarePlan.activity">
+      <path value="CarePlan.activity" />
+      <definition value="VKP-Norway uses activity.detail element to describe the contents of a CarePlan (aktivitetsplan, tjeneste or tiltaksplan). &#xD;&#xA;&#xD;&#xA;Identifies a planned action to occur as part of the plan.  For example, a medication to be used, lab tests to perform, self-monitoring, education, etc." />
+      <mustSupport value="true" />
+    </element>
+    <element id="CarePlan.activity.detail">
+      <path value="CarePlan.activity.detail" />
+      <definition value="A simple summary of a planned activity suitable for a general care plan system (e.g. form driven) that doesn't know about specific resources such as procedure etc.&#xD;&#xA;&#xD;&#xA;VKP-Norway uses this information to describe the contents of a CarePlan (aktivitetsplan, tjeneste or tiltaksplan). &#xD;&#xA;&#xD;&#xA;Example of information in a tiltaksplan:&#xD;&#xA;~~~&#xD;&#xA;&quot;detail&quot;:{&#xD;&#xA;   &quot;extension&quot;: [&#xD;&#xA;   {&#xD;&#xA;      &quot;url&quot;:&quot;http://ehelse.no/fhir/StructureDefinition/vkp-detailheader-v05&quot;,&#xD;&#xA;      &quot;valueString&quot;:&quot;Mål&quot;&#xD;&#xA;   }&#xD;&#xA;   ],&#xD;&#xA;      &quot;status&quot;:&quot;in-progress&quot;,&#xD;&#xA;      &quot;description&quot;:&quot;27.02.2018: Trygghet ved utendørs aktivitet Reg: 27.02.2018 Aaltvedt, Vigdis (AALV) Ikke godkjent&quot;&#xD;&#xA;}&#xD;&#xA;~~~" />
+      <mustSupport value="true" />
+    </element>
+    <element id="CarePlan.activity.detail.extension">
+      <path value="CarePlan.activity.detail.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="CarePlan.activity.detail.extension:header">
+      <path value="CarePlan.activity.detail.extension" />
+      <sliceName value="header" />
+      <definition value="The header of an activity.detail, usually one of the following: &quot;Problem/Ressurs&quot;, &quot;Mål&quot;, &quot;Tiltak&quot; or &quot;Evaluering&quot;" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://ehelse.no/fhir/StructureDefinition/vkp-detailheader-v090" />
+      </type>
+    </element>
+    <element id="CarePlan.activity.detail.description">
+      <path value="CarePlan.activity.detail.description" />
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>

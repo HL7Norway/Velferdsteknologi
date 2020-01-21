@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="vkp-detailheader-v090" />
+  <url value="http://ehelse.no/fhir/StructureDefinition/vkp-detailheader-v090" />
+  <version value="0.9.0" />
+  <name value="VkpDetailHeader" />
+  <status value="draft" />
+  <date value="2020-01-20" />
+  <description value="The header of an activity.detail, usually one of the following: &quot;Problem/Ressurs&quot;, &quot;Mål&quot;, &quot;Tiltak&quot; or &quot;Evaluering&quot;&#xD;&#xA;Used for CarePlan with type of &quot;tiltaksplan&quot;." />
+  <fhirVersion value="4.0.0" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+	<type value="element"/>   
+	<expression value="CarePlan"/>
+  </context>
+  <context>
+	<type value="element"/>   
+	<expression value="BackboneElement"/>
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="The header of an activity.detail" />
+      <definition value="The header of an activity.detail" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://ehelse.no/fhir/StructureDefinition/vkp-detailheader-v090" />
+    </element>
+    <element id="Extension.value[x]:valueString">
+      <path value="Extension.valueString" />
+      <sliceName value="valueString" />
+      <short value="The header of the activity.detail" />
+      <definition value="The header of the activity.detail, explains what part of the plan is described in the activity.detail.description." />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>
