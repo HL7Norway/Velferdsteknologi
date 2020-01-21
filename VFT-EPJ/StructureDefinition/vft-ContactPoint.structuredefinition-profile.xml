@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="no-vft-ContactPoint" />
+  <url value="http://hl7.no/fhir/StructureDefinition/no-vft-ContactPoint" />
+  <name value="VftContactPoint" />
+  <title value="VftContactPoint" />
+  <status value="draft" />
+  <description value="This profile contains the elements required for contact details to be usable in a Norwegian &quot;Welfare technology&quot; context." />
+  <fhirVersion value="4.0.0" />
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="servd" />
+    <uri value="http://www.omg.org/spec/ServD/1.0/" />
+    <name value="ServD" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <type value="ContactPoint" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/ContactPoint" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="ContactPoint.system">
+      <path value="ContactPoint.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ContactPoint.value">
+      <path value="ContactPoint.value" />
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>

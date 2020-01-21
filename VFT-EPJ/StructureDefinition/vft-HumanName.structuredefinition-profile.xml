@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="no-vft-HumanName" />
+  <url value="http://hl7.no/fhir/StructureDefinition/no-vft-HumanName" />
+  <name value="VftHumanName" />
+  <title value="VftHumanName" />
+  <status value="draft" />
+  <description value="Derived from no basis HumanName." />
+  <fhirVersion value="4.0.0" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <type value="HumanName" />
+  <baseDefinition value="http://hl7.no/fhir/StructureDefinition/no-basis-HumanName" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="HumanName.family">
+      <path value="HumanName.family" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="HumanName.given">
+      <path value="HumanName.given" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>
