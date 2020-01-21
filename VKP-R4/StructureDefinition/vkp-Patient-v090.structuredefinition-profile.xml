@@ -37,7 +37,7 @@
       <sliceName value="household" />
       <type>
         <code value="Extension" />
-        <profile value="http://ehelse.no/fhir/StructureDefinition/vkp-household-v05" />
+        <profile value="http://ehelse.no/fhir/StructureDefinition/vkp-household-v090" />
       </type>
     </element>
     <element id="Patient.identifier">
