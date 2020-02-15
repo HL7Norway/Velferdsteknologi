@@ -36,9 +36,6 @@
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/CarePlan" />
-      </type>
-      <type>
-        <code value="Reference" />
         <targetProfile value="http://ehelse.no/fhir/StructureDefinition/vkp-CarePlan-v06" />
       </type>
     </element>
@@ -47,9 +44,6 @@
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/CarePlan" />
-      </type>
-      <type>
-        <code value="Reference" />
         <targetProfile value="http://ehelse.no/fhir/StructureDefinition/vkp-CarePlan-v06" />
       </type>
     </element>
@@ -58,9 +52,6 @@
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/CarePlan" />
-      </type>
-      <type>
-        <code value="Reference" />
         <targetProfile value="http://ehelse.no/fhir/StructureDefinition/vkp-CarePlan-v06" />
       </type>
     </element>
@@ -97,17 +88,8 @@
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
-      </type>
-      <type>
-        <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Group" />
-      </type>
-      <type>
-        <code value="Reference" />
         <targetProfile value="http://ehelse.no/fhir/StructureDefinition/vkp-Patient" />
-      </type>
-      <type>
-        <code value="Reference" />
         <targetProfile value="http://hl7.no/fhir/StructureDefinition/no-basis-Patient" />
       </type>
       <mustSupport value="true" />
@@ -121,13 +103,7 @@
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Encounter" />
-      </type>
-      <type>
-        <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/EpisodeOfCare" />
-      </type>
-      <type>
-        <code value="Reference" />
         <targetProfile value="http://ehelse.no/fhir/StructureDefinition/vkp-digital-Encounter-v06" />
       </type>
     </element>
@@ -142,25 +118,10 @@
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
-      </type>
-      <type>
-        <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
-      </type>
-      <type>
-        <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
-      </type>
-      <type>
-        <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization" />
-      </type>
-      <type>
-        <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/CareTeam" />
-      </type>
-      <type>
-        <code value="Reference" />
         <targetProfile value="http://hl7.no/fhir/StructureDefinition/no-basis-Practitioner" />
       </type>
       <mustSupport value="true" />
