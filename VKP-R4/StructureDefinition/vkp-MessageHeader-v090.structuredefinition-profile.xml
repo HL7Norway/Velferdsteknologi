@@ -9,7 +9,7 @@
   <name value="VkpMessageHeader" />
   <status value="draft" />
   <date value="2020-01-20" />
-  <description value="Profile of the MessageHeader resource. Used in the Norwegian Personal Connected Health project to document events from devices user at the patients home. The vkp-MessageHead is also used for transmitting information from the VKP to the response center system. vkp-Messages can contain Resources like:&#xD;&#xA;&#xD;&#xA;- vkp-MedicationDispense - to document MedicationDispense events&#xD;&#xA;- vkp-Location - to document changes of the Patients geoposition&#xD;&#xA;- vkp-Flag - to document events that need attention&#xD;&#xA;- Composition - additional information about handling of a reported event documented by the person handling that event&#xD;&#xA;- vkp-CarePlan - to document what is called &quot;tjeneste&quot;, &quot;tiltaksplan&quot; and &quot;arbeidsplan&quot;&#xD;&#xA;- vkp-digital-Encounter - to document a digital (virtual) encounter" />
+  <description value="Profile of the MessageHeader resource. Used in the Norwegian Personal Connected Health project to document events from devices  at the patients home. The vkp-MessageHead is also used for transmitting information from the VKP to the response center system. vkp-Messages can contain Resources like:&#xD;&#xA;&#xD;&#xA;- vkp-MedicationDispense - to document MedicationDispense events&#xD;&#xA;- vkp-Location - to document changes of the Patients geoposition&#xD;&#xA;- vkp-Flag - to document events that need attention&#xD;&#xA;- Composition - additional information about handling of a reported event documented by the person handling that event&#xD;&#xA;- vkp-CarePlan - to document what is called &quot;tjeneste&quot;, &quot;tiltaksplan&quot; and &quot;arbeidsplan&quot;&#xD;&#xA;- vkp-digital-Encounter - to document a digital (virtual) encounter" />
   <fhirVersion value="4.0.0" />
   <kind value="resource" />
   <abstract value="false" />
@@ -23,9 +23,45 @@
     </element>
     <element id="MessageHeader.event[x]">
       <path value="MessageHeader.event[x]" />
+      <definition value="Code that identifies the event this message represents.&#xD;&#xA;&#xD;&#xA;VKP-norway uses the vkp-message-event ValueSet Containing the vkp-message-event CodeSystem:&#xD;&#xA;&#xD;&#xA;http://ehelse.no/fhir/CodeSystem/vkp-message-event-v05&#xD;&#xA;&#xD;&#xA;Example: &#xD;&#xA;~~~&#xD;&#xA;&quot;event&quot;:{&#xD;&#xA;   &quot;system&quot;:&quot;http://ehelse.no/fhir/CodeSystem/vkp-message-event-v05&quot;,&#xD;&#xA;   &quot;code&quot;:&quot;MedicationDispense&quot;&#xD;&#xA;}&#xD;&#xA;~~~" />
+      <type>
+        <code value="Coding" />
+      </type>
       <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="MessageHeaderEvent" />
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding">
+          <valueBoolean value="true" />
+        </extension>
         <strength value="preferred" />
+        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-message-event-v05" />
       </binding>
+    </element>
+    <element id="MessageHeader.event[x].system">
+      <path value="MessageHeader.event[x].system" />
+      <definition value="VKP-norway uses: http://ehelse.no/fhir/CodeSystem/vkp-message-event-v05&#xD;&#xA;&#xD;&#xA;The identification of the code system that defines the meaning of the symbol in the code." />
+      <mustSupport value="true" />
+    </element>
+    <element id="MessageHeader.event[x].version">
+      <path value="MessageHeader.event[x].version" />
+      <definition value="Not used in VKP-norway&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged." />
+      <mustSupport value="false" />
+    </element>
+    <element id="MessageHeader.event[x].code">
+      <path value="MessageHeader.event[x].code" />
+      <definition value="VKP Norway uses coded values for the event type.&#xD;&#xA;&#xD;&#xA;A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)." />
+      <mustSupport value="true" />
+    </element>
+    <element id="MessageHeader.event[x].display">
+      <path value="MessageHeader.event[x].display" />
+      <definition value="VKP-norway don't use this element&#xD;&#xA;&#xD;&#xA;A representation of the meaning of the code in the system, following the rules of the system." />
+      <mustSupport value="false" />
+    </element>
+    <element id="MessageHeader.event[x].userSelected">
+      <path value="MessageHeader.event[x].userSelected" />
+      <definition value="VKP-norway don't use this element&#xD;&#xA;Indicates that this coding was chosen by a user directly - i.e. off a pick list of available items (codes or displays)." />
+      <mustSupport value="false" />
     </element>
     <element id="MessageHeader.destination">
       <path value="MessageHeader.destination" />
