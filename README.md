@@ -9,8 +9,7 @@ Ferdige profiler publiseres også her:
 
 
 ## Vi benytter Feature branch workflow
-![Feature branch workflow]
-(https://git.sarepta.ehelse.no/utvikling/FHIR/raw/92dff80b4b825be384908a90a3abfa7d6a8d6a46/Feature-branch-workflow.JPG)
+![Feature branch workflow](https://git.sarepta.ehelse.no/utvikling/FHIR/raw/92dff80b4b825be384908a90a3abfa7d6a8d6a46/Feature-branch-workflow.JPG)
 
 Vi baserer oss på at nye features utvikles i egne feature branches og merges inn i master branch etterhvert som de er klare. Arbeidsflyten er forklart i detalj her:
 https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow
@@ -31,7 +30,7 @@ https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workf
 | |[prosjektnavn]-[versjon].zip | Pakke med det ferdige resultatet for en versjon |
 
 ## Navngivning av filer
-Inne i katalogene benytter vi navngivningsregler fra [SIMPLIFIER Best practices] (https://simplifier.net/guide/ProfilingAcademy/Best-practices)
+Inne i katalogene benytter vi navngivningsregler fra [SIMPLIFIER Best practices](https://simplifier.net/guide/ProfilingAcademy/Best-practices)
 
 **Filnavn for profiler og extensions:**  
 vkp-Flag-v05.structuredefinition-profile.xml  
