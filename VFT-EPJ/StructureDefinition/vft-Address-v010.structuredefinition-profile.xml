@@ -2,10 +2,14 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="no-vft-Address" />
   <url value="http://hl7.no/fhir/StructureDefinition/no-vft-Address" />
+  <version value="0.1.0" />
   <name value="VftAddress" />
   <title value="VftAddress" />
   <status value="draft" />
+  <date value="2020-02-27" />
+  <publisher value="EGDE Consulting" />
   <description value="Derived from no basis Address. This profile contains the elements that should be supported when you exchange address information in the context of Norwegian welfare technology." />
+  <purpose value="This address profile provides the minimum dataset required for a VFT address. The profile also contains extensions which could be useful in a VFT context." />
   <fhirVersion value="4.0.0" />
   <kind value="complex-type" />
   <abstract value="false" />
@@ -26,34 +30,51 @@
     <element id="Address.extension:elock">
       <path value="Address.extension" />
       <sliceName value="elock" />
-      <short value="elock information" />
+      <short value="Elock information" />
       <type>
         <code value="Extension" />
         <profile value="http://hl7.no/fhir/StructureDefinition/no-vft-elock" />
+      </type>
+    </element>
+    <element id="Address.extension:secret">
+      <path value="Address.extension" />
+      <sliceName value="secret" />
+      <short value="Secret address information" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.no/fhir/StructureDefinition/no-vft-secret-address" />
       </type>
     </element>
     <element id="Address.line">
       <path value="Address.line" />
       <mustSupport value="true" />
     </element>
+    <element id="Address.line.extension">
+      <path value="Address.line.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Address.line.extension:hint">
+      <path value="Address.line.extension" />
+      <sliceName value="hint" />
+      <short value="Additional locator - hint" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator" />
+      </type>
+    </element>
     <element id="Address.city">
       <path value="Address.city" />
       <mustSupport value="true" />
     </element>
-    <element id="Address.district">
-      <path value="Address.district" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Address.state">
-      <path value="Address.state" />
-      <mustSupport value="true" />
-    </element>
     <element id="Address.postalCode">
       <path value="Address.postalCode" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Address.country">
-      <path value="Address.country" />
       <mustSupport value="true" />
     </element>
   </differential>

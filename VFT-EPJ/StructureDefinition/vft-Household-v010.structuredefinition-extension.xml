@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="no-vft-household" />
+  <url value="http://hl7.no/fhir/StructureDefinition/no-vft-household" />
+  <version value="0.1.0" />
+  <name value="VftHousehold" />
+  <title value="no-vft-household" />
+  <status value="draft" />
+  <date value="2020-02-27" />
+  <publisher value="EGDE Consulting" />
+  <description value="Important information about the household of the persons home address. Whether the person lives alone or not, pets etc." />
+  <fhirVersion value="4.0.0" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Patient" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="Additional household information" />
+      <definition value="Important information about the household of the persons home address. Whether the person lives alone or not, pets etc." />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://hl7.no/fhir/StructureDefinition/no-vft-household" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <short value="Information about the household" />
+      <definition value="Important information about the household of the persons home address. Whether the person lives alone or not, pets etc." />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

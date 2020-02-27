@@ -2,11 +2,14 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="no-vft-Patient" />
   <url value="http://hl7.no/fhir/StructureDefinition/no-vft-Patient" />
-  <version value="0.0.1" />
+  <version value="0.1.0" />
   <name value="VftPatient" />
   <title value="VftPatient" />
   <status value="draft" />
+  <date value="2020-02-27" />
+  <publisher value="EGDE Consulting" />
   <description value="Derived from no basis Patient. This profile defines the minimum patient requirements for the Norwegian &quot;Welfare technology&quot; initiative." />
+  <purpose value="Provides VFT requestors with a minimal set of information required for &quot;Welfare technology&quot;" />
   <fhirVersion value="4.0.0" />
   <kind value="resource" />
   <abstract value="false" />
@@ -14,29 +17,24 @@
   <baseDefinition value="http://hl7.no/fhir/StructureDefinition/no-basis-Patient" />
   <derivation value="constraint" />
   <differential>
-    <element id="Patient.extension:citizenship">
+    <element id="Patient.extension">
       <path value="Patient.extension" />
-      <sliceName value="citizenship" />
-    </element>
-    <element id="Patient.extension:citizenship.extension:code">
-      <path value="Patient.extension.extension" />
-      <sliceName value="code" />
-    </element>
-    <element id="Patient.extension:citizenship.extension:code.value[x]">
-      <path value="Patient.extension.extension.value[x]" />
       <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
         <rules value="open" />
       </slicing>
     </element>
-    <element id="Patient.extension:citizenship.extension:period">
-      <path value="Patient.extension.extension" />
-      <sliceName value="period" />
-    </element>
-    <element id="Patient.extension:citizenship.extension:period.value[x]">
-      <path value="Patient.extension.extension.value[x]" />
-      <slicing>
-        <rules value="open" />
-      </slicing>
+    <element id="Patient.extension:household">
+      <path value="Patient.extension" />
+      <sliceName value="household" />
+      <short value="Information about the household" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.no/fhir/StructureDefinition/no-vft-household" />
+      </type>
     </element>
     <element id="Patient.identifier">
       <path value="Patient.identifier" />
@@ -107,6 +105,7 @@
     </element>
     <element id="Patient.gender">
       <path value="Patient.gender" />
+      <min value="1" />
       <mustSupport value="true" />
     </element>
     <element id="Patient.birthDate">
@@ -120,6 +119,16 @@
         <profile value="http://hl7.no/fhir/StructureDefinition/no-vft-Address" />
       </type>
       <mustSupport value="true" />
+    </element>
+    <element id="Patient.address.line.extension:hint">
+      <path value="Patient.address.line.extension" />
+      <sliceName value="hint" />
+    </element>
+    <element id="Patient.address.line.extension:hint.value[x]">
+      <path value="Patient.address.line.extension.value[x]" />
+      <slicing>
+        <rules value="open" />
+      </slicing>
     </element>
     <element id="Patient.contact">
       <path value="Patient.contact" />
@@ -141,13 +150,6 @@
       <path value="Patient.contact.relationship.coding.code" />
       <mustSupport value="true" />
     </element>
-    <element id="Patient.contact.name">
-      <path value="Patient.contact.name" />
-      <type>
-        <code value="HumanName" />
-        <profile value="http://hl7.no/fhir/StructureDefinition/no-vft-HumanName" />
-      </type>
-    </element>
     <element id="Patient.contact.telecom">
       <path value="Patient.contact.telecom" />
       <type>
@@ -156,19 +158,14 @@
       </type>
       <mustSupport value="true" />
     </element>
-    <element id="Patient.contact.address">
-      <path value="Patient.contact.address" />
-      <type>
-        <code value="Address" />
-        <profile value="http://hl7.no/fhir/StructureDefinition/no-vft-Address" />
-      </type>
-    </element>
     <element id="Patient.generalPractitioner">
       <path value="Patient.generalPractitioner" />
+      <definition value="The general practitioner of the patient (fastlege)" />
       <mustSupport value="true" />
     </element>
     <element id="Patient.generalPractitioner.reference">
       <path value="Patient.generalPractitioner.reference" />
+      <min value="1" />
       <mustSupport value="true" />
     </element>
   </differential>
