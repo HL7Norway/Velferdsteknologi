@@ -2,10 +2,14 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="no-vft-HumanName" />
   <url value="http://hl7.no/fhir/StructureDefinition/no-vft-HumanName" />
+  <version value="0.1.0" />
   <name value="VftHumanName" />
   <title value="VftHumanName" />
   <status value="draft" />
+  <date value="2020-02-27" />
+  <publisher value="EGDE Consulting" />
   <description value="Derived from no basis HumanName." />
+  <purpose value="Minimum requirements for a human name." />
   <fhirVersion value="4.0.0" />
   <kind value="complex-type" />
   <abstract value="false" />

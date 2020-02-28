@@ -2,10 +2,14 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="no-vft-ContactPoint" />
   <url value="http://hl7.no/fhir/StructureDefinition/no-vft-ContactPoint" />
+  <version value="0.1.0" />
   <name value="VftContactPoint" />
   <title value="VftContactPoint" />
   <status value="draft" />
+  <date value="2020-02-27" />
+  <publisher value="EGDE Consulting" />
   <description value="This profile contains the elements required for contact details to be usable in a Norwegian &quot;Welfare technology&quot; context." />
+  <purpose value="Provides minimum details regarding a persons contact information." />
   <fhirVersion value="4.0.0" />
   <mapping>
     <identity value="v2" />

@@ -2,24 +2,29 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="no-vft-elock" />
   <url value="http://hl7.no/fhir/StructureDefinition/no-vft-elock" />
-  <version value="0.0.1" />
+  <version value="0.1.0" />
   <name value="VftElock" />
   <title value="no-vft-elock" />
   <status value="draft" />
-  <date value="2019-11-15" />
+  <date value="2020-02-27" />
   <publisher value="EGDE Consulting" />
-  <description value="This extension provides information about whether an e-lock is installed at the provided location." />
+  <description value="Provides information about whether an e-lock is installed at the provided location." />
+  <purpose value="Especially in the context of out patient care, information of an elock system at a given address can be useful for a caregivers access to the location." />
   <fhirVersion value="4.0.0" />
   <mapping>
     <identity value="rim" />
     <uri value="http://hl7.org/v3" />
     <name value="RIM Mapping" />
   </mapping>
-  <kind value="primitive-type" />
+  <kind value="complex-type" />
   <abstract value="false" />
   <context>
     <type value="element" />
     <expression value="Address" />
+  </context>
+  <context>
+    <type value="element" />
+    <expression value="Location" />
   </context>
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
@@ -27,9 +32,8 @@
   <differential>
     <element id="Extension">
       <path value="Extension" />
-      <short value="Information regarding e-locks at the location" />
-      <definition value="Simple extension to convey if a location has an e-lock installed or not." />
-      <max value="1" />
+      <short value="Information about elock at the location" />
+      <definition value="Name of the e-lock system installed at the location, if no name is present there is no e-lock installed at the location." />
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
@@ -37,10 +41,10 @@
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
-      <short value="e-lock boolean" />
-      <definition value="Boolean value representing the presence of an e-lock at the location. A missing value corresponds with false." />
+      <short value="Name of the e-lock system installed at the location" />
+      <definition value="Name of the e-lock system installed at the location, if no name is present there is no e-lock at the location" />
       <type>
-        <code value="boolean" />
+        <code value="string" />
       </type>
     </element>
   </differential>

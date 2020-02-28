@@ -1,0 +1,99 @@
+{
+    "resourceType": "Patient",
+    "id": "vft-example-patient",
+    "meta": {
+      "profile": [
+        "http://hl7.no/fhir/StructureDefinition/no-vft-Patient"
+      ]
+    },
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/patient-citizenship",
+        "extension": [
+          {
+            "url": "code",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "urn:iso:std:iso:3166",
+                  "code": "SWE",
+                  "display": "Sweden"
+                }
+              ],
+              "text": "Sweden"
+            }
+          }
+        ]
+      }
+    ],
+    "identifier": [
+      {
+        "system": "urn:oid:2.16.578.1.12.4.1.4.1",
+        "value": "01017012345"
+      }
+    ],
+    "name": [
+      {
+        "extension": [
+          {
+            "url": "http://hl7.no/fhir/StructureDefinition/no-basis-middlename",
+            "valueString": "Amondsen"
+          }
+        ],
+        "family": "Andre",
+        "given": [
+          "Per-Joakim"
+        ]
+      }
+    ],
+    "telecom": [
+      {
+        "system": "phone",
+        "value": "97123456"
+      },
+      {
+        "system": "email",
+        "value": "per.andre@norge.no"
+      }
+    ],
+    "gender": "male",
+    "birthDate": "1970-01-01",
+    "address": [
+      {
+        "line": [
+          "Rykeneveien 369"
+        ],
+        "city": "Bjorbekk",
+        "district": "Arendal",
+        "state": "Aust-Agder",
+        "country": "Norway"
+      }
+    ],
+    "contact": [
+      {
+        "relationship": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+                "code": "C",
+                "display": "Emergency Contact"
+              }
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "47876543"
+          }
+        ]
+      }
+    ],
+    "generalPractitioner": [
+      {
+        "reference": "Practitioner/123",
+        "display": "Albert Jonsvaag"
+      }
+    ]
+  }
