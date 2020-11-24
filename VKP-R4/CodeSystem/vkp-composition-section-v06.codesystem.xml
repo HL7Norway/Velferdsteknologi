@@ -1,0 +1,52 @@
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="vkp-composition-section-v06.codesystem" />
+  <meta>
+    <lastUpdated value="2020-11-19T15:00:50.532+02:00" />
+  </meta>
+  <url value="http://ehelse.no/fhir/CodeSystem/vkp-composition-section-v06" />
+  <version value="0.90" />
+  <name value="vkp-composition-section-v06.codesystem" />
+  <status value="draft" />
+  <publisher value="Direktoratet for e-helse" />
+  <content value="complete" />
+  <concept>
+    <code value="1" />
+    <display value="alarm_information" />
+    <definition value="Hva slags enhet/utstyr som var opphav til hendelsen" />
+  </concept>
+  <concept>
+    <code value="2" />
+    <display value="reason" />
+    <definition value="Årsak til hendelsen. Ved endring skal det legges til en ny seksjon med 'endret til + ny årsak + bruker-ID'" />
+  </concept>
+  <concept>
+    <code value="3" />
+    <display value="response_summary" />
+    <definition value="Tiltak. Ved endring skal det legges til en ny seksjon med 'endret til + nytt tiltak + bruker-ID'" />
+  </concept>
+  <concept>
+    <code value="4" />
+    <display value="response_elaboration" />
+    <definition value="Kommentar/utdypende beskrivelse av tiltak" />
+  </concept>
+  <concept>
+    <code value="5" />
+    <display value="response service calls" />
+    <definition value="Beskrivelse av samtaler startet fra responsløsningen" />
+  </concept>
+  <concept>
+    <code value="6" />
+    <display value="emergency_action" />
+    <definition value="Utrykning / overføring til hjemmetjenesten: Ansvar overført til [navn på enhet], + eventuell informasjon om avvisninger" />
+  </concept>
+  <concept>
+    <code value="7" />
+    <display value="signature" />
+    <definition value="[Navn + (bruker-ID)] for den operatøren som avsluttet / kvitterte ut hendelsen" />
+  </concept>
+  <concept>
+    <code value="8" />
+    <display value="other_operators" />
+    <definition value="[Tidspunkt + bruker-ID] for andre involverte operatører enn den som avsluttet" />
+  </concept>
+</CodeSystem>

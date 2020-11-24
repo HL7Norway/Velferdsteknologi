@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="vkp-encounterDevice-v090" />
   <url value="http://ehelse.no/fhir/StructureDefinition/vkp-encounterDevice-v090" />
@@ -33,13 +32,15 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="Extension.extension:deviceidentifier">
+    <element id="Extension.extension:deviceIdentifier">
       <path value="Extension.extension" />
-      <sliceName value="deviceidentifier" />
+      <sliceName value="deviceIdentifier" />
       <short value="logical reference to the device" />
       <definition value="The device used in the patient encounter. For example, a particular camera device&#xD;&#xA;&#xD;&#xA;VKP-norway: Should be a logical reference containing the IMEI/serial number of the device. display value should contain the name of the device type." />
+      <min value="1" />
+      <max value="1" />
     </element>
-    <element id="Extension.extension:deviceidentifier.value[x]">
+    <element id="Extension.extension:deviceIdentifier.value[x]">
       <path value="Extension.extension.value[x]" />
       <slicing>
         <discriminator>
@@ -49,7 +50,7 @@
         <rules value="closed" />
       </slicing>
     </element>
-    <element id="Extension.extension:deviceidentifier.value[x]:valueIdentifier">
+    <element id="Extension.extension:deviceIdentifier.value[x]:valueIdentifier">
       <path value="Extension.extension.value[x]" />
       <sliceName value="valueIdentifier" />
       <short value="Logical reference to the device" />
@@ -58,11 +59,11 @@
         <code value="Identifier" />
       </type>
     </element>
-    <element id="Extension.extension:deviceidentifier.value[x]:valueIdentifier.system">
+    <element id="Extension.extension:deviceIdentifier.value[x]:valueIdentifier.system">
       <path value="Extension.extension.value[x].system" />
       <min value="1" />
     </element>
-    <element id="Extension.extension:deviceidentifier.value[x]:valueIdentifier.value">
+    <element id="Extension.extension:deviceIdentifier.value[x]:valueIdentifier.value">
       <path value="Extension.extension.value[x].value" />
       <min value="1" />
     </element>
@@ -71,6 +72,8 @@
       <sliceName value="display" />
       <short value="displayname of the device" />
       <definition value="Plain text narrative that identifies the device" />
+      <min value="1" />
+      <max value="1" />
     </element>
     <element id="Extension.extension:display.value[x]">
       <path value="Extension.extension.value[x]" />
@@ -90,6 +93,51 @@
       <type>
         <code value="string" />
       </type>
+    </element>
+    <element id="Extension.extension:type">
+      <path value="Extension.extension" />
+      <sliceName value="type" />
+      <short value="Generic type of the device" />
+      <definition value="Generic type of the device, e.g. Trykknapp, Snortrekk, Roommate." />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:type.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="type" />
+    </element>
+    <element id="Extension.extension:type.value[x]:valueString">
+      <path value="Extension.extension.valueString" />
+      <sliceName value="valueString" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:typeName">
+      <path value="Extension.extension" />
+      <sliceName value="typeName" />
+      <short value="Specific type of the device" />
+      <definition value="Specific typename/model, specified by the client" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:typeName.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="typeName" />
+    </element>
+    <element id="Extension.extension:typeName.value[x]:valueString">
+      <path value="Extension.extension.valueString" />
+      <sliceName value="valueString" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:location">
+      <path value="Extension.extension" />
+      <sliceName value="location" />
+      <short value="Location of the device" />
+    </element>
+    <element id="Extension.extension:location.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="location" />
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
