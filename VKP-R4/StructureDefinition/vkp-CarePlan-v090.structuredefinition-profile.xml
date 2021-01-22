@@ -7,7 +7,7 @@
   <status value="draft" />
   <date value="2020-01-20" />
   <description value="VKP norway uses the CarePlan to describe.&#xD;&#xA;- tjenesteoversikt&#xD;&#xA;- tiltaksplan&#xD;&#xA;- besøksplan" />
-  <fhirVersion value="4.0.0" />
+  <fhirVersion value="4.0.1" />
   <kind value="resource" />
   <abstract value="false" />
   <type value="CarePlan" />
@@ -69,12 +69,8 @@
       <min value="1" />
       <mustSupport value="true" />
       <binding>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-          <valueString value="CarePlanCategory" />
-        </extension>
         <strength value="required" />
         <description value="VKP-Norway uses vkp-careplan-category to identify the different kinds of care plans." />
-<!-- JES blir dette riktig -->
         <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-careplan-category-v06" />
       </binding>
     </element>
@@ -97,15 +93,6 @@
     <element id="CarePlan.subject.identifier">
       <path value="CarePlan.subject.identifier" />
       <mustSupport value="true" />
-    </element>
-    <element id="CarePlan.context">
-      <path value="CarePlan.context" />
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Encounter" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/EpisodeOfCare" />
-        <targetProfile value="http://ehelse.no/fhir/StructureDefinition/vkp-digital-Encounter-v06" />
-      </type>
     </element>
     <element id="CarePlan.period">
       <path value="CarePlan.period" />
@@ -142,9 +129,6 @@
       <mustSupport value="true" />
     </element>
     <element id="CarePlan.author.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-        <valueBoolean value="true" />
-      </extension>
       <path value="CarePlan.author.display" />
       <mustSupport value="true" />
     </element>
@@ -181,6 +165,15 @@
     <element id="CarePlan.activity.detail.description">
       <path value="CarePlan.activity.detail.description" />
       <mustSupport value="true" />
+    </element>
+    <element id="CarePlan.context">
+      <path value="CarePlan.context" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Encounter" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/EpisodeOfCare" />
+        <targetProfile value="http://ehelse.no/fhir/StructureDefinition/vkp-digital-Encounter-v06" />
+      </type>
     </element>
   </differential>
 </StructureDefinition>

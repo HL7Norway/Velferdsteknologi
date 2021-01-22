@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="vkp-encounterDevice-v090" />
   <url value="http://ehelse.no/fhir/StructureDefinition/vkp-encounterDevice-v090" />
@@ -6,7 +7,7 @@
   <status value="draft" />
   <date value="2019-11-28" />
   <description value="Simple extension for representing device identifier" />
-  <fhirVersion value="4.0.0" />
+  <fhirVersion value="4.0.1" />
   <kind value="complex-type" />
   <abstract value="false" />
   <context>
@@ -39,6 +40,10 @@
       <definition value="The device used in the patient encounter. For example, a particular camera device&#xD;&#xA;&#xD;&#xA;VKP-norway: Should be a logical reference containing the IMEI/serial number of the device. display value should contain the name of the device type." />
       <min value="1" />
       <max value="1" />
+    </element>
+    <element id="Extension.extension:deviceIdentifier.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="deviceIdentifier" />
     </element>
     <element id="Extension.extension:deviceIdentifier.value[x]">
       <path value="Extension.extension.value[x]" />
@@ -75,6 +80,10 @@
       <min value="1" />
       <max value="1" />
     </element>
+    <element id="Extension.extension:display.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="display" />
+    </element>
     <element id="Extension.extension:display.value[x]">
       <path value="Extension.extension.value[x]" />
       <slicing>
@@ -105,8 +114,17 @@
       <path value="Extension.extension.url" />
       <fixedUri value="type" />
     </element>
+    <element id="Extension.extension:type.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+      </slicing>
+    </element>
     <element id="Extension.extension:type.value[x]:valueString">
-      <path value="Extension.extension.valueString" />
+      <path value="Extension.extension.value[x]" />
       <sliceName value="valueString" />
       <type>
         <code value="string" />
@@ -123,8 +141,17 @@
       <path value="Extension.extension.url" />
       <fixedUri value="typeName" />
     </element>
+    <element id="Extension.extension:typeName.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+      </slicing>
+    </element>
     <element id="Extension.extension:typeName.value[x]:valueString">
-      <path value="Extension.extension.valueString" />
+      <path value="Extension.extension.value[x]" />
       <sliceName value="valueString" />
       <type>
         <code value="string" />
@@ -141,7 +168,7 @@
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedString value="http://ehelse.no/fhir/StructureDefinition/vkp-encounterDevice-v090" />
+      <fixedUri value="http://ehelse.no/fhir/StructureDefinition/vkp-encounterDevice-v090" />
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />

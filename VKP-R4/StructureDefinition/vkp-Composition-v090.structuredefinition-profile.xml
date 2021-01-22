@@ -1,10 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="vkp-Composition-v090" />
   <url value="http://example.org/fhir/StructureDefinition/vkp-Composition-v090" />
   <version value="0.90" />
   <name value="VkpComposition" />
   <status value="draft" />
-  <fhirVersion value="4.0.0" />
+  <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="rim" />
     <uri value="http://hl7.org/v3" />
@@ -29,9 +30,6 @@
     <element id="Composition.category">
       <path value="Composition.category" />
       <binding>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-          <valueString value="CompositionClass" />
-        </extension>
         <strength value="required" />
         <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-composition-class-v06" />
       </binding>
@@ -39,9 +37,6 @@
     <element id="Composition.event.code">
       <path value="Composition.event.code" />
       <binding>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-          <valueString value="CompositionEvent" />
-        </extension>
         <strength value="required" />
         <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-composition-event-v06" />
       </binding>
@@ -49,9 +44,6 @@
     <element id="Composition.section.code">
       <path value="Composition.section.code" />
       <binding>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-          <valueString value="CompositionSection" />
-        </extension>
         <strength value="extensible" />
         <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-composition-section-v06" />
       </binding>

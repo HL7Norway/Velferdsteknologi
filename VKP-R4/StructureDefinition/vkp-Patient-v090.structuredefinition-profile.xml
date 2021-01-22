@@ -11,13 +11,23 @@
   <status value="draft" />
   <date value="2019-11-28" />
   <description value="Profile of the no-basis-Patient profile resource. Used in the Norwegian Personal Connected Health project to document Patient information." />
-  <fhirVersion value="4.0.0" />
+  <fhirVersion value="4.0.1" />
   <kind value="resource" />
   <abstract value="false" />
   <type value="Patient" />
   <baseDefinition value="http://hl7.no/fhir/StructureDefinition/no-basis-Patient" />
   <derivation value="constraint" />
   <differential>
+    <element id="Patient.extension">
+      <path value="Patient.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
     <element id="Patient.extension:nationality">
       <path value="Patient.extension" />
       <sliceName value="nationality" />
@@ -31,6 +41,16 @@
         <code value="Extension" />
         <profile value="http://ehelse.no/fhir/StructureDefinition/vkp-sone-v090" />
       </type>
+    </element>
+    <element id="Patient.extension:sone.value[x]">
+      <path value="Patient.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
     </element>
     <element id="Patient.extension:household">
       <path value="Patient.extension" />
@@ -61,9 +81,6 @@
       <definition value="Coded value for the relationship" />
     </element>
     <element id="Patient.contact.relationship.text">
-      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-        <valueBoolean value="true" />
-      </extension>
       <path value="Patient.contact.relationship.text" />
       <short value="Plain text representation of the relationship" />
       <definition value="Plain text representation of the relationship" />
