@@ -1,0 +1,19 @@
+{
+  "updated": "2021-01-08T16:25:50.2609369+01:00",
+  "dependencies": {
+    "hl7.fhir.no.basis": "2.0.14",
+    "simplifier.core.r4": "4.0.2",
+    "simplifier.core.r4.extensions": "4.0.0",
+    "simplifier.core.r4.profiles": "4.0.0",
+    "simplifier.core.r4.searchparameters": "4.0.0",
+    "simplifier.core.r4.tx": "4.0.0",
+    "simplifier.core.r4.conceptmaps": "4.0.0",
+    "simplifier.core.r4.valuesets": "4.0.0",
+    "simplifier.core.r4.v3codesystems": "4.0.0",
+    "simplifier.core.r4.v2tables": "4.0.0",
+    "simplifier.core.r4.base": "4.0.1",
+    "simplifier.core.r4.types": "4.0.0",
+    "simplifier.core.r4.resources": "4.0.1"
+  },
+  "missing": {}
+}

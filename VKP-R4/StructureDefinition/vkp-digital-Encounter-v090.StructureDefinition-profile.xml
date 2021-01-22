@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="vkp-digital-Encounter-v090" />
   <url value="http://ehelse.no/fhir/StructureDefinition/vkp-digital-Encounter-v090" />
@@ -63,26 +64,6 @@
         <profile value="http://ehelse.no/fhir/StructureDefinition/vkp-encounterDevice-v090" />
       </type>
     </element>
-    <element id="Encounter.extension:device.extension">
-      <path value="Encounter.extension.extension" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="url" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-    </element>
-    <element id="Encounter.extension:device.extension:deviceIdentifier">
-      <path value="Encounter.extension.extension" />
-      <sliceName value="deviceIdentifier" />
-      <max value="1" />
-    </element>
-    <element id="Encounter.extension:device.extension:display">
-      <path value="Encounter.extension.extension" />
-      <sliceName value="display" />
-      <max value="1" />
-    </element>
     <element id="Encounter.identifier">
       <path value="Encounter.identifier" />
       <definition value="Unique code or number identifying the Encounter&#xD;&#xA;&#xD;&#xA;VKP project uses UUID. &#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;~~~&#xD;&#xA;&quot;identifier&quot;: [&#xD;&#xA;     {&#xD;&#xA;         &quot;system&quot;:&quot;urn:ietf:rfc:3986&quot;,&#xD;&#xA;         &quot;value&quot;:&quot;urn:uuid:a76d9bbf-f293-4fb7-ad4c-2851cac77162&quot;&#xD;&#xA;     }&#xD;&#xA;]&#xD;&#xA;~~~" />
@@ -101,9 +82,6 @@
       <short value="Encounter class for digital Encounter" />
       <definition value="VKP uses a valueset for encounter class for digital Encounter http://ehelse.no/fhir/ValueSet/vkp-encounter-class-v06" />
       <binding>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-          <valueString value="EncounterClass" />
-        </extension>
         <strength value="required" />
         <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-encounter-class-v06" />
       </binding>
@@ -114,9 +92,6 @@
       <fixedUri value="http://ehelse.no/fhir/CodeSystem/vkp-encounter-class-v06" />
     </element>
     <element id="Encounter.classHistory">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
-        <valueString value="ClassHistory" />
-      </extension>
       <path value="Encounter.classHistory" />
       <mustSupport value="true" />
     </element>
@@ -151,11 +126,6 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="Encounter.classHistory.extension:device.extension:display">
-      <path value="Encounter.classHistory.extension.extension" />
-      <sliceName value="display" />
-      <max value="0" />
-    </element>
     <element id="Encounter.classHistory.extension:device.extension:type">
       <path value="Encounter.classHistory.extension.extension" />
       <sliceName value="type" />
@@ -175,13 +145,8 @@
       <path value="Encounter.classHistory.class" />
       <short value="Encounter class for digital Encounter" />
       <definition value="VKP uses a valueset for encounter class for digital Encounter http://ehelse.no/fhir/ValueSet/vkp-encounter-class-v06" />
-      <min value="1" />
-      <max value="1" />
       <mustSupport value="true" />
       <binding>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-          <valueString value="EncounterClass" />
-        </extension>
         <strength value="required" />
         <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-encounter-class-v06" />
       </binding>
@@ -198,8 +163,6 @@
     <element id="Encounter.classHistory.period">
       <path value="Encounter.classHistory.period" />
       <definition value="Time period for the digital encounter, the system should provide both start and end times.&#xD;&#xA;If the start-time is not known a single end time can be provided as a timestamp for the Encounter.&#xD;&#xA;&#xD;&#xA;Example code: &#xD;&#xA;~~~&#xD;&#xA;&quot;period&quot;:{&#xD;&#xA;   &quot;start&quot;:&quot;2018-06-25T09:56:23.945+02:00&quot;,&#xD;&#xA;   &quot;end&quot;:&quot;2018-06-25T10:01:03.936+02:00&quot;&#xD;&#xA;}&#xD;&#xA;~~~" />
-      <min value="1" />
-      <max value="1" />
       <mustSupport value="true" />
     </element>
     <element id="Encounter.classHistory.period.start">
@@ -218,19 +181,14 @@
       <max value="1" />
       <mustSupport value="true" />
       <binding>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-          <valueString value="EncounterType" />
-        </extension>
         <strength value="required" />
         <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-encounter-type-v05" />
       </binding>
     </element>
     <element id="Encounter.subject">
       <path value="Encounter.subject" />
-      <short value="The patient or group present at the encounter" />
       <definition value="Reference to the patient that is subject to the encounter, identified by Norwegian national id number (Fødselsnummer or DNR).&#xD;&#xA;&#xD;&#xA;A link to a resource representing the person or the group to whom the medication will be given.&#xD;&#xA;&#xD;&#xA;VKP always references a Patient Resource using a norwegian national id number (Fødselsnummer or DNR) in a logical identifier in the subject.identifier element.&#xD;&#xA;The Name of the patient should be given in the subject.display element.&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;~~~~&#xD;&#xA;&quot;subject&quot;:{&#xD;&#xA;   &quot;identifier&quot;:{&#xD;&#xA;      &quot;system&quot;:&quot;urn:oid:2.16.578.1.12.4.1.4.1&quot;,&#xD;&#xA;      &quot;value&quot;:&quot;05073500186&quot;&#xD;&#xA;     },&#xD;&#xA;     &quot;display&quot;:&quot;Ærlend Sørgård&quot;&#xD;&#xA;}&#xD;&#xA;~~~~" />
       <min value="1" />
-      <max value="1" />
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
@@ -253,9 +211,6 @@
       <mustSupport value="true" />
     </element>
     <element id="Encounter.subject.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-        <valueBoolean value="true" />
-      </extension>
       <path value="Encounter.subject.display" />
       <mustSupport value="true" />
     </element>
@@ -296,9 +251,6 @@
       <mustSupport value="true" />
     </element>
     <element id="Encounter.participant.individual.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-        <valueBoolean value="true" />
-      </extension>
       <path value="Encounter.participant.individual.display" />
       <short value="Tha name of the individual" />
       <definition value="Tha name of the individual&#xD;&#xA;&#xD;&#xA;Plain text narrative that identifies the resource in addition to the resource reference." />
@@ -309,7 +261,6 @@
       <short value="The start and end time of the digital encounter" />
       <definition value="Time period for the digital encounter, the system should provide both start and end times.&#xD;&#xA;If the start-time is not known a single end time can be provided as a timestamp for the Encounter.&#xD;&#xA;&#xD;&#xA;Example code: &#xD;&#xA;~~~&#xD;&#xA;&quot;period&quot;:{&#xD;&#xA;   &quot;start&quot;:&quot;2018-06-25T09:56:23.945+02:00&quot;,&#xD;&#xA;   &quot;end&quot;:&quot;2018-06-25T10:01:03.936+02:00&quot;&#xD;&#xA;}&#xD;&#xA;~~~" />
       <min value="1" />
-      <max value="1" />
       <mustSupport value="true" />
     </element>
     <element id="Encounter.period.start">
@@ -322,21 +273,18 @@
     </element>
     <element id="Encounter.reasonCode">
       <path value="Encounter.reasonCode" />
-      <definition value="Reason the encounter takes place, coded according to http://ehelse.no/fhir/ValueSet/vkp-encounter-reason-v05" />
+      <definition value="Reason the encounter takes place, coded according to http://ehelse.no/fhir/ValueSet/vkp-encounter-reason-v06" />
       <max value="1" />
       <mustSupport value="true" />
       <binding>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-          <valueString value="EncounterReasonCode" />
-        </extension>
         <strength value="required" />
-        <description value="vkp-encounter-reason-v05" />
-        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-encounter-reason-v05" />
+        <description value="vkp-encounter-reason-v06" />
+        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-encounter-reason-v06" />
       </binding>
     </element>
     <element id="Encounter.location">
       <path value="Encounter.location" />
-      <definition value="VKP uses this refererence to name location where the digital-Encounter takes place. Typically includes only location.location.display element with a textual description of the location.&#xD;&#xA;&#xD;&#xA;List of locations where  the patient has been during this encounter.&#xD;&#xA;" />
+      <definition value="VKP uses this refererence to name location where the digital-Encounter takes place. Typically includes only location.location.display element with a textual description of the location.&#xD;&#xA;&#xD;&#xA;List of locations where  the patient has been during this encounter." />
       <comment value="Virtual encounters can be recorded in the Encounter by specifying a location reference to a location of type &quot;kind&quot; such as &quot;client's home&quot; and an encounter.class = &quot;virtual&quot;.&#xD;&#xA;&#xD;&#xA;VKP Example:&#xD;&#xA;~~~&#xD;&#xA; &quot;location&quot;: [&#xD;&#xA;        {&#xD;&#xA;            &quot;location&quot;:{&#xD;&#xA;                &quot;display&quot;:&quot;rom24 @ sykehjem&quot;&#xD;&#xA;            }&#xD;&#xA;        }&#xD;&#xA;    ]&#xD;&#xA;~~~" />
       <mustSupport value="true" />
     </element>
@@ -346,9 +294,6 @@
       <mustSupport value="true" />
     </element>
     <element id="Encounter.location.location.display">
-      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-        <valueBoolean value="true" />
-      </extension>
       <path value="Encounter.location.location.display" />
       <definition value="The Display value for the location. In vkp the format is usually &quot;[room or room-number] @ [location name]&quot;.&#xD;&#xA;&#xD;&#xA;Plain text narrative that identifies the resource in addition to the resource reference." />
       <example>

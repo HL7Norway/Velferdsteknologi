@@ -7,13 +7,12 @@
   <status value="draft" />
   <date value="2020-02-20" />
   <description value="Annotation resource to add Annotation to any resource profile." />
-  <fhirVersion value="4.0.0" />
+  <fhirVersion value="4.0.1" />
   <kind value="complex-type" />
   <abstract value="false" />
-  <!--contextType value="resource" JES er dette greit, type er element under /-->
   <context>
-	<type value="element"/>
-	<expression value="Encounter"/>
+    <type value="element" />
+    <expression value="Encounter" />
   </context>
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
@@ -23,8 +22,17 @@
       <path value="Extension.url" />
       <fixedUri value="http://ehelse.no/fhir/StructureDefinition/vkp-annotation-v090" />
     </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+      </slicing>
+    </element>
     <element id="Extension.value[x]:valueAnnotation">
-      <path value="Extension.valueAnnotation" />
+      <path value="Extension.value[x]" />
       <sliceName value="valueAnnotation" />
       <type>
         <code value="Annotation" />

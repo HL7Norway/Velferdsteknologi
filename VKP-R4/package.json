@@ -1,0 +1,14 @@
+{
+  "name": "VKPR",
+  "version": "0.1.0",
+  "description": "Put a description here",
+  "author": null,
+  "dependencies": {
+    "hl7.fhir.no.basis": "2.0.14"
+  },
+  "fhirVersions": [
+    "4.0.0"
+  ],
+  "devDependencies": null,
+  "canonicals": null
+}
