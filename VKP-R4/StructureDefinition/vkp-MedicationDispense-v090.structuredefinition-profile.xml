@@ -26,8 +26,26 @@
         <severity value="error" />
         <human value="When category code is 19 | 20 dosageInstruction.text should be filled out" />
         <expression value="category.coding.code = '19'|'20' implies dosageInstruction.text.exists()" />
-        <source value="MedicationDispense" />
+        <source value="http://ehelse.no/fhir/StructureDefinition/vkp-MedicationDispense-v090" />
       </constraint>
+    </element>
+    <element id="MedicationDispense.extension">
+      <path value="MedicationDispense.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="MedicationDispense.extension:device">
+      <path value="MedicationDispense.extension" />
+      <sliceName value="device" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://example.org/fhir/StructureDefinition/VkpMedicationDispenseDevice-v090" />
+      </type>
     </element>
     <element id="MedicationDispense.identifier">
       <path value="MedicationDispense.identifier" />
@@ -185,6 +203,7 @@
       <short value="Identification of the Norwegian felles hjelpenumme" />
       <definition value="Identification of the Norwegian felles hjelpenummer system" />
       <min value="1" />
+      <fixedUri value="urn:oid:2.16.578.1.12.4.1.4.3" />
     </element>
     <element id="MedicationDispense.subject.identifier:FHN.value">
       <path value="MedicationDispense.subject.identifier.value" />
