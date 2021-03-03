@@ -44,7 +44,7 @@
       <sliceName value="device" />
       <type>
         <code value="Extension" />
-        <profile value="http://example.org/fhir/StructureDefinition/VkpMedicationDispenseDevice-v090" />
+        <profile value="http://ehelse.no/fhir/StructureDefinition/VkpMedicationDispenseDevice-v090" />
       </type>
     </element>
     <element id="MedicationDispense.identifier">

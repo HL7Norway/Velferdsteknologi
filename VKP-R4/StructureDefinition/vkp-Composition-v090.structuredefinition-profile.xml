@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="vkp-Composition-v090" />
-  <url value="http://example.org/fhir/StructureDefinition/vkp-Composition-v090" />
+  <url value="http://ehelse.no/fhir/StructureDefinition/vkp-Composition-v090" />
   <version value="0.90" />
   <name value="VkpComposition" />
   <status value="draft" />
@@ -33,6 +33,10 @@
         <strength value="required" />
         <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-composition-class-v06" />
       </binding>
+    </element>
+    <element id="Composition.subject">
+      <path value="Composition.subject" />
+      <min value="1" />
     </element>
     <element id="Composition.event.code">
       <path value="Composition.event.code" />

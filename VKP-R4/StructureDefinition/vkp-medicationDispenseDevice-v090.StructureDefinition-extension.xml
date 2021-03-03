@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="vkp-medicationDispenseDevice-v090" />
-  <url value="http://example.org/fhir/StructureDefinition/VkpMedicationDispenseDevice-v090" />
+  <url value="http://ehelse.no/fhir/StructureDefinition/VkpMedicationDispenseDevice-v090" />
   <version value="0.9.0" />
   <name value="VkpMedicationDispenseDevice" />
   <status value="draft" />
@@ -114,7 +114,7 @@
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://ehelse.no/fhir/StructureDefinition/vkp-medicationDispenseDevice-v090" />
+      <fixedUri value="http://ehelse.no/fhir/StructureDefinition/VkpMedicationDispenseDevice-v090" />
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
