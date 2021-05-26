@@ -9,7 +9,7 @@
   <date value="2019-11-28" />
   <description value="Important information about the household of the persons home address. Wether the person lives alone or not, pets etc." />
   <purpose value="Important information about the household of the persons home address. Wether the person lives alone or not, pets etc." />
-  <fhirVersion value="4.0.0" />
+  <fhirVersion value="4.0.1" />
   <kind value="complex-type" />
   <abstract value="false" />
   <context>
@@ -36,24 +36,22 @@
       <path value="Extension" />
       <short value="Information about the household" />
       <definition value="Important information about the household of the persons home address. Wether the person lives alone or not, pets etc." />
-      <constraint>
-        <key value="ext-1" />
-        <severity value="error" />
-        <human value="Must have either extensions or value[x], not both" />
-        <expression value="extension.exists() != value.exists()" />
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" />
-      </constraint>
-      <mapping>
-        <identity value="rim" />
-        <map value="N/A" />
-      </mapping>
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
       <fixedUri value="http://ehelse.no/fhir/StructureDefinition/vkp-household-v05" />
     </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+      </slicing>
+    </element>
     <element id="Extension.value[x]:valueString">
-      <path value="Extension.valueString" />
+      <path value="Extension.value[x]" />
       <sliceName value="valueString" />
       <short value="Information about the household" />
       <definition value="Important information about the household of the persons home address. Wether the person lives alone or not, pets etc." />

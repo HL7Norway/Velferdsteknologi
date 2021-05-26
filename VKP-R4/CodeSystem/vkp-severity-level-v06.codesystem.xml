@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CodeSystem xmlns="http://hl7.org/fhir">
-  <id value="vkp-emergency-level-v05.codesystem" />
+  <id value="vkp-severity-level-v06.codesystem" />
   <meta>
     <lastUpdated value="2017-09-12T15:00:50.532+02:00" />
   </meta>
-  <url value="http://ehelse.no/fhir/CodeSystem/vkp-emergency-level-v05" />
+  <url value="http://ehelse.no/fhir/CodeSystem/vkp-severity-level-v06" />
   <version value="0.5" />
-  <name value="vkp-emergency-level-v05.codesystem" />
+  <name value="vkp-severity-level-v06.codesystem" />
   <status value="draft" />
   <publisher value="Direktoratet for e-helse" />
   <description value="Hastegrad, samme som hastegrad AMK Volven OID 7340. Norsk Medisinsk Indeks. Denne versjonen er definert opp som FHIR CodeSystem for bruk innen kategorisering av hendelser til responssenter."/>

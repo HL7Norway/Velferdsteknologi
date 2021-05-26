@@ -13,7 +13,7 @@
   <date value="2019-11-28" />
   <description value="Information about elock installed at the location" />
   <purpose value="Information about elock installed at the location" />
-  <fhirVersion value="4.0.0" />
+  <fhirVersion value="4.0.1" />
   <kind value="complex-type" />
   <abstract value="false" />
   <context>
@@ -45,8 +45,21 @@
       <short value="Information about elock at the location" />
       <definition value="Name of the e-lock system installed at the location, if no name is present there is no e-lock installed at the location." />
     </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://ehelse.no/fhir/StructureDefinition/vkp-elock-v090" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+      </slicing>
+    </element>
     <element id="Extension.value[x]:valueString">
-      <path value="Extension.valueString" />
+      <path value="Extension.value[x]" />
       <sliceName value="valueString" />
       <short value="Name of the e-lock system installed at the location" />
       <definition value="Name of the e-lock system installed at the location, if no name is present there is no e-lock at the location" />

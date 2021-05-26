@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="vkp-severity-level-v06" />
+  <meta>
+    <lastUpdated value="2017-12-21T09:06:07.055+01:00" />
+  </meta>
+  <url value="http://ehelse.no/fhir/StructureDefinition/vkp-severity-level-v06" />
+  <version value="0.6" />
+  <name value="VkpSeverityLevel" />
+  <status value="draft" />
+  <date value="2018-09-07" />
+  <description value="Describes the severity of the Flagged event." />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Flag" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="severity level  (Norwegian)" />
+      <definition value="Description of the severity level of the event using color codes. (Norwegian codes)" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://ehelse.no/fhir/StructureDefinition/vkp-severity-level-v06" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+      </slicing>
+    </element>
+    <element id="Extension.value[x]:valueCodeableConcept">
+      <path value="Extension.value[x]" />
+      <sliceName value="valueCodeableConcept" />
+      <short value="Description of the severity level of the flagged event" />
+      <definition value="Description of the severity level of the flagged event using color codes.&#xD;&#xA;&#xD;&#xA;Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list)." />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <binding>
+        <strength value="required" />
+		<valueSet value="http://ehelse.no/fhir/ValueSet/vkp-severity-level-v06" />
+      </binding>
+    </element>
+    <element id="Extension.value[x]:valueCodeableConcept.coding.system">
+      <path value="Extension.value[x].coding.system" />
+      <fixedUri value="http://ehelse.no/fhir/ValueSet/vkp-severity-level-v06" />
+    </element>
+  </differential>
+</StructureDefinition>
