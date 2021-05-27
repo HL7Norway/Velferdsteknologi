@@ -30,9 +30,9 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="Flag.extension:severity-level">
+    <element id="Flag.extension:severityLevel">
       <path value="Flag.extension" />
-      <sliceName value="severity-level" />
+      <sliceName value="severityLevel" />
       <short value="severity level of the flagged event" />
       <definition value="Description of the severity level of the flagged event using color codes." />
       <min value="1" />

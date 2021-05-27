@@ -38,6 +38,9 @@
           <path value="$this" />
         </discriminator>
       </slicing>
+      <type>
+        <code value="CodeableConcept" />
+      </type>
     </element>
     <element id="Extension.value[x]:valueCodeableConcept">
       <path value="Extension.value[x]" />
@@ -49,7 +52,7 @@
       </type>
       <binding>
         <strength value="required" />
-		<valueSet value="http://ehelse.no/fhir/ValueSet/vkp-severity-level-v06" />
+        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-severity-level-v06" />
       </binding>
     </element>
     <element id="Extension.value[x]:valueCodeableConcept.coding.system">

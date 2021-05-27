@@ -38,6 +38,9 @@
           <path value="$this" />
         </discriminator>
       </slicing>
+      <type>
+        <code value="uri" />
+      </type>
     </element>
     <element id="Extension.value[x]:valueUri">
       <path value="Extension.value[x]" />
