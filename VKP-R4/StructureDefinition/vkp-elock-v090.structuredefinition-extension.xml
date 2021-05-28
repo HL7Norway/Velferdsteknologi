@@ -56,6 +56,7 @@
           <type value="type" />
           <path value="$this" />
         </discriminator>
+		<rules value="closed" />
       </slicing>
     </element>
     <element id="Extension.value[x]:valueString">
