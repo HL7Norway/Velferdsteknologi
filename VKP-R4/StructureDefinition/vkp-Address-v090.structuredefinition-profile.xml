@@ -21,7 +21,7 @@
           <type value="value" />
           <path value="url" />
         </discriminator>
-        <rules value="open" />
+        <rules value="closed" />
       </slicing>
     </element>
     <element id="Address.extension:elock">
@@ -39,7 +39,7 @@
           <type value="value" />
           <path value="url" />
         </discriminator>
-        <rules value="open" />
+        <rules value="closed" />
       </slicing>
     </element>
     <element id="Address.line.extension:hint">
@@ -59,6 +59,7 @@
           <type value="type" />
           <path value="$this" />
         </discriminator>
+		<rules value="closed" />
       </slicing>
     </element>
     <element id="Address.line.extension:hint.value[x]:valueString">
