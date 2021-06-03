@@ -14,20 +14,20 @@
   <concept>
     <code value="0" />
     <display value="Ikke rapportert" />
-	<definition value="Hastegraden er ikke rapportert eller ikke relevant"/>
+	<definition value="Alvorlighetsgraden er ikke rapportert eller ikke relevant"/>
   </concept>
     <concept>
-    <code value="1" />
+    <code value="10" />
     <display value="Grønn" />
 	<definition value="Lav alvorlighetsgrad."/>
   </concept>
    <concept>
-    <code value="2" />
+    <code value="20" />
     <display value="Gul" />
 	<definition value="Middels høy alvorlighetsgrad."/>
   </concept>
   <concept>
-    <code value="3" />
+    <code value="30" />
     <display value="Rød" />
 	<definition value="Høy alvorlighetsgrad."/>
   </concept>
