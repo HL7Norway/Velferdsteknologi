@@ -16,7 +16,7 @@
 		<resource>
 			<type value="Patient"/>
 			<profile>
-				<reference value="http://ehelse.no/fhir/StructureDefinition/vkp-Patient-v06"/>
+				<reference value="http://ehelse.no/fhir/StructureDefinition/vkp-Patient-v090"/>
 			</profile>
 			<interaction>
 				<code value="search-type"/>
@@ -46,7 +46,7 @@
 		<resource>
 			<type value="EpisodeOfCare"/>
 			<profile>
-				<reference value="http://ehelse.no/fhir/StructureDefinition/vkp-EpisodeOfCare-v06"/>
+				<reference value="http://ehelse.no/fhir/StructureDefinition/vkp-EpisodeOfCare-v090"/>
 			</profile>
 			<interaction>
 				<code value="search-type"/>

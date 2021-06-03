@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="vkp-digital-Encounter-v090" />
   <url value="http://ehelse.no/fhir/StructureDefinition/vkp-digital-Encounter-v090" />
-  <version value="0.6" />
+  <version value="0.9.0" />
   <name value="VkpDigitalEncounter" />
   <status value="draft" />
   <date value="2020-01-20" />
@@ -80,16 +80,16 @@
     <element id="Encounter.class">
       <path value="Encounter.class" />
       <short value="Encounter class for digital Encounter" />
-      <definition value="VKP uses a valueset for encounter class for digital Encounter http://ehelse.no/fhir/ValueSet/vkp-encounter-class-v06" />
+      <definition value="VKP uses a valueset for encounter class for digital Encounter http://ehelse.no/fhir/ValueSet/vkp-encounter-class-v090" />
       <binding>
         <strength value="required" />
-        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-encounter-class-v06" />
+        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-encounter-class-v090" />
       </binding>
     </element>
     <element id="Encounter.class.system">
       <path value="Encounter.class.system" />
-      <definition value="VKP uses http://ehelse.no/fhir/CodeSystem/vkp-encounter-class-v06&#xD;&#xA;The identification of the code system that defines the meaning of the symbol in the code." />
-      <fixedUri value="http://ehelse.no/fhir/CodeSystem/vkp-encounter-class-v06" />
+      <definition value="VKP uses http://ehelse.no/fhir/CodeSystem/vkp-encounter-class-v090&#xD;&#xA;The identification of the code system that defines the meaning of the symbol in the code." />
+      <fixedUri value="http://ehelse.no/fhir/CodeSystem/vkp-encounter-class-v090" />
     </element>
     <element id="Encounter.classHistory">
       <path value="Encounter.classHistory" />
@@ -139,16 +139,16 @@
     <element id="Encounter.classHistory.class">
       <path value="Encounter.classHistory.class" />
       <short value="Encounter class for digital Encounter" />
-      <definition value="VKP uses a valueset for encounter class for digital Encounter http://ehelse.no/fhir/ValueSet/vkp-encounter-class-v06" />
+      <definition value="VKP uses a valueset for encounter class for digital Encounter http://ehelse.no/fhir/ValueSet/vkp-encounter-class-v090" />
       <mustSupport value="true" />
       <binding>
         <strength value="required" />
-        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-encounter-class-v06" />
+        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-encounter-class-v090" />
       </binding>
     </element>
     <element id="Encounter.classHistory.class.system">
       <path value="Encounter.classHistory.class.system" />
-      <fixedUri value="http://ehelse.no/fhir/CodeSystem/vkp-encounter-class-v06" />
+      <fixedUri value="http://ehelse.no/fhir/CodeSystem/vkp-encounter-class-v090" />
       <mustSupport value="true" />
     </element>
     <element id="Encounter.classHistory.class.code">
@@ -177,7 +177,7 @@
       <mustSupport value="true" />
       <binding>
         <strength value="required" />
-        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-encounter-type-v05" />
+        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-encounter-type-v090" />
       </binding>
     </element>
     <element id="Encounter.subject">
@@ -268,13 +268,13 @@
     </element>
     <element id="Encounter.reasonCode">
       <path value="Encounter.reasonCode" />
-      <definition value="Reason the encounter takes place, coded according to http://ehelse.no/fhir/ValueSet/vkp-encounter-reason-v06" />
+      <definition value="Reason the encounter takes place, coded according to http://ehelse.no/fhir/ValueSet/vkp-encounter-reason-v090" />
       <max value="1" />
       <mustSupport value="true" />
       <binding>
         <strength value="required" />
-        <description value="vkp-encounter-reason-v06" />
-        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-encounter-reason-v06" />
+        <description value="vkp-encounter-reason-v090" />
+        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-encounter-reason-v090" />
       </binding>
     </element>
     <element id="Encounter.location">

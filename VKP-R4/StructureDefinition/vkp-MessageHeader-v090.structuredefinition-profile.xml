@@ -23,18 +23,18 @@
     </element>
     <element id="MessageHeader.event[x]">
       <path value="MessageHeader.event[x]" />
-      <definition value="Code that identifies the event this message represents.&#xD;&#xA;&#xD;&#xA;VKP-norway uses the vkp-message-event ValueSet Containing the vkp-message-event CodeSystem:&#xD;&#xA;&#xD;&#xA;http://ehelse.no/fhir/CodeSystem/vkp-message-event-v05&#xD;&#xA;&#xD;&#xA;Example: &#xD;&#xA;~~~&#xD;&#xA;&quot;event&quot;:{&#xD;&#xA;   &quot;system&quot;:&quot;http://ehelse.no/fhir/CodeSystem/vkp-message-event-v05&quot;,&#xD;&#xA;   &quot;code&quot;:&quot;MedicationDispense&quot;&#xD;&#xA;}&#xD;&#xA;~~~" />
+      <definition value="Code that identifies the event this message represents.&#xD;&#xA;&#xD;&#xA;VKP-norway uses the vkp-message-event ValueSet Containing the vkp-message-event CodeSystem:&#xD;&#xA;&#xD;&#xA;http://ehelse.no/fhir/CodeSystem/vkp-message-event-v090&#xD;&#xA;&#xD;&#xA;Example: &#xD;&#xA;~~~&#xD;&#xA;&quot;event&quot;:{&#xD;&#xA;   &quot;system&quot;:&quot;http://ehelse.no/fhir/CodeSystem/vkp-message-event-v090&quot;,&#xD;&#xA;   &quot;code&quot;:&quot;MedicationDispense&quot;&#xD;&#xA;}&#xD;&#xA;~~~" />
       <type>
         <code value="Coding" />
       </type>
       <binding>
         <strength value="preferred" />
-        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-message-event-v05" />
+        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-message-event-v090" />
       </binding>
     </element>
     <element id="MessageHeader.event[x].system">
       <path value="MessageHeader.event[x].system" />
-      <definition value="VKP-norway uses: http://ehelse.no/fhir/CodeSystem/vkp-message-event-v05&#xD;&#xA;&#xD;&#xA;The identification of the code system that defines the meaning of the symbol in the code." />
+      <definition value="VKP-norway uses: http://ehelse.no/fhir/CodeSystem/vkp-message-event-v090&#xD;&#xA;&#xD;&#xA;The identification of the code system that defines the meaning of the symbol in the code." />
       <mustSupport value="true" />
     </element>
     <element id="MessageHeader.event[x].version">

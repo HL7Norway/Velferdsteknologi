@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="vkp-medicationdispense-message-status-v090.valueset" />
+  <meta>
+    <versionId value="1" />
+    <lastUpdated value="2018-06-29T08:24:56.891+00:00" />
+  </meta>
+  <url value="http://ehelse.no/fhir/ValueSet/vkp-medicationdispense-message-status-v090" />
+  <version value="0.9.0" />
+  <name value="vkp-medicationdispense-message-status-v090.valueset" />
+  <status value="draft" />
+  <date value="2018-09-13T08:24:56.133+00:00" />
+  <publisher value="Direktoratet for e-helse" />
+  <description value="ValueSet containting codes describing the message status relevant for the vkp."/>
+  <compose>
+    <include>
+      <system value="http://hl7.org/fhir/medication-dispense-status" />
+      <concept>
+        <code value="in-progress" />
+      </concept>
+      <concept>
+        <code value="completed" />
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

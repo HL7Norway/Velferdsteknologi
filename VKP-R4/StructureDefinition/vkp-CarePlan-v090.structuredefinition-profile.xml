@@ -36,7 +36,7 @@
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/CarePlan" />
-        <targetProfile value="http://ehelse.no/fhir/StructureDefinition/vkp-CarePlan-v06" />
+        <targetProfile value="http://ehelse.no/fhir/StructureDefinition/vkp-CarePlan-v090" />
       </type>
     </element>
     <element id="CarePlan.replaces">
@@ -44,7 +44,7 @@
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/CarePlan" />
-        <targetProfile value="http://ehelse.no/fhir/StructureDefinition/vkp-CarePlan-v06" />
+        <targetProfile value="http://ehelse.no/fhir/StructureDefinition/vkp-CarePlan-v090" />
       </type>
     </element>
     <element id="CarePlan.partOf">
@@ -52,7 +52,7 @@
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/CarePlan" />
-        <targetProfile value="http://ehelse.no/fhir/StructureDefinition/vkp-CarePlan-v06" />
+        <targetProfile value="http://ehelse.no/fhir/StructureDefinition/vkp-CarePlan-v090" />
       </type>
     </element>
     <element id="CarePlan.status">
@@ -65,18 +65,18 @@
     </element>
     <element id="CarePlan.category">
       <path value="CarePlan.category" />
-      <definition value="VKP-Norway uses vkp-careplan-category to identify the different kinds of care plans.  &#xD;&#xA;&#xD;&#xA;Examples: &#xD;&#xA;tiltaksplan&#xD;&#xA;tjeneste&#xD;&#xA;arbeidsplan&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;~~~&#xD;&#xA;&quot;category&quot;: [&#xD;&#xA;   {&#xD;&#xA;      &quot;coding&quot;: [&#xD;&#xA;      {&#xD;&#xA;         &quot;system&quot;:&quot;http://ehelse.no/fhir/CodeSystem/vkp-careplan-category-v06&quot;,&#xD;&#xA;         &quot;code&quot;:&quot;1&quot;,&#xD;&#xA;         &quot;display&quot;:&quot;behandlingsplan&quot;&#xD;&#xA;         }&#xD;&#xA;      ]&#xD;&#xA;   }&#xD;&#xA;]&#xD;&#xA;~~~" />
+      <definition value="VKP-Norway uses vkp-careplan-category to identify the different kinds of care plans.  &#xD;&#xA;&#xD;&#xA;Examples: &#xD;&#xA;tiltaksplan&#xD;&#xA;tjeneste&#xD;&#xA;arbeidsplan&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;~~~&#xD;&#xA;&quot;category&quot;: [&#xD;&#xA;   {&#xD;&#xA;      &quot;coding&quot;: [&#xD;&#xA;      {&#xD;&#xA;         &quot;system&quot;:&quot;http://ehelse.no/fhir/CodeSystem/vkp-careplan-category-v090&quot;,&#xD;&#xA;         &quot;code&quot;:&quot;1&quot;,&#xD;&#xA;         &quot;display&quot;:&quot;behandlingsplan&quot;&#xD;&#xA;         }&#xD;&#xA;      ]&#xD;&#xA;   }&#xD;&#xA;]&#xD;&#xA;~~~" />
       <min value="1" />
       <mustSupport value="true" />
       <binding>
         <strength value="required" />
         <description value="VKP-Norway uses vkp-careplan-category to identify the different kinds of care plans." />
-        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-careplan-category-v06" />
+        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-careplan-category-v090" />
       </binding>
     </element>
     <element id="CarePlan.category.coding.system">
       <path value="CarePlan.category.coding.system" />
-      <fixedUri value="http://ehelse.no/fhir/CodeSystem/vkp-careplan-category-v06" />
+      <fixedUri value="http://ehelse.no/fhir/CodeSystem/vkp-careplan-category-v090" />
     </element>
     <element id="CarePlan.subject">
       <path value="CarePlan.subject" />
@@ -139,7 +139,7 @@
     </element>
     <element id="CarePlan.activity.detail">
       <path value="CarePlan.activity.detail" />
-      <definition value="A simple summary of a planned activity suitable for a general care plan system (e.g. form driven) that doesn't know about specific resources such as procedure etc.&#xD;&#xA;&#xD;&#xA;VKP-Norway uses this information to describe the contents of a CarePlan (aktivitetsplan, tjeneste or tiltaksplan). &#xD;&#xA;&#xD;&#xA;Example of information in a tiltaksplan:&#xD;&#xA;~~~&#xD;&#xA;&quot;detail&quot;:{&#xD;&#xA;   &quot;extension&quot;: [&#xD;&#xA;   {&#xD;&#xA;      &quot;url&quot;:&quot;http://ehelse.no/fhir/StructureDefinition/vkp-detailheader-v05&quot;,&#xD;&#xA;      &quot;valueString&quot;:&quot;Mål&quot;&#xD;&#xA;   }&#xD;&#xA;   ],&#xD;&#xA;      &quot;status&quot;:&quot;in-progress&quot;,&#xD;&#xA;      &quot;description&quot;:&quot;27.02.2018: Trygghet ved utendørs aktivitet Reg: 27.02.2018 Aaltvedt, Vigdis (AALV) Ikke godkjent&quot;&#xD;&#xA;}&#xD;&#xA;~~~" />
+      <definition value="A simple summary of a planned activity suitable for a general care plan system (e.g. form driven) that doesn't know about specific resources such as procedure etc.&#xD;&#xA;&#xD;&#xA;VKP-Norway uses this information to describe the contents of a CarePlan (aktivitetsplan, tjeneste or tiltaksplan). &#xD;&#xA;&#xD;&#xA;Example of information in a tiltaksplan:&#xD;&#xA;~~~&#xD;&#xA;&quot;detail&quot;:{&#xD;&#xA;   &quot;extension&quot;: [&#xD;&#xA;   {&#xD;&#xA;      &quot;url&quot;:&quot;http://ehelse.no/fhir/StructureDefinition/vkp-detailheader-v090&quot;,&#xD;&#xA;      &quot;valueString&quot;:&quot;Mål&quot;&#xD;&#xA;   }&#xD;&#xA;   ],&#xD;&#xA;      &quot;status&quot;:&quot;in-progress&quot;,&#xD;&#xA;      &quot;description&quot;:&quot;27.02.2018: Trygghet ved utendørs aktivitet Reg: 27.02.2018 Aaltvedt, Vigdis (AALV) Ikke godkjent&quot;&#xD;&#xA;}&#xD;&#xA;~~~" />
       <mustSupport value="true" />
     </element>
     <element id="CarePlan.activity.detail.extension">

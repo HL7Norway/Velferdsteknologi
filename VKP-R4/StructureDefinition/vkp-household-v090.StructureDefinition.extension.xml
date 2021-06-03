@@ -39,7 +39,7 @@
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://ehelse.no/fhir/StructureDefinition/vkp-household-v05" />
+      <fixedUri value="http://ehelse.no/fhir/StructureDefinition/vkp-household-v090" />
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />

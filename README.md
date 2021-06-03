@@ -33,11 +33,11 @@ https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workf
 Inne i katalogene benytter vi navngivningsregler fra [SIMPLIFIER Best practices](https://simplifier.net/guide/ProfilingAcademy/Best-practices)
 
 **Filnavn for profiler og extensions:**  
-vkp-Flag-v05.structuredefinition-profile.xml  
-vkp-additionalpositiondata-v05.structuredefinition-extension.xml  
+vkp-Flag-v090.structuredefinition-profile.xml  
+vkp-additionalpositiondata-v090.structuredefinition-extension.xml  
 
 **URL'ene i koden:**  
-http://ehelse.no/fhir/StructureDefinition/vkp-Flag-v05
+http://ehelse.no/fhir/StructureDefinition/vkp-Flag-v090
 
 ## kontakt
 

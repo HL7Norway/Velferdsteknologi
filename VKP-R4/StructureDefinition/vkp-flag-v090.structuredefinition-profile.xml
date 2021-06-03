@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="vkp-Flag-v06" />
+  <id value="vkp-Flag-v090" />
   <meta>
     <lastUpdated value="2017-12-21T09:07:03.955+01:00" />
   </meta>
@@ -8,7 +8,7 @@
     <valueCode value="pc" />
   </extension>
   <url value="http://ehelse.no/fhir/StructureDefinition/vkp-Flag-v090" />
-  <version value="0.6" />
+  <version value="0.9.0" />
   <name value="VkpFlag" />
   <status value="draft" />
   <date value="2018-09-07" />
@@ -39,7 +39,7 @@
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://ehelse.no/fhir/StructureDefinition/vkp-severity-level-v06" />
+        <profile value="http://ehelse.no/fhir/StructureDefinition/vkp-severity-level-v090" />
       </type>
     </element>
     <element id="Flag.extension:displayURL">
@@ -50,7 +50,7 @@
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://ehelse.no/fhir/StructureDefinition/vkp-displayURL-v06" />
+        <profile value="http://ehelse.no/fhir/StructureDefinition/vkp-displayURL-v090" />
       </type>
     </element>
     <element id="Flag.extension:observationreference">

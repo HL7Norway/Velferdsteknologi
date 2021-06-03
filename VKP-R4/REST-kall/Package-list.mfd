@@ -233,7 +233,7 @@
 						<wsdl/>
 					</data>
 				</component>
-				<component name="vkp-ImplementationGuide-v06" library="xml" uid="7" kind="14">
+				<component name="vkp-ImplementationGuide-v090" library="xml" uid="7" kind="14">
 					<properties XSLTTargetEncoding="UTF-8"/>
 					<view ltx="29" lty="103" rbx="335" rby="495"/>
 					<data>
@@ -268,7 +268,7 @@
 								</entry>
 							</entry>
 						</root>
-						<document schema="..\StructureDefinition\vkp-ImplementationGuide-v06.xsd" inputinstance="..\StructureDefinition\vkp-ImplementationGuide-v06.xml" outputinstance="..\StructureDefinition\vkp-ImplementationGuide-v06.xml" instanceroot="{http://hl7.org/fhir}ImplementationGuide"/>
+						<document schema="..\StructureDefinition\vkp-ImplementationGuide-v090.xsd" inputinstance="..\StructureDefinition\vkp-ImplementationGuide-v090.xml" outputinstance="..\StructureDefinition\vkp-ImplementationGuide-v090.xml" instanceroot="{http://hl7.org/fhir}ImplementationGuide"/>
 						<wsdl/>
 					</data>
 				</component>

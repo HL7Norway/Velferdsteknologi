@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="vkp-severity-level-v090.codesystem" />
+  <meta>
+    <lastUpdated value="2017-09-12T15:00:50.532+02:00" />
+  </meta>
+  <url value="http://ehelse.no/fhir/CodeSystem/vkp-severity-level-v090" />
+  <version value="0.9.0" />
+  <name value="vkp-severity-level-v090.codesystem" />
+  <status value="draft" />
+  <publisher value="Direktoratet for e-helse" />
+  <description value="Alvorlighetsgrad for varsler."/>
+  <content value="complete" />
+  <concept>
+    <code value="0" />
+    <display value="Ikke rapportert" />
+	<definition value="Hastegraden er ikke rapportert eller ikke relevant"/>
+  </concept>
+    <concept>
+    <code value="1" />
+    <display value="Grønn" />
+	<definition value="Lav alvorlighetsgrad."/>
+  </concept>
+   <concept>
+    <code value="2" />
+    <display value="Gul" />
+	<definition value="Middels høy alvorlighetsgrad."/>
+  </concept>
+  <concept>
+    <code value="3" />
+    <display value="Rød" />
+	<definition value="Høy alvorlighetsgrad."/>
+  </concept>
+</CodeSystem>

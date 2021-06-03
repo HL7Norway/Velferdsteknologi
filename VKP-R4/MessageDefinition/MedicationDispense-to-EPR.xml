@@ -8,7 +8,7 @@
 	- Composition - additional information about handling of a reported event documented by the person handling that event
 	- Flag - should be present when the MedicationDispense needs special attention by the receiver "/>
 	<event>
-		<system value="http://ehelse.no/fhir/CodeSystem/vkp-message-event-v05"/>
+		<system value="http://ehelse.no/fhir/CodeSystem/vkp-message-event-v090"/>
 		<code value="MedicationDispense"/>
 	</event>
 	<focus>
@@ -19,7 +19,7 @@
 	<focus>
 		<code id="MedicationDispense"/>
 		<profile>
-			<reference value="http://ehelse.no/fhir/StructureDefinition/vkp-MedicationDispense-v05"/>
+			<reference value="http://ehelse.no/fhir/StructureDefinition/vkp-MedicationDispense-v090"/>
 		</profile>
 		<min value="1"/>
 		<max value="1"/>

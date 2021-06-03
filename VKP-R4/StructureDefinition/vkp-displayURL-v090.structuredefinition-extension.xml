@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="vkp-displayURL-v090" />
+  <meta>
+    <lastUpdated value="2017-12-14T16:06:37.334+01:00" />
+  </meta>
+  <url value="http://ehelse.no/fhir/StructureDefinition/vkp-displayURL-v090" />
+  <version value="0.9.0" />
+  <name value="VkpDisplayURL" />
+  <status value="draft" />
+  <date value="2017-06-02T16:08:09.7914111+02:00" />
+  <description value="URL to show the event data to user in some web interface" />
+  <purpose value="URL" />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Flag" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="URL to show the event data to a user" />
+      <definition value="URL to show the event data to user in some web interface" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://ehelse.no/fhir/StructureDefinition/vkp-displayURL-v090" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+		 <rules value="closed" />
+      </slicing>
+      <type>
+        <code value="uri" />
+      </type>
+    </element>
+    <element id="Extension.value[x]:valueUri">
+      <path value="Extension.value[x]" />
+      <sliceName value="valueUri" />
+      <type>
+        <code value="uri" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

@@ -1,0 +1,15 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="vkp-section-code" />
+  <url value="http://ehelse.no/fhir/ValueSet/vkp-composition-event-v090" />
+  <version value="0.9.0" />
+  <name value="vkp-composition-event-v090.valueset" />
+  <status value="draft" />
+  <experimental value="true" />
+  <publisher value="Direktoratet for e-helse" />
+  <immutable value="false" />
+  <compose>
+    <include>
+      <system value="http://ehelse.no/fhir/CodeSystem/vkp-composition-event-v090" />
+    </include>
+  </compose>
+</ValueSet>

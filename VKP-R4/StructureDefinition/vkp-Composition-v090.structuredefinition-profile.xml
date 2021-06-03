@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="vkp-Composition-v090" />
   <url value="http://ehelse.no/fhir/StructureDefinition/vkp-Composition-v090" />
-  <version value="0.90" />
+   <version value="0.9.0" />
   <name value="VkpComposition" />
   <status value="draft" />
   <fhirVersion value="4.0.1" />
@@ -31,7 +31,7 @@
       <path value="Composition.category" />
       <binding>
         <strength value="required" />
-        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-composition-class-v06" />
+        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-composition-class-v090" />
       </binding>
     </element>
     <element id="Composition.subject">
@@ -42,14 +42,14 @@
       <path value="Composition.event.code" />
       <binding>
         <strength value="required" />
-        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-composition-event-v06" />
+        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-composition-event-v090" />
       </binding>
     </element>
     <element id="Composition.section.code">
       <path value="Composition.section.code" />
       <binding>
         <strength value="extensible" />
-        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-composition-section-v06" />
+        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-composition-section-v090" />
       </binding>
     </element>
   </differential>

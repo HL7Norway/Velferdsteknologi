@@ -75,17 +75,17 @@
       <definition value="A code specifying the state of the set of dispense events.&#xD;&#xA;&#xD;&#xA;The VKP project uses a subset of the message-status (http://hl7.org/fhir/medication-admin-status) CodeSystem containing the codes:&#xD;&#xA;- in-progress&#xD;&#xA;- completed - Normal reporting of medication dispenced should have status completed" />
       <binding>
         <strength value="required" />
-        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-medicationdispense-message-status-v05" />
+        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-medicationdispense-message-status-v090" />
       </binding>
     </element>
     <element id="MedicationDispense.category">
       <path value="MedicationDispense.category" />
       <short value="Event types when medication dispencer performs the medication dispense" />
-      <definition value="Event types when medication dispencer performs the medication dispense. Values from http://ehelse.no/fhir/CodeSystem/vkp-medicationdispense-events-v06 is required" />
+      <definition value="Event types when medication dispencer performs the medication dispense. Values from http://ehelse.no/fhir/CodeSystem/vkp-medicationdispense-events-v090 is required" />
       <min value="1" />
       <binding>
         <strength value="required" />
-        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-medicationdispense-events-v06" />
+        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-medicationdispense-events-v090" />
       </binding>
     </element>
     <element id="MedicationDispense.category.coding">
