@@ -42,22 +42,11 @@
         <profile value="http://ehelse.no/fhir/StructureDefinition/vkp-severity-level-v090" />
       </type>
     </element>
-    <element id="Flag.extension:displayURL">
+    <element id="Flag.extension:detail">
       <path value="Flag.extension" />
-      <sliceName value="displayURL" />
-      <short value="Url for the alarm" />
-      <definition value="Url to open the alarm in a browser" />
-      <max value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://ehelse.no/fhir/StructureDefinition/vkp-displayURL-v090" />
-      </type>
-    </element>
-    <element id="Flag.extension:observationreference">
-      <path value="Flag.extension" />
-      <sliceName value="observationreference" />
+      <sliceName value="detail" />
       <short value="Reference to observation" />
-      <definition value="Reference to the observation or other resource that contains more information about the event triggering the flag" />
+      <definition value="Reference to the observation or other resource that contains more information about the event triggering the flag.&#xD;&#xA;If the flag represents a missing observation, detail.reference shall contain the LOINC-code of the observation type, and detail.display shall contain the human readable name." />
       <max value="1" />
       <type>
         <code value="Extension" />
