@@ -49,4 +49,9 @@
     <display value="other_operators" />
     <definition value="[Tidspunkt + bruker-ID] for andre involverte operatører enn den som avsluttet" />
   </concept>
+  <concept>
+    <code value="9" />
+    <display value="note" />
+    <definition value="Seksjon for generelle journalnotater" />
+  </concept>
 </CodeSystem>

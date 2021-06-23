@@ -53,12 +53,6 @@
         <profile value="http://hl7.org/fhir/StructureDefinition/flag-detail" />
       </type>
     </element>
-    <element id="Flag.identifier:alarmid">
-      <path value="Flag.identifier" />
-      <sliceName value="alarmid" />
-      <min value="1" />
-      <max value="1" />
-    </element>
     <element id="Flag.code">
       <path value="Flag.code" />
       <definition value="Used in the PCH Norway project to enter text to be displayed to the user describing the Flagged event. in Code.text attribute" />

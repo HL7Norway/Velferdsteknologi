@@ -12,47 +12,7 @@
   <content value="complete" />
   <concept>
     <code value="0" />
-    <display value="pasient_oppfolging" />
+    <display value="Pasientoppfolging" />
     <definition value="Notat om tjenestens pasientoppfølging" />
-  </concept>
-  <concept>
-	  <code value="1" />
-	  <display value="respons_notat" />
-	  <definition value="Responstjenestenotat" />
-  </concept>
-  <concept>
-	  <code value="2"/>
-	  <display value="ikke_respons"/>
-	  <definition value="Hendelse som ikke skal journalføres"/>
-  </concept>
-  <concept>
-	  <code value="3"/>
-	  <display value="tiltaksplan"/>
-	  <definition value="Oversikt over tiltak som skal bidra til å oppnå gitte mål, knyttet til et spesifikt behov / en helsemessig utfordring"/>
-  </concept>
-      <concept>
-	  <code value="4"/>
-	  <display value="trygghetsalarm"/>
-	  <definition value="Trygghetsalarm"/>
-  </concept>
-   <concept>
-	  <code value="5"/>
-	  <display value="lokalisering"/>
-	  <definition value="Lokalisering"/>
-  </concept>
-    <concept>
-	  <code value="6"/>
-	  <display value="digitalt_tilsyn"/>
-	  <definition value="Digitalt tilsyn"/>
-  </concept>
-    <concept>
-	  <code value="7"/>
-	  <display value="pasientvarsling_institusjon"/>
-	  <definition value="Pasientvarsling"/>
-  </concept>
-    <concept>
-	  <code value="8"/>
-	  <display value="medisineringstjeneste"/>
-	  <definition value="Medisinering"/>
   </concept>
 </CodeSystem>
