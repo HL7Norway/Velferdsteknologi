@@ -122,4 +122,9 @@
     <display value="mislykket_brukeranrop" />
     <definition value="Mislykket brukeranrop" />
   </concept>
+   <concept>
+    <code value="23" />
+    <display value="inaktivitet_bad" />
+    <definition value="Uventet langt opphold på badet" />
+  </concept>
 </CodeSystem>
