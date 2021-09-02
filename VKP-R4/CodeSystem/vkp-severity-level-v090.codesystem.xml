@@ -18,17 +18,22 @@
   </concept>
     <concept>
     <code value="10" />
-    <display value="Grønn" />
-	<definition value="Lav alvorlighetsgrad."/>
+    <display value="Normal" />
+	<definition value="Normal/lav alvorlighetsgrad."/>
   </concept>
    <concept>
     <code value="20" />
-    <display value="Gul" />
-	<definition value="Middels høy alvorlighetsgrad."/>
+    <display value="Moderat" />
+	<definition value="Moderat alvorlighetsgrad."/>
   </concept>
   <concept>
     <code value="30" />
-    <display value="Rød" />
+    <display value="Alvorlig" />
 	<definition value="Høy alvorlighetsgrad."/>
+  </concept>
+    <concept>
+    <code value="40" />
+    <display value="Krisisk" />
+	<definition value="Kritisk alvorlighetsgrad."/>
   </concept>
 </CodeSystem>
