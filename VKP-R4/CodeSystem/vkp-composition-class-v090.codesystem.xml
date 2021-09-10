@@ -11,8 +11,13 @@
   <publisher value="Direktoratet for e-helse" />
   <content value="complete" />
   <concept>
-    <code value="0" />
+    <code value="1" />
+    <display value="Trygghet og mestring" />
+    <definition value="Notat om pasientoppfølging innen trygghet og mestring" />
+  </concept>
+  <concept>
+    <code value="2" />
     <display value="Pasientoppfolging" />
-    <definition value="Notat om tjenestens pasientoppfølging" />
+    <definition value="Notat om pasientoppfølging innen digital hjemmeoppfølging" />
   </concept>
 </CodeSystem>
