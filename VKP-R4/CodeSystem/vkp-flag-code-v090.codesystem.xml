@@ -6,53 +6,50 @@
 		<lastUpdated value="2018-06-27T10:48:34.405+00:00"/>
 	</meta>
 	<url value="http://ehelse.no/fhir/CodeSystem/vkp-flag-code-v090"/>
-	<version value="0.9.0" />
+	<version value="0.9.0"/>
 	<name value="vkp-flag-code-v090.codesystem"/>
 	<status value="draft"/>
 	<date value="2018-06-27T10:48:33.551+00:00"/>
 	<publisher value="Direktoratet for e-helse"/>
 	<content value="complete"/>
-	
+	<concept>
+		<code value="0"/>
+		<display value="Oppsummerende varsel"/>
+		<definition value="Varsel som dekker flere undervarsler"/>
+	</concept>
 	<concept>
 		<code value="1"/>
 		<display value="Handling utført"/>
 		<definition value="Handling utført"/>
 	</concept>
-	
 	<concept>
 		<code value="1.1"/>
 		<display value="Måledata rapportert"/>
 		<definition value="Måledata rapportert"/>
 	</concept>
-	
 	<concept>
 		<code value="1.2"/>
 		<display value="Skjemabesvarelse"/>
 		<definition value="Skjemabesvarelse"/>
 	</concept>
-	
 	<concept>
 		<code value="1.3"/>
 		<display value="Annen handling utført"/>
 		<definition value="Annen handling utført"/>
 	</concept>
-	
 	<concept>
 		<code value="2"/>
 		<display value="Inaktiv pasient"/>
 		<definition value="Inaktiv pasient"/>
 	</concept>
-	
 	<concept>
 		<code value="2.1"/>
 		<display value="Manglende skjemabesvarelse"/>
 		<definition value="Manglende skjemabesvarelse"/>
 	</concept>
-	
 	<concept>
 		<code value="2.2"/>
 		<display value="Måling ikke rapportert"/>
 		<definition value="Måling ikke rapportert"/>
 	</concept>
-	
 </CodeSystem>

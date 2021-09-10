@@ -33,7 +33,7 @@
   </concept>
     <concept>
     <code value="40" />
-    <display value="Krisisk" />
+    <display value="Kritisk" />
 	<definition value="Kritisk alvorlighetsgrad."/>
   </concept>
 </CodeSystem>
