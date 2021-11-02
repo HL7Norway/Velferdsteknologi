@@ -30,12 +30,14 @@
         </discriminator>
         <rules value="open" />
       </slicing>
+      <min value="1" />
     </element>
     <element id="Encounter.extension:note">
       <path value="Encounter.extension" />
       <sliceName value="note" />
       <short value="A journal note" />
       <definition value="A journal note to document the digital encounter.&#xD;&#xA;Can be XHTML formatted text.&#xD;&#xA;In the VKP project in Norway the note is used for: &#xD;&#xA;Response summary: A text describing the resolution of the digital-Encounter event&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;~~~&#xD;&#xA;{&#xD;&#xA;      &quot;url&quot;:&quot;http://ehelse.no/fhir/StructureDefinition/vkp-annotation-v090&quot;,&#xD;&#xA;      &quot;extension&quot;: [&#xD;&#xA;          {&#xD;&#xA;              &quot;url&quot;:&quot;note&quot;,&#xD;&#xA;             &quot;valueAnnotation&quot;:{&#xD;&#xA;                  &quot;authorReference&quot;:{&#xD;&#xA;                      &quot;identifier&quot;:{&#xD;&#xA;                          &quot;system&quot;:&quot;urn:oid:2.16.578.1.12.4.1.4.1&quot;,&#xD;&#xA;                          &quot;value&quot;:&quot;04056600324&quot;&#xD;&#xA;                     },&#xD;&#xA;                      &quot;display&quot;:&quot;Magnar Koman&quot;&#xD;&#xA;                  },&#xD;&#xA;                  &quot;time&quot;:&quot;2018-06-25T08:00:00.936Z&quot;,&#xD;&#xA;                  &quot;text&quot;:&quot;Selve teksten til journalnotatet.&quot;&#xD;&#xA;              }&#xD;&#xA;          }&#xD;&#xA;      ]&#xD;&#xA;}&#xD;&#xA;~~~" />
+      <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -52,16 +54,6 @@
       <type>
         <code value="Extension" />
         <profile value="http://ehelse.no/fhir/StructureDefinition/vkp-annotation-v090" />
-      </type>
-    </element>
-    <element id="Encounter.extension:device">
-      <path value="Encounter.extension" />
-      <sliceName value="device" />
-      <definition value="The device used in the patient encounter. For example, a particular camera device&#xD;&#xA;&#xD;&#xA;VKP-norway: Should be a logical reference containing the IMEI/serial number of the device. display value should contain the name of the device type.&#xD;&#xA;Could also contain a display name of the device" />
-      <min value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://ehelse.no/fhir/StructureDefinition/vkp-encounterDevice-v090" />
       </type>
     </element>
     <element id="Encounter.identifier">
@@ -104,37 +96,19 @@
         </discriminator>
         <rules value="open" />
       </slicing>
+      <min value="1" />
     </element>
-    <element id="Encounter.classHistory.extension:device">
+    <element id="Encounter.classHistory.extension:deviceReference">
       <path value="Encounter.classHistory.extension" />
-      <sliceName value="device" />
-      <definition value="Devices used during the patient encounter. For example, a particular camera device.&#xD;&#xA;&#xD;&#xA;VKP-norway: Should contain a displaynames of the devices" />
+      <sliceName value="deviceReference" />
+      <short value="Logical reference to the device" />
+      <definition value="Device used during the patient encounter. For example, a particular camera device." />
       <min value="1" />
       <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://ehelse.no/fhir/StructureDefinition/vkp-encounterDevice-v090" />
+        <profile value="http://ehelse.no/fhir/StructureDefinition/vkp-deviceReference-v090" />
       </type>
-    </element>
-    <element id="Encounter.classHistory.extension:device.extension">
-      <path value="Encounter.classHistory.extension.extension" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="url" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-    </element>
-    <element id="Encounter.classHistory.extension:device.extension:typeName">
-      <path value="Encounter.classHistory.extension.extension" />
-      <sliceName value="typeName" />
-      <max value="0" />
-    </element>
-    <element id="Encounter.classHistory.extension:device.extension:location">
-      <path value="Encounter.classHistory.extension.extension" />
-      <sliceName value="location" />
-      <max value="0" />
     </element>
     <element id="Encounter.classHistory.class">
       <path value="Encounter.classHistory.class" />

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="vkp-detectedissue-v090" />
+  <url value="http://ehelse.no/fhir/StructureDefinition/vkp-DetectedIssue-v090" />
+  <version value="0.9.0" />
+  <name value="VkpDetectedIssue" />
+  <status value="draft" />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="DetectedIssue" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/DetectedIssue" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="DetectedIssue.code">
+      <path value="DetectedIssue.code" />
+      <short value="The type of alert that thiis detected issue represents." />
+      <min value="1" />
+      <binding>
+        <strength value="preferred" />
+        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-alert-code-v090" />
+      </binding>
+    </element>
+  </differential>
+</StructureDefinition>

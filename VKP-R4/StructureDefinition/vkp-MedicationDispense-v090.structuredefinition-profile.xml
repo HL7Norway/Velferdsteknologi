@@ -29,24 +29,6 @@
         <source value="http://ehelse.no/fhir/StructureDefinition/vkp-MedicationDispense-v090" />
       </constraint>
     </element>
-    <element id="MedicationDispense.extension">
-      <path value="MedicationDispense.extension" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="url" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-    </element>
-    <element id="MedicationDispense.extension:device">
-      <path value="MedicationDispense.extension" />
-      <sliceName value="device" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://ehelse.no/fhir/StructureDefinition/VkpMedicationDispenseDevice-v090" />
-      </type>
-    </element>
     <element id="MedicationDispense.identifier">
       <path value="MedicationDispense.identifier" />
       <short value="Unique code or number identifying the MedicationDispense" />

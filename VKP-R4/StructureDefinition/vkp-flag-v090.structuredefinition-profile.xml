@@ -29,6 +29,7 @@
         </discriminator>
         <rules value="open" />
       </slicing>
+      <min value="1" />
     </element>
     <element id="Flag.extension:severityLevel">
       <path value="Flag.extension" />
@@ -47,6 +48,7 @@
       <sliceName value="detail" />
       <short value="Reference to observation" />
       <definition value="Reference to the observation or other resource that contains more information about the event triggering the flag.&#xD;&#xA;If the flag represents a missing observation, detail.reference shall contain the LOINC-code of the observation type, and detail.display shall contain the human readable name." />
+      <min value="0" />
       <max value="1" />
       <type>
         <code value="Extension" />
