@@ -55,10 +55,6 @@
       <path value="MedicationDispense.status" />
       <short value="in-progress | completed" />
       <definition value="A code specifying the state of the set of dispense events.&#xD;&#xA;&#xD;&#xA;The VKP project uses a subset of the message-status (http://hl7.org/fhir/medication-admin-status) CodeSystem containing the codes:&#xD;&#xA;- in-progress&#xD;&#xA;- completed - Normal reporting of medication dispenced should have status completed" />
-      <binding>
-        <strength value="required" />
-        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-medicationdispense-message-status-v090" />
-      </binding>
     </element>
     <element id="MedicationDispense.category">
       <path value="MedicationDispense.category" />
@@ -74,44 +70,9 @@
       <path value="MedicationDispense.category.coding" />
       <min value="1" />
     </element>
-    <element id="MedicationDispense.medication[x]">
-      <path value="MedicationDispense.medication[x]" />
-      <slicing>
-        <discriminator>
-          <type value="type" />
-          <path value="$this" />
-        </discriminator>
-        <rules value="closed" />
-      </slicing>
-    </element>
-    <element id="MedicationDispense.medication[x]:medicationCodeableConcept">
-      <path value="MedicationDispense.medication[x]" />
-      <sliceName value="medicationCodeableConcept" />
-      <short value="Will always be unknown" />
-      <definition value="VKP project always uses unknown value &#xD;&#xA;&#xD;&#xA;Fixed value: &quot;Ukjent medisin&quot;" />
-      <type>
-        <code value="CodeableConcept" />
-      </type>
-      <fixedCodeableConcept>
-        <text value="Ukjent medisin" />
-      </fixedCodeableConcept>
-    </element>
-    <element id="MedicationDispense.medication[x]:medicationCodeableConcept.text">
-      <path value="MedicationDispense.medication[x].text" />
-      <short value="VKP always unknown medicine" />
-      <definition value="VKP expects a fixed value of &quot;Ukjent medisin&quot;&#xD;&#xA;&#xD;&#xA;A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user." />
-      <fixedString value="Ukjent medisin" />
-    </element>
     <element id="MedicationDispense.subject">
       <path value="MedicationDispense.subject" />
-      <definition value="A link to a resource representing the person or the group to whom the medication will be given.&#xD;&#xA;&#xD;&#xA;VKP always references a Patient Resource using a norwegian Fødslesnummer, Felles hjelpenummer or D-nummer in a logical identifier in the subject.identifier element.&#xD;&#xA;The Name of the patient should be given in the subject.display element.&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;~~~~&#xD;&#xA;&quot;subject&quot;:{&#xD;&#xA;   &quot;identifier&quot;:{&#xD;&#xA;      &quot;system&quot;:&quot;urn:oid:2.16.578.1.12.4.1.4.1&quot;,&#xD;&#xA;      &quot;value&quot;:&quot;05073500186&quot;&#xD;&#xA;     },&#xD;&#xA;     &quot;display&quot;:&quot;Ærlend Sørgård&quot;&#xD;&#xA;}&#xD;&#xA;~~~~" />
       <min value="1" />
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
-        <targetProfile value="http://ehelse.no/fhir/StructureDefinition/vkp-Patient-v090" />
-        <targetProfile value="http://hl7.no/fhir/StructureDefinition/no-basis-Patient" />
-      </type>
     </element>
     <element id="MedicationDispense.subject.reference">
       <path value="MedicationDispense.subject.reference" />
@@ -197,14 +158,6 @@
       <path value="MedicationDispense.subject.display" />
       <mustSupport value="true" />
     </element>
-    <element id="MedicationDispense.context">
-      <path value="MedicationDispense.context" />
-      <max value="0" />
-    </element>
-    <element id="MedicationDispense.supportingInformation">
-      <path value="MedicationDispense.supportingInformation" />
-      <max value="0" />
-    </element>
     <element id="MedicationDispense.performer">
       <path value="MedicationDispense.performer" />
       <short value="Device and person who performed the dispense" />
@@ -234,47 +187,20 @@
       <path value="MedicationDispense.performer.actor.identifier.value" />
       <min value="1" />
     </element>
-    <element id="MedicationDispense.authorizingPrescription">
-      <path value="MedicationDispense.authorizingPrescription" />
-      <max value="0" />
-    </element>
     <element id="MedicationDispense.type">
       <path value="MedicationDispense.type" />
-      <max value="0" />
-    </element>
-    <element id="MedicationDispense.quantity">
-      <path value="MedicationDispense.quantity" />
-      <max value="0" />
-    </element>
-    <element id="MedicationDispense.daysSupply">
-      <path value="MedicationDispense.daysSupply" />
-      <max value="0" />
-    </element>
-    <element id="MedicationDispense.whenPrepared">
-      <path value="MedicationDispense.whenPrepared" />
       <max value="0" />
     </element>
     <element id="MedicationDispense.whenHandedOver">
       <path value="MedicationDispense.whenHandedOver" />
       <definition value="Timestamp defining the point in time the MedicationDispense event took place. The timestamp could also be set for &quot;negative&quot; events, when a product was not provided to the patient according to plan.&#xD;&#xA;&#xD;&#xA;The time the dispensed product was/was not provided to the patient or their representative.&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;~~~&#xD;&#xA;&quot;timestamp&quot;:&quot;2018-07-18T07:01:06+00:00&quot;&#xD;&#xA;~~~" />
-      <min value="1" />
-    </element>
-    <element id="MedicationDispense.destination">
-      <path value="MedicationDispense.destination" />
-      <max value="0" />
-    </element>
-    <element id="MedicationDispense.receiver">
-      <path value="MedicationDispense.receiver" />
-      <max value="0" />
     </element>
     <element id="MedicationDispense.note">
       <path value="MedicationDispense.note" />
       <definition value="VKP: In the VPK project additional information about the MedicationDispense event sould be documented in a Composition in the Message Bundle&#xD;&#xA;&#xD;&#xA;'Extra information about the dispense that could not be conveyed in the other attributes." />
-      <max value="0" />
     </element>
     <element id="MedicationDispense.dosageInstruction">
       <path value="MedicationDispense.dosageInstruction" />
-      <definition value="VKP takes handles information about the dosage given in the text element.&#xD;&#xA;&#xD;&#xA;Example text could be: &#xD;&#xA;«10 doser medisin ble matet ut for bruk på reise.&#xD;&#xA;Første dose: 22/6 kl. 19:00. &#xD;&#xA;Siste dose: 24/6 kl. 19:00.»&#xD;&#xA;&#xD;&#xA;Indicates how the medication is to be used by the patient.&#xD;&#xA;&#xD;&#xA;Example code:&#xD;&#xA;~~~&#xD;&#xA;&quot;dosageInstruction&quot;: [&#xD;&#xA;     {&#xD;&#xA;         &quot;text&quot;:&quot;Husk øyedråper!&quot;&#xD;&#xA;     }&#xD;&#xA;]&#xD;&#xA;~~~" />
       <mustSupport value="false" />
     </element>
     <element id="MedicationDispense.dosageInstruction.sequence">
@@ -333,14 +259,6 @@
     <element id="MedicationDispense.dosageInstruction.maxDosePerLifetime">
       <path value="MedicationDispense.dosageInstruction.maxDosePerLifetime" />
       <mustSupport value="false" />
-    </element>
-    <element id="MedicationDispense.substitution">
-      <path value="MedicationDispense.substitution" />
-      <max value="0" />
-    </element>
-    <element id="MedicationDispense.detectedIssue">
-      <path value="MedicationDispense.detectedIssue" />
-      <max value="0" />
     </element>
     <element id="MedicationDispense.eventHistory">
       <path value="MedicationDispense.eventHistory" />
