@@ -47,10 +47,6 @@
       <definition value="The actual UUID value.&#xD;&#xA;The portion of the identifier typically relevant to the user and which is unique within the context of the system." />
       <mustSupport value="true" />
     </element>
-    <element id="MedicationDispense.partOf">
-      <path value="MedicationDispense.partOf" />
-      <max value="0" />
-    </element>
     <element id="MedicationDispense.status">
       <path value="MedicationDispense.status" />
       <short value="in-progress | completed" />
@@ -186,10 +182,6 @@
     <element id="MedicationDispense.performer.actor.identifier.value">
       <path value="MedicationDispense.performer.actor.identifier.value" />
       <min value="1" />
-    </element>
-    <element id="MedicationDispense.type">
-      <path value="MedicationDispense.type" />
-      <max value="0" />
     </element>
     <element id="MedicationDispense.whenHandedOver">
       <path value="MedicationDispense.whenHandedOver" />
