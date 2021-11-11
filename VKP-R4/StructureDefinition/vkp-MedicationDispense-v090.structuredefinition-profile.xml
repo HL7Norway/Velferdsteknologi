@@ -72,7 +72,6 @@
     </element>
     <element id="MedicationDispense.subject.reference">
       <path value="MedicationDispense.subject.reference" />
-      <max value="0" />
       <mustSupport value="false" />
     </element>
     <element id="MedicationDispense.subject.identifier">
@@ -164,6 +163,10 @@
       <path value="MedicationDispense.performer.actor" />
       <short value="The device used to dispense the medication to the patient.  For example, a particular medication dispense device" />
       <definition value="The device used to dispense the medication to the patient.  For example, a particular medication dispense device&#xD;&#xA;&#xD;&#xA;VKP-norway: Should be a logical reference containing the IMEI/serial number of the device.&#xD;&#xA;display value should contain the name of the device type.&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;~~~~&#xD;&#xA;&quot;performer&quot;: [&#xD;&#xA;                    {&#xD;&#xA;                        &quot;actor&quot;:{&#xD;&#xA;                            &quot;identifier&quot;:{&#xD;&#xA;                                &quot;system&quot;:&quot;http://dignio.no/IMEInummer&quot;,&#xD;&#xA;                                &quot;value&quot;:&quot;123456789101112&quot;&#xD;&#xA;                            },&#xD;&#xA;                            &quot;display&quot;:&quot;Medido multidosesdispenser&quot;&#xD;&#xA;                        }&#xD;&#xA;                    }&#xD;&#xA;                ]&#xD;&#xA;~~~~" />
+    </element>
+    <element id="MedicationDispense.performer.actor.reference">
+      <path value="MedicationDispense.performer.actor.reference" />
+      <max value="0" />
     </element>
     <element id="MedicationDispense.performer.actor.identifier">
       <path value="MedicationDispense.performer.actor.identifier" />
