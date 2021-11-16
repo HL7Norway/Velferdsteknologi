@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../STU3/fhir-all-xsd/fhir-single.xsd">
+<CodeSystem xmlns="http://hl7.org/fhir">
 	<id value="vkp-medicationdispense-events-v090.codesystem"/>
 	<meta>
 		<versionId value="1"/>

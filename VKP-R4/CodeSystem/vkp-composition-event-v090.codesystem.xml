@@ -12,27 +12,52 @@
   <content value="complete" />
   <concept>
     <code value="0" />
-    <display value="hendelse_meldt" />
+    <display value="hendelse meldt" />
     <definition value="Hendelsen ble registrert" />
   </concept>
   <concept>
     <code value="1" />
-    <display value="hendelse_behandles" />
+    <display value="hendelse behandles" />
     <definition value="Behandling påbegynt" />
   </concept>
   <concept>
 	  <code value="3"/>
-	  <display value="hendelse_kvittert"/>
+	  <display value="hendelse kvittert"/>
 	  <definition value="Hendelsen ble kvittert ut"/>
   </concept>
   <concept>
 	  <code value="4"/>
-	  <display value="hendelse_til_utrykning"/>
+	  <display value="hendelse til utrykning"/>
 	  <definition value="Ansvar for hendelsen ble overført til utrykningsenhet"/>
   </concept>
   <concept>
 	  <code value="5"/>
-	  <display value="hendelse_ok_utrykning"/>
+	  <display value="hendelse ok utrykning"/>
 	  <definition value="Utrykningsenhet aksepterte ansvar for hendelsen"/>
+  </concept>
+    <concept>
+	  <code value="6"/>
+	  <display value="årsak"/>
+	  <definition value="Årsak til hendelsen"/>
+  </concept>
+    <concept>
+	  <code value="7"/>
+	  <display value="tiltak"/>
+	  <definition value="Kort beskrivelse av tiltak"/>
+  </concept>
+    <concept>
+	  <code value="8"/>
+	  <display value="samtale"/>
+	  <definition value="Beskrivelse av samtaler startet fra responsløsningen"/>
+  </concept>
+    <concept>
+	  <code value="9"/>
+	  <display value="aksjon"/>
+	  <definition value="Utrykning / overføring til hjemmetjenesten: Ansvar overført til [navn på enhet], + eventuell informasjon om avvisninger"/>
+  </concept>
+    <concept>
+	  <code value="10"/>
+	  <display value="annen aktør"/>
+	  <definition value="Andre involverte operatører enn den som avsluttet (angitt med bruker-ID)"/>
   </concept>
 </CodeSystem>
