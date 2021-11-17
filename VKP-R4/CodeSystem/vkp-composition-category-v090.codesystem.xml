@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CodeSystem xmlns="http://hl7.org/fhir">
-  <id value="vkp-composition-class-v090.codesystem" />
+  <id value="vkp-composition-category-v090.codesystem" />
   <meta>
     <lastUpdated value="2019-05-07T18:31:50.532+02:00" />
   </meta>
-  <url value="http://ehelse.no/fhir/CodeSystem/vkp-composition-class-v090" />
+  <url value="http://ehelse.no/fhir/CodeSystem/vkp-composition-category-v090" />
   <version value="0.9.0" />
-  <name value="vkp-composition-class-v090.codesystem" />
+  <name value="vkp-composition-category-v090.codesystem" />
   <status value="draft" />
   <publisher value="Direktoratet for e-helse" />
   <content value="complete" />
@@ -17,7 +17,7 @@
   </concept>
   <concept>
     <code value="2" />
-    <display value="Pasientoppfolging" />
+    <display value="Digital hjemmeoppfølging" />
     <definition value="Notat om pasientoppfølging innen digital hjemmeoppfølging" />
   </concept>
 </CodeSystem>

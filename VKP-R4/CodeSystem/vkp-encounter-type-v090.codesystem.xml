@@ -12,19 +12,15 @@
 	<date value="2018-06-27T10:48:33.551+00:00"/>
 	<publisher value="Direktoratet for e-helse"/>
 	<content value="complete"/>
-	<concept>
-		<code value="0"/>
-		<display value="begge"/>
-		<definition value="Tilsyn gjennomført og hendelse rappportert"/>
-	</concept>
+
 	<concept>
 		<code value="1"/>
-		<display value="tilsyn"/>
-		<definition value="Tilsyn gjennomført"/>
+		<display value="planlagt tilsyn"/>
+		<definition value="Planlagt tilsyn gjennomført"/>
 	</concept>
 	<concept>
 		<code value="2"/>
-		<display value="hendelse"/>
-		<definition value="Hendelse rapportert"/>
+		<display value="hendelsesbasert tilsyn"/>
+		<definition value="Hendelsesbasert tilsyn gjennomført"/>
 	</concept>
 </CodeSystem>

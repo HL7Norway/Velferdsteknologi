@@ -31,7 +31,7 @@
       <path value="Composition.category" />
       <binding>
         <strength value="required" />
-        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-composition-class-v090" />
+        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-composition-category-v090" />
       </binding>
     </element>
     <element id="Composition.subject">
