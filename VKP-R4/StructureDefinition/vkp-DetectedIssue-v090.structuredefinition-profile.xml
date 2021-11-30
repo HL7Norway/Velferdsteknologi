@@ -21,5 +21,9 @@
         <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-alert-code-v090" />
       </binding>
     </element>
+    <element id="DetectedIssue.patient">
+      <path value="DetectedIssue.patient" />
+      <min value="1" />
+    </element>
   </differential>
 </StructureDefinition>
