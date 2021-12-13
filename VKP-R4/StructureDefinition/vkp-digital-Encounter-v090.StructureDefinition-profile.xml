@@ -189,6 +189,12 @@
       <min value="1" />
       <mustSupport value="true" />
     </element>
+    <element id="Encounter.participant.type">
+      <path value="Encounter.participant.type" />
+      <code>
+        <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode" />
+      </code>
+    </element>
     <element id="Encounter.participant.individual">
       <path value="Encounter.participant.individual" />
       <short value="Refernce to the individual that participated in the encounter" />
@@ -198,31 +204,8 @@
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
         <targetProfile value="http://hl7.no/fhir/StructureDefinition/no-basis-Practitioner" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device" />
       </type>
-      <mustSupport value="true" />
-    </element>
-    <element id="Encounter.participant.individual.identifier">
-      <path value="Encounter.participant.individual.identifier" />
-      <definition value="Logical refernce to the individual that participated in the encounter, usually health care provider. Identified using Norwegian national id number (fødselsnummer).&#xD;&#xA;The Name of the participant should be given in the subject.display element.&#xD;&#xA;&#xD;&#xA;An identifier for the other resource. This is used when there is no way to reference the other resource directly, either because the entity is not available through a FHIR server, or because there is no way for the author of the resource to convert a known identifier to an actual location. There is no requirement that a Reference.identifier point to something that is actually exposed as a FHIR instance, but it SHALL point to a business concept that would be expected to be exposed as a FHIR instance, and that instance would need to be of a FHIR resource type allowed by the reference." />
-      <mustSupport value="true" />
-    </element>
-    <element id="Encounter.participant.individual.identifier.system">
-      <path value="Encounter.participant.individual.identifier.system" />
-      <short value="The official name of the FNR namespace" />
-      <definition value="The official name of the FNR namespace, identified by its oid value&#xD;&#xA;&#xD;&#xA;Establishes the namespace for the value - that is, a URL that describes a set values that are unique." />
-      <fixedUri value="urn:oid:2.16.578.1.12.4.1.4.1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Encounter.participant.individual.identifier.value">
-      <path value="Encounter.participant.individual.identifier.value" />
-      <short value="The FNR of the individual" />
-      <definition value="The FNR value identifying the participant&#xD;&#xA;&#xD;&#xA;The portion of the identifier typically relevant to the user and which is unique within the context of the system." />
-      <mustSupport value="true" />
-    </element>
-    <element id="Encounter.participant.individual.display">
-      <path value="Encounter.participant.individual.display" />
-      <short value="Tha name of the individual" />
-      <definition value="Tha name of the individual&#xD;&#xA;&#xD;&#xA;Plain text narrative that identifies the resource in addition to the resource reference." />
       <mustSupport value="true" />
     </element>
     <element id="Encounter.period">
