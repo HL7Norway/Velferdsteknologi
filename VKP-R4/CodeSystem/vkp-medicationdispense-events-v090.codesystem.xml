@@ -20,7 +20,7 @@
 	<concept>
 		<code value="1.1"/>
 		<display value="medisin utlevert uassistert"/>
-		<definition value="Medisin ble utlevert med assistanse"/>
+		<definition value="Medisin ble utlevert uten assistanse"/>
 	</concept>
 	<concept>
 		<code value="1.2"/>
