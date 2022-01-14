@@ -17,7 +17,7 @@
       <short value="The type of alert that thiis detected issue represents." />
       <min value="1" />
       <binding>
-        <strength value="preferred" />
+        <strength value="required" />
         <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-alert-code-v090" />
       </binding>
     </element>
