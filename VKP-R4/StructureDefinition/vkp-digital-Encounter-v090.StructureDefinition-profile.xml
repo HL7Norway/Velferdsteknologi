@@ -21,41 +21,6 @@
       <comment value="The use-case in question is performing a virtual encounter using a camera device to perform the encounter." />
       <alias value="digitalt tilsyn" />
     </element>
-    <element id="Encounter.extension">
-      <path value="Encounter.extension" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="url" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-      <min value="1" />
-    </element>
-    <element id="Encounter.extension:note">
-      <path value="Encounter.extension" />
-      <sliceName value="note" />
-      <short value="A journal note" />
-      <definition value="A journal note to document the digital encounter.&#xD;&#xA;Can be XHTML formatted text.&#xD;&#xA;In the VKP project in Norway the note is used for: &#xD;&#xA;Response summary: A text describing the resolution of the digital-Encounter event&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;~~~&#xD;&#xA;{&#xD;&#xA;      &quot;url&quot;:&quot;http://ehelse.no/fhir/StructureDefinition/vkp-annotation-v090&quot;,&#xD;&#xA;      &quot;extension&quot;: [&#xD;&#xA;          {&#xD;&#xA;              &quot;url&quot;:&quot;note&quot;,&#xD;&#xA;             &quot;valueAnnotation&quot;:{&#xD;&#xA;                  &quot;authorReference&quot;:{&#xD;&#xA;                      &quot;identifier&quot;:{&#xD;&#xA;                          &quot;system&quot;:&quot;urn:oid:2.16.578.1.12.4.1.4.1&quot;,&#xD;&#xA;                          &quot;value&quot;:&quot;04056600324&quot;&#xD;&#xA;                     },&#xD;&#xA;                      &quot;display&quot;:&quot;Magnar Koman&quot;&#xD;&#xA;                  },&#xD;&#xA;                  &quot;time&quot;:&quot;2018-06-25T08:00:00.936Z&quot;,&#xD;&#xA;                  &quot;text&quot;:&quot;Selve teksten til journalnotatet.&quot;&#xD;&#xA;              }&#xD;&#xA;          }&#xD;&#xA;      ]&#xD;&#xA;}&#xD;&#xA;~~~" />
-      <min value="0" />
-      <max value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://ehelse.no/fhir/StructureDefinition/vkp-annotation-v090" />
-      </type>
-    </element>
-    <element id="Encounter.extension:signature">
-      <path value="Encounter.extension" />
-      <sliceName value="signature" />
-      <short value="Signature for the journal note" />
-      <definition value="When a journal note is to document the digital encounter in the EHR it needs a string identifying who registered the note. A signature of who registered the information should be present in all events, even when there is no text in the journal note.&#xD;&#xA;&#xD;&#xA;Can be XHTML formatted text.&#xD;&#xA;In the VKP project in Norway the signature is used for: &#xD;&#xA;Signature: Name of author plus a system specific signature identifying the user who submitted the Composition (user name in the system).&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;~~~&#xD;&#xA;{&#xD;&#xA;   &quot;url&quot;:&quot;http://ehelse.no/fhir/StructureDefinition/vkp-annotation-v090&quot;,&#xD;&#xA;      &quot;extension&quot;: [&#xD;&#xA;          {&#xD;&#xA;              &quot;url&quot;:&quot;signature&quot;,&#xD;&#xA;              &quot;valueAnnotation&quot;:{&#xD;&#xA;                 &quot;time&quot;:&quot;2018-06-25T08:00:00.936Z&quot;,&#xD;&#xA;                 &quot;text&quot;:&quot;Magnar Koman (signatur)&quot;&#xD;&#xA;             }&#xD;&#xA;          }&#xD;&#xA;      ]&#xD;&#xA;}&#xD;&#xA;~~~" />
-      <min value="1" />
-      <max value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://ehelse.no/fhir/StructureDefinition/vkp-annotation-v090" />
-      </type>
-    </element>
     <element id="Encounter.identifier">
       <path value="Encounter.identifier" />
       <definition value="Unique code or number identifying the Encounter&#xD;&#xA;&#xD;&#xA;VKP project uses UUID. &#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;~~~&#xD;&#xA;&quot;identifier&quot;: [&#xD;&#xA;     {&#xD;&#xA;         &quot;system&quot;:&quot;urn:ietf:rfc:3986&quot;,&#xD;&#xA;         &quot;value&quot;:&quot;urn:uuid:a76d9bbf-f293-4fb7-ad4c-2851cac77162&quot;&#xD;&#xA;     }&#xD;&#xA;]&#xD;&#xA;~~~" />
@@ -72,62 +37,48 @@
     <element id="Encounter.class">
       <path value="Encounter.class" />
       <short value="Encounter class for digital Encounter" />
-      <definition value="VKP uses a valueset for encounter class for digital Encounter http://ehelse.no/fhir/ValueSet/vkp-encounter-class-v090" />
       <binding>
         <strength value="required" />
-        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-encounter-class-v090" />
+        <valueSet value="http://terminology.hl7.org/CodeSystem/v3-ActCode" />
       </binding>
     </element>
     <element id="Encounter.class.system">
       <path value="Encounter.class.system" />
-      <definition value="VKP uses http://ehelse.no/fhir/CodeSystem/vkp-encounter-class-v090&#xD;&#xA;The identification of the code system that defines the meaning of the symbol in the code." />
-      <fixedUri value="http://ehelse.no/fhir/CodeSystem/vkp-encounter-class-v090" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/v3-ActCode" />
+    </element>
+    <element id="Encounter.class.code">
+      <path value="Encounter.class.code" />
+      <fixedCode value="VR" />
+    </element>
+    <element id="Encounter.class.display">
+      <path value="Encounter.class.display" />
+      <fixedString value="virtual" />
     </element>
     <element id="Encounter.classHistory">
       <path value="Encounter.classHistory" />
       <mustSupport value="true" />
     </element>
-    <element id="Encounter.classHistory.extension">
-      <path value="Encounter.classHistory.extension" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="url" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-      <min value="1" />
-    </element>
-    <element id="Encounter.classHistory.extension:deviceReference">
-      <path value="Encounter.classHistory.extension" />
-      <sliceName value="deviceReference" />
-      <short value="Logical reference to the device" />
-      <definition value="Device used during the patient encounter. For example, a particular camera device." />
-      <min value="1" />
-      <max value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://ehelse.no/fhir/StructureDefinition/vkp-deviceReference-v090" />
-      </type>
-    </element>
     <element id="Encounter.classHistory.class">
       <path value="Encounter.classHistory.class" />
       <short value="Encounter class for digital Encounter" />
-      <definition value="VKP uses a valueset for encounter class for digital Encounter http://ehelse.no/fhir/ValueSet/vkp-encounter-class-v090" />
       <mustSupport value="true" />
       <binding>
         <strength value="required" />
-        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-encounter-class-v090" />
       </binding>
     </element>
     <element id="Encounter.classHistory.class.system">
       <path value="Encounter.classHistory.class.system" />
-      <fixedUri value="http://ehelse.no/fhir/CodeSystem/vkp-encounter-class-v090" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/v3-ActCode" />
       <mustSupport value="true" />
     </element>
     <element id="Encounter.classHistory.class.code">
       <path value="Encounter.classHistory.class.code" />
+      <fixedCode value="VR" />
       <mustSupport value="true" />
+    </element>
+    <element id="Encounter.classHistory.class.display">
+      <path value="Encounter.classHistory.class.display" />
+      <fixedString value="virtual" />
     </element>
     <element id="Encounter.classHistory.period">
       <path value="Encounter.classHistory.period" />
@@ -145,14 +96,7 @@
     <element id="Encounter.type">
       <path value="Encounter.type" />
       <short value="Event type" />
-      <definition value="Encounter type &#xD;&#xA;tilsyn|hendelse" />
-      <min value="1" />
-      <max value="1" />
       <mustSupport value="true" />
-      <binding>
-        <strength value="required" />
-        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-encounter-type-v090" />
-      </binding>
     </element>
     <element id="Encounter.subject">
       <path value="Encounter.subject" />
@@ -192,8 +136,14 @@
     <element id="Encounter.participant.type">
       <path value="Encounter.participant.type" />
       <code>
-        <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode" />
+        <system value="http://ehelse.no/fhir/ValueSet/vkp-encounter-type-v090" />
       </code>
+      <min value="1" />
+      <max value="1" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-encounter-type-v090" />
+      </binding>
     </element>
     <element id="Encounter.participant.individual">
       <path value="Encounter.participant.individual" />
