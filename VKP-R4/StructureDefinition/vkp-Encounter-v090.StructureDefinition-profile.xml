@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="vkp-Encounter-v090" />
+  <url value="http://ehelse.no/fhir/StructureDefinition/vkp-Encounter-v090" />
+  <version value="0.9.0" />
+  <name value="VkpEncounter" />
+  <status value="draft" />
+  <date value="2020-01-20" />
+  <description value="A digital or physical interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient." />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Encounter" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Encounter" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Encounter">
+      <path value="Encounter" />
+      <short value="A digital or physical interaction during which services are provided to the patient." />
+      <definition value="A digital or physical interaction during which services are provided to the patient." />
+      <comment value="The use-case in question is performing a virtual encounter using a camera device to perform the encounter." />
+    </element>
+    <element id="Encounter.identifier">
+      <path value="Encounter.identifier" />
+      <definition value="Unique code or number identifying the Encounter&#xD;&#xA;&#xD;&#xA;VKP project uses UUID. &#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;~~~&#xD;&#xA;&quot;identifier&quot;: [&#xD;&#xA;     {&#xD;&#xA;         &quot;system&quot;:&quot;urn:ietf:rfc:3986&quot;,&#xD;&#xA;         &quot;value&quot;:&quot;urn:uuid:a76d9bbf-f293-4fb7-ad4c-2851cac77162&quot;&#xD;&#xA;     }&#xD;&#xA;]&#xD;&#xA;~~~" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.identifier.system">
+      <path value="Encounter.identifier.system" />
+      <fixedUri value="urn:ietf:rfc:3986" />
+    </element>
+    <element id="Encounter.identifier.value">
+      <path value="Encounter.identifier.value" />
+      <definition value="The actual uniqe identifier (UUID)&#xD;&#xA;&#xD;&#xA;The portion of the identifier typically relevant to the user and which is unique within the context of the system." />
+    </element>
+    <element id="Encounter.class">
+      <path value="Encounter.class" />
+      <short value="Encounter class for VkpEncounter" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://terminology.hl7.org/CodeSystem/v3-ActCode" />
+      </binding>
+    </element>
+    <element id="Encounter.class.system">
+      <path value="Encounter.class.system" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/v3-ActCode" />
+    </element>
+    <element id="Encounter.class.code">
+      <path value="Encounter.class.code" />
+      <comment value="For digital/virtual encounters - code VR (virtual) should be used." />
+    </element>
+    <element id="Encounter.classHistory">
+      <path value="Encounter.classHistory" />
+      <mustSupport value="false" />
+    </element>
+    <element id="Encounter.classHistory.class">
+      <path value="Encounter.classHistory.class" />
+      <short value="Encounter class for VkpEncounter" />
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+      </binding>
+    </element>
+    <element id="Encounter.classHistory.class.system">
+      <path value="Encounter.classHistory.class.system" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/v3-ActCode" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.classHistory.class.code">
+      <path value="Encounter.classHistory.class.code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.classHistory.period">
+      <path value="Encounter.classHistory.period" />
+      <definition value="Time period for the encounter, the system should provide both start and end times.&#xD;&#xA;If the start-time is not known a single end time can be provided as a timestamp for the Encounter.&#xD;&#xA;&#xD;&#xA;Example code: &#xD;&#xA;~~~&#xD;&#xA;&quot;period&quot;:{&#xD;&#xA;   &quot;start&quot;:&quot;2018-06-25T09:56:23.945+02:00&quot;,&#xD;&#xA;   &quot;end&quot;:&quot;2018-06-25T10:01:03.936+02:00&quot;&#xD;&#xA;}&#xD;&#xA;~~~" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.classHistory.period.start">
+      <path value="Encounter.classHistory.period.start" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.classHistory.period.end">
+      <path value="Encounter.classHistory.period.end" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.type">
+      <path value="Encounter.type" />
+      <short value="Event type" />
+      <mustSupport value="false" />
+    </element>
+    <element id="Encounter.subject">
+      <path value="Encounter.subject" />
+      <definition value="Reference to the patient that is subject to the encounter, identified by Norwegian national id number (Fødselsnummer or DNR).&#xD;&#xA;&#xD;&#xA;A link to a resource representing the person or the group to whom the medication will be given.&#xD;&#xA;&#xD;&#xA;VKP always references a Patient Resource using a norwegian national id number (Fødselsnummer or DNR) in a logical identifier in the subject.identifier element.&#xD;&#xA;The Name of the patient should be given in the subject.display element.&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;~~~~&#xD;&#xA;&quot;subject&quot;:{&#xD;&#xA;   &quot;identifier&quot;:{&#xD;&#xA;      &quot;system&quot;:&quot;urn:oid:2.16.578.1.12.4.1.4.1&quot;,&#xD;&#xA;      &quot;value&quot;:&quot;05073500186&quot;&#xD;&#xA;     },&#xD;&#xA;     &quot;display&quot;:&quot;Ærlend Sørgård&quot;&#xD;&#xA;}&#xD;&#xA;~~~~" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Group" />
+        <targetProfile value="http://hl7.no/fhir/StructureDefinition/no-basis-Patient" />
+        <targetProfile value="http://ehelse.no/fhir/StructureDefinition/vkp-Patient-v090" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.subject.identifier">
+      <path value="Encounter.subject.identifier" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.subject.identifier.system">
+      <path value="Encounter.subject.identifier.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.subject.identifier.value">
+      <path value="Encounter.subject.identifier.value" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.subject.display">
+      <path value="Encounter.subject.display" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.participant">
+      <path value="Encounter.participant" />
+      <definition value="Refernce to the individual that participated in the encounter, usually health care provider. Identified using Norwegian national id number (fødselsnummer).&#xD;&#xA;The Name of the participant should be given in the subject.display element.&#xD;&#xA;&#xD;&#xA;Example: &#xD;&#xA;~~~~&#xD;&#xA;&quot;participant&quot;: [&#xD;&#xA;   {&#xD;&#xA;      &quot;individual&quot;:{&#xD;&#xA;         &quot;identifier&quot;:{&#xD;&#xA;            &quot;system&quot;:&quot;urn:oid:2.16.578.1.12.4.1.4.1&quot;,&#xD;&#xA;            &quot;value&quot;:&quot;04056600324&quot;&#xD;&#xA;         },&#xD;&#xA;         &quot;display&quot;:&quot;Magnar Koman&quot;&#xD;&#xA;      }&#xD;&#xA;   }&#xD;&#xA;]&#xD;&#xA;~~~~" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.participant.type">
+      <path value="Encounter.participant.type" />
+      <code>
+        <system value="http://ehelse.no/fhir/ValueSet/vkp-encounter-mode-v090" />
+      </code>
+      <min value="1" />
+      <max value="1" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-encounter-mode-v090" />
+      </binding>
+    </element>
+    <element id="Encounter.participant.individual">
+      <path value="Encounter.participant.individual" />
+      <short value="Refernce to the individual that participated in the encounter" />
+      <definition value="Refernce to the individual that participated in the encounter, usually health care provider. Identified using Norwegian national id number (fødselsnummer).&#xD;&#xA;The Name of the participant should be given in the subject.display element." />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
+        <targetProfile value="http://hl7.no/fhir/StructureDefinition/no-basis-Practitioner" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.period">
+      <path value="Encounter.period" />
+      <short value="The start and end time of the digital encounter" />
+      <definition value="Time period for the digital encounter, the system should provide both start and end times.&#xD;&#xA;If the start-time is not known a single end time can be provided as a timestamp for the Encounter.&#xD;&#xA;&#xD;&#xA;Example code: &#xD;&#xA;~~~&#xD;&#xA;&quot;period&quot;:{&#xD;&#xA;   &quot;start&quot;:&quot;2018-06-25T09:56:23.945+02:00&quot;,&#xD;&#xA;   &quot;end&quot;:&quot;2018-06-25T10:01:03.936+02:00&quot;&#xD;&#xA;}&#xD;&#xA;~~~" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.period.start">
+      <path value="Encounter.period.start" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.period.end">
+      <path value="Encounter.period.end" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.reasonCode">
+      <path value="Encounter.reasonCode" />
+      <definition value="Reason the encounter takes place, coded according to http://ehelse.no/fhir/ValueSet/vkp-encounter-reason-v090" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+        <description value="vkp-encounter-reason-v090" />
+        <valueSet value="http://ehelse.no/fhir/ValueSet/vkp-encounter-reason-v090" />
+      </binding>
+    </element>
+    <element id="Encounter.location">
+      <path value="Encounter.location" />
+      <definition value="VKP uses this refererence to name location where the digital-Encounter takes place. Typically includes only location.location.display element with a textual description of the location.&#xD;&#xA;&#xD;&#xA;List of locations where  the patient has been during this encounter." />
+      <comment value="Virtual encounters can be recorded in the Encounter by specifying a location reference to a location of type &quot;kind&quot; such as &quot;client's home&quot; and an encounter.class = &quot;virtual&quot;.&#xD;&#xA;&#xD;&#xA;VKP Example:&#xD;&#xA;~~~&#xD;&#xA; &quot;location&quot;: [&#xD;&#xA;        {&#xD;&#xA;            &quot;location&quot;:{&#xD;&#xA;                &quot;display&quot;:&quot;rom24 @ sykehjem&quot;&#xD;&#xA;            }&#xD;&#xA;        }&#xD;&#xA;    ]&#xD;&#xA;~~~" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.location.location">
+      <path value="Encounter.location.location" />
+      <definition value="A location reference. Only display value is supported by the VKP.&#xD;&#xA;&#xD;&#xA;The location where the encounter takes place." />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.location.location.display">
+      <path value="Encounter.location.location.display" />
+      <definition value="The Display value for the location. In vkp the format is usually &quot;[room or room-number] @ [location name]&quot;.&#xD;&#xA;&#xD;&#xA;Plain text narrative that identifies the resource in addition to the resource reference." />
+      <example>
+        <label value="display" />
+        <valueString value="&quot;rom24 @ sykehjem&quot;" />
+      </example>
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>
