@@ -1,0 +1,65 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "vkp-QuestionnaireReponse-v090",
+  "url": "http://ehelse.no/fhir/StructureDefinition/vkp-QuestionnaireReponse-v090",
+  "name": "VkpQuestionnaireResponse",
+  "status": "draft",
+  "date": "2022-04-20",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "QuestionnaireResponse",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "QuestionnaireResponse.questionnaire.extension",
+        "path": "QuestionnaireResponse.questionnaire.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 0
+      },
+      {
+        "id": "QuestionnaireResponse.questionnaire.extension:questionnaireDisplay",
+        "path": "QuestionnaireResponse.questionnaire.extension",
+        "sliceName": "questionnaireDisplay",
+        "requirements": "This shall be the title of the Questionnaire if the Questionnaire resource is not included.",
+        "min": 0,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/display"
+            ]
+          }
+        ],
+        "isModifier": false
+      },
+      {
+        "id": "QuestionnaireResponse.subject",
+        "path": "QuestionnaireResponse.subject",
+        "definition": "Reference to the patient, identified by Norwegian national id number (Fødselsnummer or DNR).\r\n\r\nA link to a resource representing the person or the group to whom the medication will be given.\r\n\r\nVKP always references a Practitioner Resource using a norwegian national id number (Fødselsnummer or DNR) in a logical identifier in the practitioner.identifier element.\r\nThe Name of the practitioner should be given in the performer.display element.\r\n\r\nExample:\r\n~~~~\r\n\"performer\":{\r\n   \"identifier\":{\r\n      \"system\":\"urn:oid:2.16.578.1.12.4.1.4.1\",\r\n      \"value\":\"05073500186\"\r\n     },\r\n     \"display\":\"Ærlend Sørgård\"\r\n}\r\n~~~~",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Patient",
+              "http://hl7.no/fhir/StructureDefinition/no-basis-Patient",
+              "http://ehelse.no/fhir/StructureDefinition/vkp-Patient-v090"
+            ]
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}
