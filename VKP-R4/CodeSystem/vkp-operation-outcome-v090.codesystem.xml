@@ -1,0 +1,79 @@
+<CodeSystem xmlns="http://hl7.org/fhir">
+	<id value="Vkp-operation-outcome-v090.codesystem"/>
+	<meta>
+		<versionId value="1"/>
+		<lastUpdated value="2021-11-25T17:48:34.405+00:00"/>
+	</meta>
+	<url value="http://ehelse.no/fhir/CodeSystem/vkp-operation-outcome-v090"/>
+	<version value="0.9.0"/>
+	<name value="vkp-operation-outcome-v090.codesystem"/>
+	<status value="draft"/>
+	<date value="2018-06-27T10:48:33.551+00:00"/>
+	<publisher value="Direktoratet for e-helse"/>
+	<content value="complete"/>
+	<concept>
+		<code value="1"/>
+		<display value="forbudt"/>
+		<definition value="Forbidden"/>
+	</concept>
+	<concept>
+		<code value="1.1"/>
+		<display value="ikke aktiv"/>
+		<definition value="NotActive"/>
+	</concept>
+	<concept>
+		<code value="1.2"/>
+		<display value="ikke tillatt"/>
+		<definition value="NotAllowed" />
+	</concept>
+	<concept>
+		<code value="1.3"/>
+		<display value="ikke oppfylt tjenstlig behov"/>
+		<definition value="MissingActiveService"/>
+	</concept>
+	<concept>
+		<code value="1.4"/>
+		<display value="ikke tilgang"/>
+		<definition value="NoAccess"/>
+	</concept>
+	<concept>
+		<code value="1.5"/>
+		<display value="ikke tilgang"/>
+		<definition value="NotAuthorized"/>
+	</concept>
+	<concept>
+		<code value="2"/>
+		<display value="ugyldige data"/>
+		<definition value="Invalid"/>
+	</concept>
+	<concept>
+		<code value="2.1"/>
+		<display value="ugyldig personidentifikator"/>
+		<definition value="InvalidSsn"/>
+	</concept>
+	<concept>
+		<code value="2.2"/>
+		<display value="ugyldig systemidentifikator"/>
+		<definition value="InvalidOrg"/>
+	</concept>
+		<concept>
+		<code value="2.3"/>
+		<display value="ugyldig antall parametere"/>
+		<definition value="InvalidParameterCount "/>
+	</concept>
+	<concept>
+		<code value="2.4"/>
+		<display value="ugyldig format"/>
+		<definition value="InvalidFormat"/>
+	</concept>
+		<concept>
+		<code value="3"/>
+		<display value="annen feil"/>
+		<definition value="Other"/>
+	</concept>
+	<concept>
+		<code value="3.1"/>
+		<display value="time out"/>
+		<definition value="TimedOut"/>
+	</concept>
+</CodeSystem>
