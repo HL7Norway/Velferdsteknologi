@@ -8,7 +8,7 @@
 	<url value="http://ehelse.no/fhir/CodeSystem/vkp-alert-code-v090"/>
 	<version value="0.9.0"/>
 	<name value="vkp-alert-code-v090.codesystem"/>
-	<status value="Draft"/>
+	<status value="draft"/>
 	<date value="2018-06-27T10:48:33.551+00:00"/>
 	<publisher value="Direktoratet for e-helse"/>
 	<content value="complete"/>
