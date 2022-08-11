@@ -12,7 +12,7 @@
   <content value="complete" />
     <concept>
     <code value="0" />
-    <display value="bildetilsyn_anonymisert" />
+    <display value="bildetilsyn anonymisert" />
     <definition value="Anonymisert bildebasert tilsyn" />
   </concept>
   <concept>
@@ -22,12 +22,12 @@
   </concept>
   <concept>
     <code value="2" />
-    <display value="toveis_tale" />
+    <display value="toveis tale" />
     <definition value="Toveis tale" />
   </concept>
   <concept>
     <code value="3" />
-    <display value="innlytt_anonymisert" />
+    <display value="innlytt anonymisert" />
     <definition value="Anonymisert innlytt" />
   </concept>
   <concept>
