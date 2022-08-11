@@ -38,12 +38,11 @@
       <short value="Encounter class for VkpEncounter" />
       <binding>
         <strength value="required" />
-        <valueSet value="http://terminology.hl7.org/CodeSystem/v3-ActCode" />
       </binding>
     </element>
     <element id="Encounter.class.system">
       <path value="Encounter.class.system" />
-      <fixedUri value="http://terminology.hl7.org/CodeSystem/v3-ActCode" />
+      <fixedUri value="http://terminology.hl7.org/ValueSet/v3-ActEncounterCode" />
     </element>
     <element id="Encounter.class.code">
       <path value="Encounter.class.code" />
@@ -63,7 +62,7 @@
     </element>
     <element id="Encounter.classHistory.class.system">
       <path value="Encounter.classHistory.class.system" />
-      <fixedUri value="http://terminology.hl7.org/CodeSystem/v3-ActCode" />
+      <fixedUri value="http://terminology.hl7.org/ValueSet/v3-ActEncounterCode" />
       <mustSupport value="true" />
     </element>
     <element id="Encounter.classHistory.class.code">
