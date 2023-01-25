@@ -73,7 +73,7 @@
     </element>
     <element id="Patient.contact.relationship">
       <path value="Patient.contact.relationship" />
-      <definition value="VKP can use both coded and text value for relationship. Coded values are given according to HL7 CodeSystem http://hl7.org/fhir/ValueSet/v2-0131&#xD;&#xA;Text values can be free text description of the relationship. Both a textdescription and a coded value can be present.&#xD;&#xA;The main contact of the patient should be coded as &quot;C&quot; - &quot;Emergency Contact&quot;&#xD;&#xA;&#xD;&#xA;The nature of the relationship between the patient and the contact person." />
+      <definition value="VKP can use both coded and text value for relationship. Coded values are given according to HL7 CodeSystem http://hl7.org/fhir/v2/0131/&#xD;&#xA;Text values can be free text description of the relationship. Both a textdescription and a coded value can be present.&#xD;&#xA;The main contact of the patient should be coded as &quot;C&quot; - &quot;Emergency Contact&quot;&#xD;&#xA;&#xD;&#xA;The nature of the relationship between the patient and the contact person." />
     </element>
     <element id="Patient.contact.relationship.coding">
       <path value="Patient.contact.relationship.coding" />
