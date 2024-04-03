@@ -45,6 +45,6 @@
 	<concept>
 		<code value="3"/>
 		<display value="medisin melding til bruker"/>
-		<definition value="Melding til bruker om annen medisinering ble kvittert ut"/>
+		<definition value="Melding til bruker ble kvittert ut"/>
 	</concept>
 </CodeSystem>
