@@ -267,6 +267,11 @@
         <definition value="Epilepsi" />
     </concept>
     <concept>
+        <code value="4.25" />
+        <display value="Kamera" />
+        <definition value="Hendelsesbasert digitalt tilsyn - kamera" />
+    </concept>
+    <concept>
         <code value="5" />
         <display value="Digital hjemmeoppfølging" />
         <definition value="Varsel ved digital hjemmeoppfølging" />
