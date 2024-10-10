@@ -2,7 +2,7 @@
     <id value="Vkp-alert-code-v090.codesystem" />
     <meta>
         <versionId value="1" />
-        <lastUpdated value="2021-11-25T17:48:34.405+00:00" />
+        <lastUpdated value="2024-10-10T17:48:34.405+00:00" />
     </meta>
     <url value="http://ehelse.no/fhir/CodeSystem/vkp-alert-code-v090" />
     <version value="0.9.0" />
@@ -144,7 +144,7 @@
     <concept>
         <code value="4" />
         <display value="Digitalt tilsyn" />
-        <definition value="Varsler fra sensorikk tilknyttet digitalt tilsyn" />
+        <definition value="Varsler tilknyttet digitalt tilsyn" />
     </concept>
     <concept>
         <code value="4.1" />
@@ -204,7 +204,7 @@
     <concept>
         <code value="4.12" />
         <display value="Frav&#230;r" />
-        <definition value="Det er ikke registrert person i rommet på et tidspunkt hvor det skal v&#230;re person i rommet" />
+        <definition value="Det er ikke registrert person i rommet på et tidspunkt hvor det skal være person i rommet" />
     </concept>
     <concept>
         <code value="4.13" />
@@ -268,8 +268,13 @@
     </concept>
     <concept>
         <code value="4.25" />
-        <display value="Kamera" />
+        <display value="Hendelsesbasert kameratilsyn" />
         <definition value="Hendelsesbasert digitalt tilsyn - kamera" />
+    </concept>
+    <concept>
+        <code value="4.26" />
+        <display value="Planlagt kameratilsyn" />
+        <definition value="Planlagt digitalt tilsyn - kamera" />
     </concept>
     <concept>
         <code value="5" />
