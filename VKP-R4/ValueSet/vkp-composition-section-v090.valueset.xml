@@ -1,5 +1,5 @@
 <ValueSet xmlns="http://hl7.org/fhir">
-  <id value="vkp-section-code" />
+  <id value="vkp-composition-section-v090.valueset" />
   <url value="http://ehelse.no/fhir/ValueSet/vkp-composition-section-v090" />
   <version value="0.9.0" />
   <name value="vkp-composition-section-v090.valueset" />
