@@ -28,6 +28,11 @@
 		<definition value="Medisin ble utlevert med assistanse"/>
 	</concept>
 	<concept>
+		<code value="1.3"/>
+		<display value="behovsmedisin utlevert"/>
+		<definition value="Behovsmedisin ble utlevert"/>
+	</concept>
+	<concept>
 		<code value="2"/>
 		<display value="medisin utlevert reise"/>
 		<definition value="Forhåndsutmating av medisin"/>
