@@ -1,1 +1,13 @@
 Package-no-basis*/
+
+# Build / output
+fsh-generated/
+input-cache/
+output/
+temp/
+*.zip
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
